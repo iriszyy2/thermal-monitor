@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T09:03:23.525056+00:00",
+  "generated_at": "2026-03-22T10:00:56.163832+00:00",
   "brands": [
     "TOPDON",
     "Seek",
@@ -8,11 +8,21 @@
     "HIKIMICRO"
   ],
   "stats": {
-    "total_changes": 6,
-    "today": 6,
-    "this_week": 6
+    "total_changes": 7,
+    "today": 7,
+    "this_week": 7
   },
   "history": [
+    {
+      "id": "2026-03-22T10:00:53.948451+00:00-FLIR-page-Blog",
+      "type": "page_change",
+      "brand": "FLIR",
+      "ts": "2026-03-22T10:00:53.948451+00:00",
+      "title": "Blog",
+      "url": "https://www.flir.com/discover/professional-tools/",
+      "detail": "Content updated",
+      "price": ""
+    },
     {
       "id": "2026-03-22T09:03:21.505297+00:00-FLIR-page-Blog",
       "type": "page_change",
@@ -79,80 +89,80 @@
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:20.011571+00:00"
+        "checked_at": "2026-03-22T10:00:51.467096+00:00"
       },
       "FAQ": {
         "url": "https://www.topdon.com/pages/faq",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:20.266475+00:00"
+        "checked_at": "2026-03-22T10:00:51.589845+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:20.431989+00:00"
+        "checked_at": "2026-03-22T10:00:51.763404+00:00"
       }
     },
     "Seek": {
       "About Us": {
         "url": "https://www.thermal.com/pages/about",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:20.732859+00:00"
+        "checked_at": "2026-03-22T10:00:52.195874+00:00"
       },
       "FAQ": {
         "url": "https://www.thermal.com/pages/faq",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:20.784678+00:00"
+        "checked_at": "2026-03-22T10:00:52.321877+00:00"
       },
       "Refund Policy": {
         "url": "https://www.thermal.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:20.833298+00:00"
+        "checked_at": "2026-03-22T10:00:52.440583+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:21.908517+00:00"
+        "checked_at": "2026-03-22T10:00:54.266865+00:00"
       },
       "Support": {
         "url": "https://www.flir.com/support/",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:22.151989+00:00"
+        "checked_at": "2026-03-22T10:00:54.505004+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:22.684665+00:00"
+        "checked_at": "2026-03-22T10:00:54.848411+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:23.152152+00:00"
+        "checked_at": "2026-03-22T10:00:55.452666+00:00"
       },
       "Support": {
         "url": "https://www.fluke.com/en-us/support",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:23.239124+00:00"
+        "checked_at": "2026-03-22T10:00:55.561091+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
         "status": "ok",
-        "checked_at": "2026-03-22T09:03:23.357717+00:00"
+        "checked_at": "2026-03-22T10:00:55.849649+00:00"
       }
     },
     "HIKIMICRO": {
       "About": {
         "url": "https://www.hikimicrotech.com/en/about/",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:23.498826+00:00"
+        "checked_at": "2026-03-22T10:00:56.111129+00:00"
       },
       "Support": {
         "url": "https://www.hikimicrotech.com/en/support/",
         "status": "error",
-        "checked_at": "2026-03-22T09:03:23.523727+00:00"
+        "checked_at": "2026-03-22T10:00:56.161290+00:00"
       }
     }
   },
