@@ -5,11 +5,8 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
-# Required for GitHub Pages deployment
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   monitor:
@@ -35,33 +32,4 @@ jobs:
         uses: actions/cache@v4
         with:
           path: monitor_state.json
-          key: monitor-state-${{ github.run_id }}
-          restore-keys: |
-            monitor-state-
-
-      - name: Run monitor
-        env:
-          SMTP_HOST:   ${{ secrets.SMTP_HOST }}
-          SMTP_PORT:   ${{ secrets.SMTP_PORT }}
-          SMTP_USER:   ${{ secrets.SMTP_USER }}
-          SMTP_PASS:   ${{ secrets.SMTP_PASS }}
-          EMAIL_TO:    ${{ secrets.EMAIL_TO }}
-          PAGES_URL:   ${{ secrets.PAGES_URL }}
-       run: python monitor.py
-
-      - name: Save updated state
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: monitor_state.json
-          key: monitor-state-${{ github.run_id }}
-
-      # Commit data.json back to repo so GitHub Pages can serve it
-      - name: Commit data.json
-        if: always()
-       run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json
-          git diff --cached --quiet || git commit -m "chore: update monitor data [skip ci]"
-          git push
+          key: monitor-state-${{ github.run_id }
