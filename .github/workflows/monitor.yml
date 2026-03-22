@@ -62,6 +62,5 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --cached --quiet || git commit -m "chore: update monitor data [skip ci]"
+          git add docs/data.json
           git push
