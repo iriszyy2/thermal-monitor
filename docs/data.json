@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T19:52:57.672577+00:00",
+  "generated_at": "2026-03-22T20:56:09.741238+00:00",
   "brands": [
     "TOPDON",
     "Seek",
@@ -8,11 +8,31 @@
     "HIKIMICRO"
   ],
   "stats": {
-    "total_changes": 24,
-    "today": 24,
-    "this_week": 24
+    "total_changes": 26,
+    "today": 26,
+    "this_week": 26
   },
   "history": [
+    {
+      "id": "2026-03-22T20:56:05.803621+00:00-TOPDON-page-About Us",
+      "type": "page_change",
+      "brand": "TOPDON",
+      "ts": "2026-03-22T20:56:05.803621+00:00",
+      "title": "About Us",
+      "url": "https://www.topdon.com/pages/about-us",
+      "detail": "Content updated",
+      "price": ""
+    },
+    {
+      "id": "2026-03-22T20:56:07.690192+00:00-FLIR-page-Blog",
+      "type": "page_change",
+      "brand": "FLIR",
+      "ts": "2026-03-22T20:56:07.690192+00:00",
+      "title": "Blog",
+      "url": "https://www.flir.com/discover/professional-tools/",
+      "detail": "Content updated",
+      "price": ""
+    },
     {
       "id": "2026-03-22T19:52:54.851608+00:00-TOPDON-page-About Us",
       "type": "page_change",
@@ -259,80 +279,80 @@
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
         "status": "changed",
-        "checked_at": "2026-03-22T19:52:54.851625+00:00"
+        "checked_at": "2026-03-22T20:56:05.803640+00:00"
       },
       "FAQ": {
         "url": "https://www.topdon.com/pages/faq",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:54.996486+00:00"
+        "checked_at": "2026-03-22T20:56:05.922846+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:55.198665+00:00"
+        "checked_at": "2026-03-22T20:56:06.106405+00:00"
       }
     },
     "Seek": {
       "About Us": {
         "url": "https://www.thermal.com/pages/about",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:55.531381+00:00"
+        "checked_at": "2026-03-22T20:56:06.688608+00:00"
       },
       "FAQ": {
         "url": "https://www.thermal.com/pages/faq",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:55.593876+00:00"
+        "checked_at": "2026-03-22T20:56:06.820402+00:00"
       },
       "Refund Policy": {
         "url": "https://www.thermal.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:55.661934+00:00"
+        "checked_at": "2026-03-22T20:56:06.974868+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-22T19:52:56.515196+00:00"
+        "checked_at": "2026-03-22T20:56:08.250582+00:00"
       },
       "Support": {
         "url": "https://www.flir.com/support/",
         "status": "ok",
-        "checked_at": "2026-03-22T19:52:56.782864+00:00"
+        "checked_at": "2026-03-22T20:56:08.459409+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-22T19:52:57.007961+00:00"
+        "checked_at": "2026-03-22T20:56:08.666984+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:57.326906+00:00"
+        "checked_at": "2026-03-22T20:56:09.206842+00:00"
       },
       "Support": {
         "url": "https://www.fluke.com/en-us/support",
         "status": "ok",
-        "checked_at": "2026-03-22T19:52:57.422965+00:00"
+        "checked_at": "2026-03-22T20:56:09.344526+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
         "status": "ok",
-        "checked_at": "2026-03-22T19:52:57.544636+00:00"
+        "checked_at": "2026-03-22T20:56:09.525975+00:00"
       }
     },
     "HIKIMICRO": {
       "About": {
         "url": "https://www.hikimicrotech.com/en/about/",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:57.666279+00:00"
+        "checked_at": "2026-03-22T20:56:09.705552+00:00"
       },
       "Support": {
         "url": "https://www.hikimicrotech.com/en/support/",
         "status": "error",
-        "checked_at": "2026-03-22T19:52:57.671258+00:00"
+        "checked_at": "2026-03-22T20:56:09.739751+00:00"
       }
     }
   },
