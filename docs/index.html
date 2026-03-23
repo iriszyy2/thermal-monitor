@@ -2,341 +2,402 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>竞品监控 Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>竞品监控</title>
 <style>
-  :root {
-    --bg: #f8f7f4;
-    --surface: #ffffff;
-    --border: #e8e6e0;
-    --border-soft: #f0ede8;
-    --text: #1a1a1a;
-    --text-muted: #6b6b6b;
-    --text-faint: #9ca3af;
-    --accent: #1a1a1a;
-    --green: #16a34a; --green-bg: #dcfce7;
-    --red: #dc2626;   --red-bg: #fee2e2;
-    --amber: #b45309; --amber-bg: #fef3c7;
-    --blue: #1d4ed8;  --blue-bg: #dbeafe;
-    --purple: #7c3aed;--purple-bg: #f3e8ff;
-    --teal: #0891b2;  --teal-bg: #e0f2fe;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
-  a { color: var(--blue); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4ef;
+  --card:#ffffff;
+  --border:#e8e6df;
+  --text:#1a1a18;
+  --muted:#7a7870;
+  --faint:#f0efe9;
+  --green:#15803d;--green-bg:#dcfce7;
+  --amber:#b45309;--amber-bg:#fef3c7;
+  --red:#b91c1c;  --red-bg:#fee2e2;
+  --blue:#1d4ed8; --blue-bg:#dbeafe;
+  --purple:#6d28d9;--purple-bg:#ede9fe;
+  --teal:#0e7490; --teal-bg:#cffafe;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;min-height:100vh}
 
-  /* Layout */
-  .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; align-items: center; height: 56px; gap: 12px; }
-  .topbar-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
-  .topbar-title { font-size: 15px; font-weight: 600; }
-  .topbar-sub { font-size: 12px; color: var(--text-muted); }
-  .topbar-right { margin-left: auto; display: flex; gap: 8px; }
-  .btn { font-size: 12px; padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
-  .btn:hover { background: var(--bg); }
+/* ── Top bar ── */
+.topbar{background:var(--card);border-bottom:1px solid var(--border);
+  padding:0 24px;height:52px;display:flex;align-items:center;
+  justify-content:space-between;position:sticky;top:0;z-index:10}
+.topbar-left{display:flex;align-items:center;gap:9px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
+.topbar-title{font-size:15px;font-weight:600}
+.topbar-meta{font-size:12px;color:var(--muted);margin-top:1px}
+.topbar-right{display:flex;gap:8px}
+.btn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:8px;
+  border:1px solid var(--border);background:var(--card);color:var(--text);
+  cursor:pointer;transition:background .12s}
+.btn:hover{background:var(--faint)}
 
-  .main { max-width: 1100px; margin: 0 auto; padding: 28px 24px; }
+/* ── Layout ── */
+.page{max-width:1040px;margin:0 auto;padding:24px 20px}
 
-  /* Alert banner */
-  .alert { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: 13px; color: #92400e; }
-  .alert.hidden { display: none; }
+/* ── Alert ── */
+.alert{background:var(--amber-bg);border:1px solid #fcd34d;border-radius:10px;
+  padding:10px 16px;display:flex;align-items:center;gap:9px;margin-bottom:20px;
+  font-size:13px;color:var(--amber)}
+.alert.hidden{display:none}
+.alert-icon{font-size:14px;flex-shrink:0}
 
-  /* Stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
-  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
-  .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  .stat-val { font-size: 26px; font-weight: 600; color: var(--text); }
-  .stat-val.amber { color: var(--amber); }
-  .stat-val.green { color: var(--green); font-size: 15px; padding-top: 4px; }
-  .stat-sub { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
+/* ── Stats ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+.stat-val{font-size:26px;font-weight:600;color:var(--text)}
+.stat-val.amber{color:var(--amber)}
+.stat-val.green{color:var(--green);font-size:16px;padding-top:4px}
+.stat-sub{font-size:11px;color:var(--muted);margin-top:3px}
 
-  /* Tabs */
-  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-  .tab { padding: 8px 18px 12px; font-size: 13px; cursor: pointer; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; }
-  .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
+/* ── Tabs ── */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px}
+.tab{font-size:13px;font-weight:500;padding:8px 16px 10px;color:var(--muted);
+  cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .12s}
+.tab.active{color:var(--text);border-bottom-color:var(--text)}
 
-  /* Panel */
-  .panel { display: none; }
-  .panel.active { display: block; }
+/* ── Main grid ── */
+.grid{display:grid;grid-template-columns:1fr 300px;gap:16px}
 
-  /* Two-col grid */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+/* ── Cards ── */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;margin-bottom:14px}
+.card:last-child{margin-bottom:0}
+.card-header{padding:12px 16px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.card-hint{font-size:11px;color:var(--muted)}
+.count-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;
+  background:var(--amber-bg);color:var(--amber)}
+.count-badge.zero{background:var(--faint);color:var(--muted)}
 
-  /* Card */
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 16px; }
-  .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-  .card-title { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-  .count-badge { font-size: 11px; padding: 2px 7px; border-radius: 10px; font-weight: 500; }
-  .cb-amber { background: var(--amber-bg); color: var(--amber); }
-  .cb-blue  { background: var(--blue-bg);  color: var(--blue); }
-  .cb-green { background: var(--green-bg); color: var(--green); }
-  .cb-gray  { background: var(--bg); color: var(--text-muted); }
-  .card-label { font-size: 11px; color: var(--text-faint); }
+/* ── Change items ── */
+.change-item{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;
+  border-bottom:1px solid var(--faint);transition:background .1s;cursor:default}
+.change-item:last-child{border-bottom:none}
+.change-item:hover{background:var(--faint)}
+.tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:5px;
+  flex-shrink:0;margin-top:1px;letter-spacing:.02em}
+.tag-NEW     {background:var(--green-bg); color:var(--green)}
+.tag-REMOVED {background:var(--red-bg);   color:var(--red)}
+.tag-PRICE   {background:var(--amber-bg); color:var(--amber)}
+.tag-STOCK   {background:var(--blue-bg);  color:var(--blue)}
+.tag-BLOG    {background:var(--purple-bg);color:var(--purple)}
+.tag-PAGE    {background:var(--teal-bg);  color:var(--teal)}
+.change-body{flex:1;min-width:0}
+.change-brand{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1px}
+.change-title{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:1px}
+.change-title a{color:var(--blue);text-decoration:none}
+.change-title a:hover{text-decoration:underline}
+.change-detail{font-size:12px;color:var(--muted)}
+.change-time{font-size:11px;color:var(--muted);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.empty{padding:32px 16px;text-align:center;color:var(--muted);font-size:13px}
 
-  /* Change row */
-  .change-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border-soft); }
-  .change-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .tag { font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 5px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.03em; }
-  .tag-NEW     { background: var(--green-bg);  color: var(--green); }
-  .tag-REMOVED { background: var(--red-bg);    color: var(--red); }
-  .tag-PRICE   { background: var(--amber-bg);  color: var(--amber); }
-  .tag-STOCK   { background: var(--blue-bg);   color: var(--blue); }
-  .tag-BLOG    { background: var(--purple-bg); color: var(--purple); }
-  .tag-PAGE    { background: var(--teal-bg);   color: var(--teal); }
-  .change-body { flex: 1; min-width: 0; }
-  .change-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .change-detail { font-size: 12px; color: var(--text-muted); }
-  .change-time { font-size: 11px; color: var(--text-faint); white-space: nowrap; flex-shrink: 0; }
+/* ── Right column ── */
+.right{display:flex;flex-direction:column;gap:14px}
 
-  /* Page status rows */
-  .page-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-soft); font-size: 13px; }
-  .page-row:last-child { border-bottom: none; }
-  .status-ok      { font-size: 11px; padding: 2px 8px; border-radius: 8px; background: var(--green-bg); color: var(--green); }
-  .status-changed { font-size: 11px; padding: 2px 8px; border-radius: 8px; background: var(--amber-bg); color: var(--amber); }
+/* ── Page status ── */
+.page-row{display:flex;align-items:center;justify-content:space-between;
+  padding:9px 16px;border-bottom:1px solid var(--faint);font-size:13px}
+.page-row:last-child{border-bottom:none}
+.page-info{flex:1;min-width:0}
+.page-name{color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.page-brand{font-size:11px;color:var(--muted)}
+.status-ok     {font-size:11px;font-weight:600;color:var(--green);white-space:nowrap;margin-left:8px}
+.status-changed{font-size:11px;font-weight:600;color:var(--amber);white-space:nowrap;margin-left:8px}
+.status-error  {font-size:11px;font-weight:600;color:var(--red);white-space:nowrap;margin-left:8px}
 
-  /* Brands tab */
-  .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .brand-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
-  .brand-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-  .brand-url  { font-size: 11px; color: var(--text-faint); font-family: monospace; margin-bottom: 12px; }
-  .brand-stat { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); padding: 4px 0; border-bottom: 1px solid var(--border-soft); }
-  .brand-stat:last-child { border-bottom: none; }
-  .brand-stat-val { font-weight: 500; color: var(--text); }
+/* ── Brands ── */
+.brand-row{display:flex;align-items:center;justify-content:space-between;
+  padding:9px 16px;border-bottom:1px solid var(--faint);cursor:pointer;transition:background .1s}
+.brand-row:last-child{border-bottom:none}
+.brand-row:hover{background:var(--faint)}
+.brand-name{font-size:13px;font-weight:500}
+.brand-cnt{font-size:11px;background:var(--faint);color:var(--muted);
+  padding:2px 9px;border-radius:10px}
 
-  /* Empty state */
-  .empty { font-size: 13px; color: var(--text-faint); padding: 12px 0; }
+/* ── Filter strip ── */
+.filters{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.filter-btn{font-size:12px;padding:4px 12px;border-radius:16px;
+  border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer}
+.filter-btn.active{background:var(--text);color:#fff;border-color:var(--text)}
 
-  /* Loading */
-  #loading { text-align: center; padding: 60px; color: var(--text-muted); font-size: 14px; }
-  #app { display: none; }
+#loading{text-align:center;padding:60px;color:var(--muted)}
+.panel-hidden{display:none}
 
-  /* Last updated */
-  .last-updated { font-size: 11px; color: var(--text-faint); margin-top: 32px; text-align: center; }
-
-  @media (max-width: 680px) {
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .brand-grid { grid-template-columns: repeat(2, 1fr); }
-    .topbar-sub { display: none; }
-  }
+@media(max-width:720px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<div id="loading">Loading dashboard data...</div>
-
-<div id="app">
-  <div class="topbar">
-    <div class="topbar-dot" id="status-dot"></div>
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="pulse"></div>
     <div>
       <div class="topbar-title">竞品监控 Dashboard</div>
-      <div class="topbar-sub" id="topbar-sub">—</div>
-    </div>
-    <div class="topbar-right">
-      <button class="btn" onclick="location.reload()">刷新</button>
+      <div class="topbar-meta" id="meta">加载中…</div>
     </div>
   </div>
+  <div class="topbar-right">
+    <button class="btn" onclick="loadData()">刷新</button>
+  </div>
+</div>
 
-  <div class="main">
+<div class="page">
+  <div id="loading">正在加载数据…</div>
+  <div id="app" style="display:none">
+
     <div class="alert hidden" id="alert-banner">
-      <span style="font-size:16px">⚡</span>
+      <span class="alert-icon">⚡</span>
       <span id="alert-text"></span>
     </div>
 
     <div class="stats">
       <div class="stat">
-        <div class="stat-label">品牌监控数</div>
+        <div class="stat-label">监控品牌</div>
         <div class="stat-val" id="s-brands">—</div>
-        <div class="stat-sub">全部运行中</div>
+        <div class="stat-sub" id="s-brands-sub">—</div>
       </div>
       <div class="stat">
         <div class="stat-label">今日变化</div>
         <div class="stat-val amber" id="s-today">—</div>
-        <div class="stat-sub">过去24小时</div>
+        <div class="stat-sub">过去 24 小时</div>
       </div>
       <div class="stat">
-        <div class="stat-label">累计变化</div>
-        <div class="stat-val" id="s-total">—</div>
-        <div class="stat-sub">监控期间合计</div>
+        <div class="stat-label">本周变化</div>
+        <div class="stat-val" id="s-week">—</div>
+        <div class="stat-sub">过去 7 天</div>
       </div>
       <div class="stat">
         <div class="stat-label">系统状态</div>
-        <div class="stat-val green" id="s-status">—</div>
+        <div class="stat-val green" id="s-status">正常</div>
         <div class="stat-sub" id="s-time">—</div>
       </div>
     </div>
 
     <div class="tabs">
-      <div class="tab active" onclick="switchTab('changes')">变化日志</div>
-      <div class="tab" onclick="switchTab('brands')">品牌概览</div>
+      <div class="tab active" onclick="switchTab('changes',this)">变化日志</div>
+      <div class="tab" onclick="switchTab('brands',this)">品牌概览</div>
     </div>
 
     <!-- Changes tab -->
-    <div class="panel active" id="tab-changes">
-      <div class="two-col">
+    <div id="tab-changes">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-f="all">全部</button>
+        <button class="filter-btn" data-f="new_product">新品</button>
+        <button class="filter-btn" data-f="price_change">价格</button>
+        <button class="filter-btn" data-f="stock_change">库存</button>
+        <button class="filter-btn" data-f="removed_product">下架</button>
+        <button class="filter-btn" data-f="new_article">博客</button>
+        <button class="filter-btn" data-f="page_change">页面</button>
+      </div>
+
+      <div class="grid">
         <div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">产品变化 <span class="count-badge cb-amber" id="cnt-product">0</span></div>
-              <span class="card-label">新品 · 价格 · 库存</span>
+              <div class="card-title">
+                变化日志
+                <span class="count-badge zero" id="change-count">0</span>
+              </div>
+              <div class="card-hint" id="brand-label">所有品牌</div>
             </div>
-            <div id="list-product"><div class="empty">暂无产品变化</div></div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">页面变化 <span class="count-badge cb-blue" id="cnt-page">0</span></div>
-              <span class="card-label">政策 · FAQ · 关于</span>
-            </div>
-            <div id="list-page"><div class="empty">暂无页面变化</div></div>
+            <div id="change-list"><div class="empty">暂无变化记录</div></div>
           </div>
         </div>
-        <div>
+
+        <div class="right">
           <div class="card">
-            <div class="card-header">
-              <div class="card-title">博客更新 <span class="count-badge cb-blue" id="cnt-blog">0</span></div>
-            </div>
-            <div id="list-blog"><div class="empty">暂无博客更新</div></div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">已下架产品 <span class="count-badge cb-gray" id="cnt-removed">0</span></div>
-            </div>
-            <div id="list-removed"><div class="empty">暂无下架记录</div></div>
+            <div class="card-header"><div class="card-title">关键页面状态</div></div>
+            <div id="page-list"><div class="empty">暂无数据</div></div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Brands tab -->
-    <div class="panel" id="tab-brands">
-      <div class="brand-grid" id="brand-grid"></div>
+    <div id="tab-brands" class="panel-hidden">
+      <div class="grid">
+        <div id="brand-cards"></div>
+        <div></div>
+      </div>
     </div>
 
-    <div class="last-updated" id="last-updated"></div>
   </div>
 </div>
 
 <script>
-const TYPE_TAG = {
-  new_product: 'NEW', removed_product: 'REMOVED',
-  price_change: 'PRICE', stock_change: 'STOCK',
-  new_article: 'BLOG', page_change: 'PAGE'
-};
+let D = null, activeFilter = 'all', activeBrand = 'all';
 
-function timeAgo(iso) {
-  const diff = (Date.now() - new Date(iso)) / 1000;
-  if (diff < 60)   return '刚刚';
-  if (diff < 3600) return `${Math.floor(diff/60)}分钟前`;
-  if (diff < 86400)return `${Math.floor(diff/3600)}小时前`;
-  return `${Math.floor(diff/86400)}天前`;
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function timeAgo(iso){
+  const d = (Date.now()-new Date(iso))/1000;
+  if(d<60) return '刚刚';
+  if(d<3600) return Math.floor(d/60)+'分钟前';
+  if(d<86400) return Math.floor(d/3600)+'小时前';
+  return Math.floor(d/86400)+'天前';
 }
 
-function changeRow(c) {
-  const tag = TYPE_TAG[c.type] || '?';
-  const titleHtml = c.url
-    ? `<a href="${c.url}" target="_blank" rel="noopener">${c.title}</a>`
-    : c.title;
-  return `<div class="change-row">
-    <span class="tag tag-${tag}">${tag}</span>
-    <div class="change-body">
-      <div class="change-name">${titleHtml}</div>
-      <div class="change-detail">${c.brand} · ${c.detail}</div>
-    </div>
-    <div class="change-time">${timeAgo(c.time)}</div>
-  </div>`;
+function switchTab(id, el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-changes').classList.toggle('panel-hidden', id!=='changes');
+  document.getElementById('tab-brands').classList.toggle('panel-hidden',  id!=='brands');
 }
 
-function renderList(containerId, items, countId) {
-  const el = document.getElementById(containerId);
-  const cnt = document.getElementById(countId);
-  cnt.textContent = items.length;
-  el.innerHTML = items.length
-    ? items.map(changeRow).join('')
-    : '<div class="empty">暂无记录</div>';
-}
-
-function switchTab(id) {
-  document.querySelectorAll('.tab').forEach((t, i) => {
-    const ids = ['changes', 'brands'];
-    t.classList.toggle('active', ids[i] === id);
+function renderChanges(){
+  if(!D) return;
+  const changes = (D.changes||[]).filter(c=>{
+    const fOk = activeFilter==='all' || c.type===activeFilter;
+    const bOk = activeBrand==='all'  || c.brand===activeBrand;
+    return fOk && bOk;
   });
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
+  const pill = document.getElementById('change-count');
+  pill.textContent = changes.length;
+  pill.className = 'count-badge'+(changes.length===0?' zero':'');
+
+  document.getElementById('change-list').innerHTML = changes.length
+    ? changes.map(c=>{
+        const tag = c.label||'?';
+        const title = c.url
+          ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a>`
+          : esc(c.title);
+        return `<div class="change-item">
+          <span class="tag tag-${tag}">${tag}</span>
+          <div class="change-body">
+            <div class="change-brand">${esc(c.brand)}</div>
+            <div class="change-title">${title}</div>
+            <div class="change-detail">${esc(c.detail)}</div>
+          </div>
+          <div class="change-time">${c.ts?timeAgo(c.ts):''}</div>
+        </div>`;
+      }).join('')
+    : '<div class="empty">当前筛选条件下无记录</div>';
 }
 
-async function loadData() {
-  try {
-    const r = await fetch('data.json?t=' + Date.now());
-    if (!r.ok) throw new Error('data.json not found');
-    const d = await r.json();
-
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-
-    // Topbar
-    const genAt = new Date(d.generated_at);
-    document.getElementById('topbar-sub').textContent =
-      `最后检查：${timeAgo(d.generated_at)} · 监控 ${d.stats.brands_monitored} 个品牌`;
-
-    // Stats
-    document.getElementById('s-brands').textContent = d.stats.brands_monitored;
-    document.getElementById('s-today').textContent  = d.stats.changes_today;
-    document.getElementById('s-total').textContent  = d.stats.total_changes;
-    document.getElementById('s-status').textContent = d.is_first_run ? '基线中' : '正常';
-    document.getElementById('s-time').textContent   =
-      genAt.toLocaleDateString('zh-CN',{month:'2-digit',day:'2-digit'}) + ' ' +
-      genAt.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
-
-    // Alert banner
-    const todayChanges = d.changes.filter(c => {
-      const diff = (Date.now() - new Date(c.time)) / 1000;
-      return diff < 86400;
-    });
-    if (todayChanges.length > 0 && !d.is_first_run) {
-      const types = [...new Set(todayChanges.map(c => TYPE_TAG[c.type]))].join('、');
-      document.getElementById('alert-text').innerHTML =
-        `今日检测到 <strong>${todayChanges.length} 处新变化</strong>：${types}`;
-      document.getElementById('alert-banner').classList.remove('hidden');
+function renderPages(){
+  if(!D) return;
+  const rows = [];
+  for(const [brand, pages] of Object.entries(D.page_status||{})){
+    for(const [name, info] of Object.entries(pages)){
+      const cls = info.status==='changed'?'status-changed':info.status==='error'?'status-error':'status-ok';
+      const lbl = info.status==='changed'?'已变化':info.status==='error'?'访问失败':'未变化';
+      const link = info.url
+        ? `<a href="${esc(info.url)}" target="_blank" style="color:var(--text);text-decoration:none">${esc(name)}</a>`
+        : esc(name);
+      rows.push(`<div class="page-row">
+        <div class="page-info"><div class="page-name">${link}</div>
+        <div class="page-brand">${esc(brand)}</div></div>
+        <span class="${cls}">${lbl}</span></div>`);
     }
+  }
+  document.getElementById('page-list').innerHTML = rows.length ? rows.join('') : '<div class="empty">暂无数据</div>';
+}
 
-    // Categorize changes
-    const product  = d.changes.filter(c => ['new_product','price_change','stock_change'].includes(c.type));
-    const removed  = d.changes.filter(c => c.type === 'removed_product');
-    const blog     = d.changes.filter(c => c.type === 'new_article');
-    const pages    = d.changes.filter(c => c.type === 'page_change');
+function renderBrands(){
+  if(!D) return;
+  const brands = D.brand_list || [];
+  const counts = D.product_counts || {};
+  // Sidebar brand list
+  document.getElementById('brand-list')&&(document.getElementById('brand-list').innerHTML =
+    brands.map(b=>`<div class="brand-row" onclick="filterBrand('${b}')">
+      <span class="brand-name" style="color:${activeBrand===b?'var(--blue)':'var(--text)'}">${esc(b)}</span>
+      <span class="brand-cnt">${counts[b]??'—'} 产品</span>
+    </div>`).join(''));
 
-    renderList('list-product', product.slice(0,20), 'cnt-product');
-    renderList('list-removed', removed.slice(0,10), 'cnt-removed');
-    renderList('list-blog',    blog.slice(0,10),    'cnt-blog');
-    renderList('list-page',    pages.slice(0,10),   'cnt-page');
+  // Brand overview cards
+  document.getElementById('brand-cards').innerHTML = brands.map(b=>{
+    const bChanges = (D.changes||[]).filter(c=>c.brand===b);
+    const recent = bChanges.slice(0,3);
+    return `<div class="card" style="margin-bottom:14px">
+      <div class="card-header">
+        <div class="card-title">${esc(b)}</div>
+        <span class="card-hint">${counts[b]??'—'} 产品 · ${bChanges.length} 条记录</span>
+      </div>
+      ${recent.length ? recent.map(c=>`<div class="change-item">
+        <span class="tag tag-${c.label||'?'}">${c.label||'?'}</span>
+        <div class="change-body">
+          <div class="change-title">${c.url?`<a href="${esc(c.url)}" target="_blank">${esc(c.title)}</a>`:esc(c.title)}</div>
+          <div class="change-detail">${esc(c.detail)}</div>
+        </div>
+        <div class="change-time">${c.ts?timeAgo(c.ts):''}</div>
+      </div>`).join('') : '<div class="empty">暂无记录</div>'}
+    </div>`;
+  }).join('');
+}
 
-    // Brand grid
-    const grid = document.getElementById('brand-grid');
-    grid.innerHTML = Object.entries(d.brands).map(([name, info]) => {
-      const brandChanges = d.changes.filter(c => c.brand === name);
-      const todayBrand   = brandChanges.filter(c => (Date.now()-new Date(c.time))/1000 < 86400);
-      return `<div class="brand-card">
-        <div class="brand-name">${name}</div>
-        <div class="brand-url">${info.base.replace('https://','')}</div>
-        <div class="brand-stat"><span>今日变化</span><span class="brand-stat-val">${todayBrand.length}</span></div>
-        <div class="brand-stat"><span>累计变化</span><span class="brand-stat-val">${brandChanges.length}</span></div>
-        ${info.product_count ? `<div class="brand-stat"><span>产品数量</span><span class="brand-stat-val">${info.product_count}</span></div>` : ''}
-        <div class="brand-stat"><span>状态</span><span class="brand-stat-val" style="color:var(--green)">运行中</span></div>
-      </div>`;
-    }).join('');
+function filterBrand(b){
+  activeBrand = activeBrand===b?'all':b;
+  document.getElementById('brand-label').textContent = activeBrand==='all'?'所有品牌':activeBrand;
+  renderChanges();
+  renderBrands();
+}
 
-    document.getElementById('last-updated').textContent =
-      `数据更新于 ${genAt.toLocaleString('zh-CN')} · 每30分钟自动刷新`;
+document.getElementById('filters').addEventListener('click',e=>{
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.f;
+  renderChanges();
+});
 
-  } catch(e) {
-    document.getElementById('loading').textContent =
-      'Dashboard 数据加载失败。请先运行一次 monitor.py 生成 data.json，或确认 GitHub Pages 已开启。';
-    console.error(e);
+function render(data){
+  D = data;
+  document.getElementById('loading').style.display='none';
+  document.getElementById('app').style.display='block';
+
+  const genAt = data.generated_at?new Date(data.generated_at):null;
+  const brands = data.brand_list||[];
+
+  document.getElementById('meta').textContent = genAt
+    ? `上次检查：${timeAgo(data.generated_at)} · 监控 ${brands.length} 个品牌`
+    : '暂无数据';
+  document.getElementById('s-brands').textContent     = brands.length||'—';
+  document.getElementById('s-brands-sub').textContent = brands.join(' · ')||'—';
+  document.getElementById('s-today').textContent      = data.stats?.today??0;
+  document.getElementById('s-week').textContent       = data.stats?.week??0;
+  document.getElementById('s-time').textContent       = genAt?genAt.toLocaleDateString('zh-CN'):'—';
+
+  const today = data.stats?.today??0;
+  const banner = document.getElementById('alert-banner');
+  if(today>0){
+    banner.classList.remove('hidden');
+    document.getElementById('alert-text').textContent = `今日检测到 ${today} 处变化，请查看下方日志。`;
+  } else {
+    banner.classList.add('hidden');
+  }
+
+  renderChanges();
+  renderPages();
+  renderBrands();
+}
+
+async function loadData(){
+  try{
+    const r = await fetch('data.json?t='+Date.now());
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    render(await r.json());
+  }catch(e){
+    document.getElementById('loading').innerHTML=
+      `<div style="color:var(--red);font-size:13px">无法加载 data.json：${e.message}</div>`;
+    document.getElementById('loading').style.display='block';
+    document.getElementById('app').style.display='none';
   }
 }
 
 loadData();
-setInterval(loadData, 5 * 60 * 1000); // auto-refresh every 5 min
+setInterval(loadData, 5*60*1000);
 </script>
 </body>
 </html>
