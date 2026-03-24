@@ -58,4 +58,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
+          git fetch origin main
+          git reset --soft origin/main
+          git add -f docs/data.json
+          git diff --cached --quiet || git commit -m "chore: update monitor data [skip ci]"
+          git push origin main
