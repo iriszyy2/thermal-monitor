@@ -1,16 +1,69 @@
 {
-  "generated_at": "2026-03-24T14:49:04.707060+00:00",
+  "generated_at": "2026-03-24T18:08:55.312054+00:00",
   "brand_list": [
     "TOPDON",
     "FLIR",
     "FLUKE"
   ],
   "stats": {
-    "total": 33,
-    "today": 33,
-    "week": 33
+    "total": 34,
+    "today": 34,
+    "week": 34
   },
   "changes": [
+    {
+      "id": "2026-03-24T18:08:52.064578+00:00-TOPDON-page_change-3cd971",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-24T18:08:52.064599+00:00",
+      "title": "Solution: Home Inspection",
+      "url": "https://www.topdon.com/pages/solutions-home-inspection",
+      "detail": "~ [)h4\u0013iVjx\u0014%���ɉ��V\u000f��L�qC����� ��\u0000�� �&��j�;�.����������W_����u� ����&%�*�F�� → [)h4\u0013i�J= ��\u0000�\u0004�5\u0000��\u0001)��@� ���>����}�=� �\u0014\u0012)\b�Bf�)��\u000f!T^.\u001a\u0017U\u000eUJUs�P^k\u0000'�՗�/U\u000e��E\n~ `\u0000H�B��o�~ݫ^���Uo�R��ﾜjځ� ��!\u00014�%y�Y���� +�q\u001b�\u0006 \u00040hP�L�SNǐ��������.�fuQ $eT�$�� → �\u0018���NR��\u0001*��s\u00195k�j �x���\u0000! �\u0000�?L� 9�Hg\u001bo�\u0018!@\bq �������Ohl ��܉\u0012Ew���u�u�GH0�\u001bH%\n~ C@��.C��~�\u001b;�\u0019\u0002�\u0016�P\u0019S��m;��\u0004�\u0001T��H��v��}\u000eP�%��X�������\u0010H �\u0002r�G��G�uھ!��X&�lc�� → F� J���&��|8���?��w/��^?�Y�|��?��s?�����윀��S�w�g�A���\u0018�S\u0018\u0019\u0005�'�D�\u0010��&\u0007@\u0005 �\u0004$)���@\n~ st�7#i9�6�\u000e��. ����lm\u0002� \u0005��`���T�z2��/����_�뻗�o� �z�t�_A�2�����W] N��)�;�3/�\"� → @L�ơ\u0017�[ uAR�AFnk�\u0018�#�T�\u0018m���d� �^A, u��D ��Őߵ�o� ?\n~ ���K��G(�� ���ux�t駲�C���\u0013��*�� ݷO�U!r'l�N��[��?\u0010B���|���f�|�\u0014|��?Ƌ��{���zv� M^�  → �1��� �(F�_���C���ɨDC>�1\u0005� ߈ ��a��C �\u0002��PQ^�:��s�;�5:� U\u000eˀ\n~ kc����cl龮����������������\u0001+�ޝ�y\u0015pY( X���ׅ�#Ȝ�\u0000;��}�\b�\u0016\u0005�����Ӌ���\u0013�\u001b�>�\"؊\u001b��Λo → k\b���\u0000����_���K?�-���L 3\u0015�Ƙ��s]��\u0018��\u0019\u001a��\u0007͙����jM�;Vy\u0019\"�͜cm\u001a�H[ ��Y�\u000e��L+�!zӼ`$f\n~ v\b�fZ�\u000fћ�\u0005#1C]ߤ��했WU�_�G�C� d�� → D\u0005��l\u0019r4�(䔥QIabU*��;� ?�ƾV8�:��E���幭4\u0005��q����\"�Y ��� ��\u0012�!m\u0001�AMv!D�5 �E=�J�\u0007\u000f��R\n~ ��\"$���2f��F��}֋@06��\u0001\u0000m��Y�w�DY\u0015�����d��Q��(a,��1 �;X�.mj��\u0004���\u0010G�5�B:T �7'�\u00038[ → ���\u0013� a �����2C�\u0000�&�ҭ6�/h Bv��S%%�\\�&�t\u0016�\u0010�s�#�{���{\u0003 2�k�@\u0011\u0012`[s\u0019��n#��>�E \u0018\u001bJ�",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[)h4\u0013iVjx\u0014%���ɉ��V\u000f��L�qC����� ��\u0000�� �&��j�;�.����������W_����u� ����&%�*�F��D�ر�?��P \u000eDB\u0014b",
+          "new": "[)h4\u0013i�J= ��\u0000�\u0004�5\u0000��\u0001)��@� ���>����}�=� �\u0014\u0012)\b�Bf�)��\u000f!T^.\u001a\u0017U\u000eUJUs�P^k\u0000'�՗�/U\u000e��E�{\u0019ں�Ԗ� �GZu�V�\"�y�l�*Cuٽi\b6�\u0013��v���k}�a�b\u0011��d�Y�|G�O#�� �)�6f�]�bXa\b\b\u0019�e�V�orc'6C`�B\u0012�/c�ܻm'T�\u00009�"
+        },
+        {
+          "type": "modified",
+          "old": "`\u0000H�B��o�~ݫ^���Uo�R��ﾜjځ� ��!\u00014�%y�Y���� +�q\u001b�\u0006 \u00040hP�L�SNǐ��������.�fuQ $eT�$����\u0004ҁᔙ�1�-�7#K�$��7J:%aJm�t���\u0006\u0019�\u001a[��~�$��\"ˣ��Fƍ�\u0006{U�������~9�A� #c]��Ӵʹ\u0014M(�\b��{��^��{U���\u0002�T\u0000�Y\u0005��U\u0000H}�+��\u00029\u0005��7hz\u001a4-�E�q g�Z�� 6ΧJb��(c#�\u000e\u0015iM�5A\u0010v$)�5�B���~�kg($�ХP�21���r�u�\u0015��>������f\u0006�'`�\u0001H~\u000fH�/\u0004�\u0006�Ͻ�������af0��HA\u0010\u00152�O \u0014\b��rѸ�r�R�����Z\u00038Q��T}�r�U.�����ͥ��l�?Ҫc��\u00141�Ce�T\u0019���MC������{��_�� \u0015��\u0003w&C͒�;2~\u001a�6f\bNI�1��w\u0015�",
+          "new": "�\u0018���NR��\u0001*��s\u00195k�j �x���\u0000! �\u0000�?L� 9�Hg\u001bo�\u0018!@\bq �������Ohl ��܉\u0012Ew���u�u�GH0�\u001bH%s5\u0019�ZnH\"\u0002\"\u000e\u0002Ϲ�f g�2�&5 U�-�e �MɕX���`�������W*�61$�� c����oő�-#R�\bN���\u0011�0HzzA7�^�٨_B���U��Y���(� �?��P?��Ch{�R�WdD�0jo%s^��\u0003d\u0011d_�tUh\u0015jܓ¶!I��(+�T����8qYU� ��\u0013���\u0003�*b�%���R��s�\u0019I�1�;u��_�n+��&@�P@�"
+        },
+        {
+          "type": "modified",
+          "old": "C@��.C��~�\u001b;�\u0019\u0002�\u0016�P\u0019S��m;��\u0004�\u0001T��H��v��}\u000eP�%��X�������\u0010H �\u0002r�G��G�uھ!��X&�lc��>����UB�\u0000\u0011!I�.���\u001b�o 6�Z�D��;�{�:Ժ�#$\u0018� ��陌i�?7$\u0011YN\u0002Ϲ�f g�2�&5 U�-�e �MɕX���`�������W*�61$�� c�����đ�-%R�\bN���\u0011�0Hzz�0\u0018��٨w��wh\u0015%|V���%��B��\u0010�G�q\bm�SI����\u0018F��dΫ�,��띮 �B�{R�>$I�\u0011e%��֒0\u001a'.�J�C\u0015w�Y�z�WE��D6�M",
+          "new": "F� J���&��|8���?��w/��^?�Y�|��?��s?�����윀��S�w�g�A���\u0018�S\u0018\u0019\u0005�'�D�\u0010��&\u0007@\u0005 �\u0004$)���@萔)bߊ�sf3ϯ���q��5��ǈ"
+        },
+        {
+          "type": "modified",
+          "old": "st�7#i9�6�\u000e��. ����lm\u0002� \u0005��`���T�z2��/����_�뻗�o� �z�t�_A�2�����W] N��)�;�3/�\"�&\u0006�\u0014FF�� '\u0011\"���� P\u0001�\u0002�\u0000I���3\u0010�'U�ط�����\u001b�n\u0013��5�\u0018�C\u0001���8��\u000f�.H*9��m�\u0010C|D���\u0010��Џ��>!�+����WT��",
+          "new": "@L�ơ\u0017�[ uAR�AFnk�\u0018�#�T�\u0018m���d� �^A, u��D ��Őߵ�o� ?"
+        },
+        {
+          "type": "modified",
+          "old": "���K��G(�� ���ux�t駲�C���\u0013��*�� ݷO�U!r'l�N��[��?\u0010B���|���f�|�\u0014|��?Ƌ��{���zv� M^� Ч�/7���k4}��A\u000f����� =M g�g�[?5|e\bg�yn_�pN��\"�\u001a�Ժ 8np�6��",
+          "new": "�1��� �(F�_���C���ɨDC>�1\u0005� ߈ ��a��C �\u0002��PQ^�:��s�;�5:� U\u000eˀ"
+        },
+        {
+          "type": "modified",
+          "old": "kc����cl龮����������������\u0001+�ޝ�y\u0015pY( X���ׅ�#Ȝ�\u0000;��}�\b�\u0016\u0005�����Ӌ���\u0013�\u001b�>�\"؊\u001b��ΛoM�m\u0002)L/���T7G�u�M�ky\u0016o\u000e���@[+����-r\u001a��ɍ�%,�V�\u0017�J�\u0003�\u0005��%V �V��9S�Nk ��X{�\u0002�\u000fD s\u0007��\u001a��Os#� �P����\u0018z��D��\u000e\u0010M��\u0010��\u0006D۟\u001a�\u0001�!�)�\u0015Pș!K�\"y�� � N\u0005�9 (�F�� � ��\u0018G\u000e�\\�\u0003���[^��������'��J`�+^U��~\u0017�)���] �ٛ16Tv���i[��d�')Wtś�yr�M�#�MC\u0018��&\u0007�m͌�Rs\u0000�+w h��u��Wk�ݱ��\u0010�l� kӰE�b�o�",
+          "new": "k\b���\u0000����_���K?�-���L 3\u0015�Ƙ��s]��\u0018��\u0019\u001a��\u0007͙����jM�;Vy\u0019\"�͜cm\u001a�H[ ��Y�\u000e��L+�!zӼ`$f�뛔%��\u0012��K�$����Gm���o��,/�p�[�^\u0001>�]sǑv���?ک97| 7��7�G�C6��e\u0006�J5;E�\bS�\u0006\u0019�� �\u0010WGT�&܃ĺ�X��CO���\u000f��V ���MQ{ /PC�z+\u0013;Q���W4\u0004��d @Z�p�\u0018\u0007B�)��J���5�P�\u0007V�\u0016�����\"U\b��&k' r[�\u0000\u00045��n�!4$�RcJ�M�B��=��o&+\u0014��O̝�h#�@^�:#�� \u0004�;� �\u0018�,�\"t ��� Tq�\u001b�N�6�\u0013��~��v?8G\u0019j���ڜjϡ�G�W��W'�R\u0014��K@� �6�#�)�um�e\u0012�!�\"/\u0002 u�����|\u0012���:�t�\u0014�w\u0013�퍰~*\u0016\u001a@�� d9�-�dJ:�3+Qyhv�"
+        },
+        {
+          "type": "modified",
+          "old": "v\b�fZ�\u000fћ�\u0005#1C]ߤ��했WU�_�G�C� d��",
+          "new": "D\u0005��l\u0019r4�(䔥QIabU*��;� ?�ƾV8�:��E���幭4\u0005��q����\"�Y ��� ��\u0012�!m\u0001�AMv!D�5 �E=�J�\u0007\u000f��RȊ~�M ���"
+        },
+        {
+          "type": "modified",
+          "old": "��\"$���2f��F��}֋@06��\u0001\u0000m��Y�w�DY\u0015�����d��Q��(a,��1 �;X�.mj��\u0004���\u0010G�5�B:T �7'�\u00038[�Z�3���-�",
+          "new": "���\u0013� a �����2C�\u0000�&�ҭ6�/h Bv��S%%�\\�&�t\u0016�\u0010�s�#�{���{\u0003 2�k�@\u0011\u0012`[s\u0019��n#��>�E \u0018\u001bJ�\u0000����,�;`�����g�K2��(�M�0�K�\u0018�� �]�v\u0015WF��zs�#�\u001a@! ���\u0013�\u0001�mU��\u0019J��\u0016i�|T�܆�~�]\u0018�Z�)rwΖG^�\"� �\u0012h��P�\u0013ΖG*\u0000 L�ǹ,���0T�\u0000\u0000�\u0001�%%E�B�8��k�v�\u001b��\u0018� u\u0004��t�h�T NϹ�Τ�l�\u0004�p�ʖ ��,�T�ʡ��2M\u0005Ѿ uW\u0013�? ��xH(�5U�}��X7�j�N���:*\u0010�� D\u0011�G�\u000f#LG�%�2>�m\u0019��\u001b�-��\u0007\u0000\u001a\u0001�"
+        }
+      ]
+    },
     {
       "id": "2026-03-24T14:49:00.530764+00:00-TOPDON-page_change-c736b7",
       "type": "page_change",
@@ -676,77 +729,77 @@
     "TOPDON": {
       "Thermal Imagers": {
         "url": "https://www.topdon.com/pages/tools/thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:00.530795+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:51.664203+00:00"
       },
       "Thermal Apps": {
         "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:00.698978+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:51.854058+00:00"
       },
       "Solution: Home Inspection": {
         "url": "https://www.topdon.com/pages/solutions-home-inspection",
-        "status": "ok",
-        "checked_at": "2026-03-24T14:49:00.799784+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-24T18:08:52.064611+00:00"
       },
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:00.973049+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:52.237940+00:00"
       },
       "Newsroom": {
         "url": "https://www.topdon.com/pages/news",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:01.181721+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:52.390714+00:00"
       },
       "Program: TestLight": {
         "url": "https://www.topdon.com/pages/topdon-testlight-program",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:01.414937+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:52.686935+00:00"
       },
       "Program: TOP-UP": {
         "url": "https://www.topdon.com/pages/top-up-program",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:01.626355+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:52.857137+00:00"
       },
       "Program: My Story": {
         "url": "https://www.topdon.com/pages/my-topdon-story",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:01.804948+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:53.088372+00:00"
       },
       "Program: Partner": {
         "url": "https://www.topdon.com/pages/become-a-topdon-partner",
         "status": "error",
-        "checked_at": "2026-03-24T14:49:02.002739+00:00"
+        "checked_at": "2026-03-24T18:08:53.301305+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-24T14:49:02.133169+00:00"
+        "checked_at": "2026-03-24T18:08:53.423792+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-24T14:49:03.875449+00:00"
+        "checked_at": "2026-03-24T18:08:54.484384+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-24T14:49:04.183976+00:00"
+        "checked_at": "2026-03-24T18:08:54.702579+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-24T14:49:04.537178+00:00"
+        "checked_at": "2026-03-24T18:08:55.090667+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
-        "status": "changed",
-        "checked_at": "2026-03-24T14:49:04.701292+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-24T18:08:55.305992+00:00"
       }
     }
   },
