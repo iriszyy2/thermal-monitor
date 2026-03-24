@@ -1,14 +1,17 @@
 """
-Thermal Camera Competitive Monitor v7
-TOPDON: TC/TS products (Shopify API) + confirmed thermal pages
-FLIR, FLUKE: product/blog page hash + key pages
+Thermal Camera Competitive Monitor v8
+- TOPDON pages: full text diff (see exactly what changed)
+- TOPDON TC/TS products: price/stock/new + product page text diff
+- FLIR/FLUKE: hash-only
 """
 
-import os, json, hashlib, re, httpx, smtplib
+import os, json, hashlib, re, httpx, smtplib, difflib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+# ─── Config ───────────────────────────────────────────────────────────────────
 
 THERMAL_RE = re.compile(
     r'\b(tc\d|ts\d|tc0|ts0|thermal|infrared|imager|thermograph)',
@@ -24,20 +27,22 @@ BRANDS = {
     "TOPDON": {
         "type": "shopify_filtered",
         "base": "https://www.topdon.com",
-        "products_api":  "https://www.topdon.com/products.json",
-        "blog_api":      "https://www.topdon.com/blogs/news.json",
+        "products_api": "https://www.topdon.com/products.json",
+        "blog_api":     "https://www.topdon.com/blogs/news.json",
         "blog_keywords": THERMAL_BLOG_KW,
-        "nav_url":       "https://www.topdon.com/",
+        "nav_url":      "https://www.topdon.com/",
+        # Pages with full text diff
         "pages": {
-            "Thermal Imagers":          "https://www.topdon.com/pages/tools/thermal-imagers",
-            "Solution: Home Inspection":"https://www.topdon.com/pages/solutions-home-inspection",
-            "Thermal Apps":             "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-            "About Us":                 "https://www.topdon.com/pages/about-us",
-            "Newsroom":                 "https://www.topdon.com/pages/news",
-            "Program: TestLight":       "https://www.topdon.com/pages/topdon-testlight-program",
-            "Program: TOP-UP":          "https://www.topdon.com/pages/top-up-program",
-            "Program: My Story":        "https://www.topdon.com/pages/my-topdon-story",
-            "Refund Policy":            "https://www.topdon.com/policies/refund-policy",
+            "Thermal Imagers":           "https://www.topdon.com/pages/tools/thermal-imagers",
+            "Thermal Apps":              "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
+            "Solution: Home Inspection": "https://www.topdon.com/pages/solutions-home-inspection",
+            "About Us":                  "https://www.topdon.com/pages/about-us",
+            "Newsroom":                  "https://www.topdon.com/pages/news",
+            "Program: TestLight":        "https://www.topdon.com/pages/topdon-testlight-program",
+            "Program: TOP-UP":           "https://www.topdon.com/pages/top-up-program",
+            "Program: My Story":         "https://www.topdon.com/pages/my-topdon-story",
+            "Program: Partner":          "https://www.topdon.com/pages/become-a-topdon-partner",
+            "Refund Policy":             "https://www.topdon.com/policies/refund-policy",
         },
     },
     "FLIR": {
@@ -67,6 +72,7 @@ DATA_DIR            = Path("docs")
 DATA_FILE           = DATA_DIR / "data.json"
 MAX_HISTORY         = 300
 PAGE_COOLDOWN_HOURS = 6
+MAX_DIFF_LINES      = 8   # max diff lines to show per page change
 
 HEADERS = {
     "User-Agent":      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
@@ -84,11 +90,12 @@ TYPE_LABEL = {
     "new_article":     "BLOG",
     "page_change":     "PAGE",
     "nav_change":      "NAV",
+    "product_page":    "PRODUCT PAGE",
 }
 TAG_COLOR = {
     "NEW": "#16a34a", "REMOVED": "#dc2626", "PRICE": "#d97706",
     "STOCK": "#2563eb", "BLOG": "#7c3aed", "PAGE": "#0891b2",
-    "NAV": "#be185d",
+    "NAV": "#be185d", "PRODUCT PAGE": "#0891b2",
 }
 
 # ─── State ────────────────────────────────────────────────────────────────────
@@ -124,21 +131,87 @@ def save_dashboard(d):
     DATA_DIR.mkdir(exist_ok=True)
     DATA_FILE.write_text(json.dumps(d, indent=2, ensure_ascii=False))
 
-# ─── Hashing ──────────────────────────────────────────────────────────────────
+# ─── Text extraction ──────────────────────────────────────────────────────────
 
-def text_hash(html):
-    t = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL | re.IGNORECASE)
-    t = re.sub(r'<style[^>]*>.*?</style>',  '', t,    flags=re.DOTALL | re.IGNORECASE)
+def extract_text(html: str) -> str:
+    """Extract clean visible text from HTML for diffing."""
+    t = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL|re.IGNORECASE)
+    t = re.sub(r'<style[^>]*>.*?</style>',  '', t,    flags=re.DOTALL|re.IGNORECASE)
     t = re.sub(r'<!--.*?-->',               '', t,    flags=re.DOTALL)
+    # Keep line breaks at block elements
+    t = re.sub(r'</(p|div|li|h[1-6]|section|article|td|tr)[^>]*>', '\n', t, flags=re.IGNORECASE)
+    t = re.sub(r'<br\s*/?>',               '\n', t, flags=re.IGNORECASE)
     t = re.sub(r'<[^>]+>', ' ', t)
-    t = re.sub(r'\b\d{10,13}\b', '', t)
-    return hashlib.sha256(' '.join(t.split()).encode()).hexdigest()[:24]
+    # Clean up lines
+    lines = []
+    for line in t.split('\n'):
+        line = re.sub(r'\s+', ' ', line).strip()
+        # Skip very short lines and nav/footer boilerplate
+        if len(line) > 20:
+            lines.append(line)
+    return '\n'.join(lines)
 
-def nav_hash(html):
-    m = re.search(r'<header[^>]*>.*?</header>', html, re.DOTALL | re.IGNORECASE)
-    return text_hash(m.group(0) if m else html[:8000])
+def text_hash(text: str) -> str:
+    return hashlib.sha256(text.encode()).hexdigest()[:24]
+
+def compute_diff(old_text: str, new_text: str) -> list[dict]:
+    """Return list of {type, old, new} change objects, max MAX_DIFF_LINES items."""
+    old_lines = old_text.splitlines()
+    new_lines = new_text.splitlines()
+    changes = []
+    matcher = difflib.SequenceMatcher(None, old_lines, new_lines, autojunk=True)
+    for op, i1, i2, j1, j2 in matcher.get_opcodes():
+        if op == 'equal':
+            continue
+        old_chunk = old_lines[i1:i2]
+        new_chunk = new_lines[j1:j2]
+        if op == 'insert':
+            for line in new_chunk:
+                if line.strip():
+                    changes.append({"type": "added",   "text": line.strip()})
+        elif op == 'delete':
+            for line in old_chunk:
+                if line.strip():
+                    changes.append({"type": "removed", "text": line.strip()})
+        elif op == 'replace':
+            # Pair up old/new lines
+            for i in range(max(len(old_chunk), len(new_chunk))):
+                old_l = old_chunk[i].strip() if i < len(old_chunk) else ""
+                new_l = new_chunk[i].strip() if i < len(new_chunk) else ""
+                if old_l and new_l:
+                    changes.append({"type": "modified", "old": old_l, "new": new_l})
+                elif new_l:
+                    changes.append({"type": "added",   "text": new_l})
+                elif old_l:
+                    changes.append({"type": "removed", "text": old_l})
+        if len(changes) >= MAX_DIFF_LINES:
+            break
+    return changes[:MAX_DIFF_LINES]
+
+def format_diff_detail(diffs: list[dict], total_changes: int) -> str:
+    """Format diff list into a readable string for email/dashboard."""
+    lines = []
+    for d in diffs:
+        if d["type"] == "added":
+            lines.append(f"+ {d['text'][:120]}")
+        elif d["type"] == "removed":
+            lines.append(f"- {d['text'][:120]}")
+        elif d["type"] == "modified":
+            lines.append(f"~ {d['old'][:80]} → {d['new'][:80]}")
+    if total_changes > MAX_DIFF_LINES:
+        lines.append(f"... and {total_changes - MAX_DIFF_LINES} more changes")
+    return "\n".join(lines) if lines else "Content updated (diff unavailable)"
 
 # ─── Fetchers ─────────────────────────────────────────────────────────────────
+
+def fetch_page(url: str, client: httpx.Client) -> tuple[str|None, str|None]:
+    """Returns (raw_html, extracted_text) or (None, None) on error."""
+    try:
+        r = client.get(url, timeout=25); r.raise_for_status()
+        text = extract_text(r.text)
+        return r.text, text
+    except Exception as e:
+        print(f"    [warn] {url}: {e}"); return None, None
 
 def fetch_shopify_products(api_url, base, client):
     products, page = {}, 1
@@ -159,7 +232,7 @@ def fetch_shopify_products(api_url, base, client):
             v = next((x for x in p.get("variants", []) if x.get("available")),
                      p["variants"][0] if p.get("variants") else {})
             raw = v.get("price", "")
-            try:    price = f"{float(raw):.2f}" if raw else "N/A"
+            try: price = f"{float(raw):.2f}" if raw else "N/A"
             except: price = raw or "N/A"
             products[h] = {
                 "title":     title,
@@ -187,44 +260,31 @@ def fetch_shopify_blog(api_url, base, keywords, client):
     except Exception as e:
         print(f"    [warn] blog: {e}"); return {}
 
-def fetch_hash(url, client):
-    try:
-        r = client.get(url, timeout=25); r.raise_for_status()
-        return text_hash(r.text)
-    except Exception as e:
-        print(f"    [warn] {url}: {e}"); return None
-
-def fetch_nav_hash(url, client):
-    try:
-        r = client.get(url, timeout=25); r.raise_for_status()
-        return nav_hash(r.text)
-    except Exception as e:
-        print(f"    [warn] nav: {e}"); return None
-
-# ─── Diff ─────────────────────────────────────────────────────────────────────
+# ─── Diff helpers ─────────────────────────────────────────────────────────────
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
 
-def mk(type_, brand, title, url, detail, price=""):
+def mk(type_, brand, title, url, detail, price="", diffs=None):
     return {
         "id":     f"{now_iso()}-{brand}-{type_}-{hashlib.md5(title.encode()).hexdigest()[:6]}",
         "type":   type_, "label": TYPE_LABEL.get(type_, "?"),
         "brand":  brand, "ts":    now_iso(),
         "title":  title, "url":   url,
         "detail": detail, "price": price,
+        "diffs":  diffs or [],   # list of {type, text/old/new}
     }
 
 def diff_products(brand, old, new):
     out = []
     for h in sorted(set(new) - set(old)):
-        p  = new[h]
+        p = new[h]
         ps = f"${p['price']}" if p["price"] != "N/A" else "Price TBD"
         out.append(mk("new_product", brand, p["title"], p["url"],
                       f"{ps} · {'In stock' if p['available'] else 'Out of stock'}", p["price"]))
     for h in sorted(set(old) - set(new)):
         p = old[h]
-        out.append(mk("removed_product", brand, p["title"], p.get("url", ""), "Removed from store"))
+        out.append(mk("removed_product", brand, p["title"], p.get("url",""), "Removed from store"))
     for h in sorted(set(old) & set(new)):
         o, n = old[h], new[h]
         if o["price"] != n["price"] and "N/A" not in (o["price"], n["price"]):
@@ -240,13 +300,35 @@ def diff_products(brand, old, new):
     return out
 
 def diff_blog(brand, old, new):
-    return [
-        mk("new_article", brand, new[aid]["title"], new[aid].get("url", ""),
-           f"Published {new[aid].get('published_at', '')[:10]}")
-        for aid in sorted(set(new) - set(old))
-    ]
+    return [mk("new_article", brand, new[aid]["title"], new[aid].get("url",""),
+               f"Published {new[aid].get('published_at','')[:10]}")
+            for aid in sorted(set(new) - set(old))]
 
-def diff_page(brand, name, old_h, new_h, url, last_alerted, cooldown=PAGE_COOLDOWN_HOURS):
+def diff_page_text(brand, name, old_text, new_text, url, last_alerted,
+                   cooldown=PAGE_COOLDOWN_HOURS):
+    """Full text diff for TOPDON pages."""
+    if not old_text or not new_text: return []
+    old_h = text_hash(old_text)
+    new_h = text_hash(new_text)
+    if old_h == new_h: return []
+    if last_alerted:
+        try:
+            if datetime.now(timezone.utc) - datetime.fromisoformat(last_alerted) \
+               < timedelta(hours=cooldown):
+                print(f"    [cooldown] {brand} · {name}"); return []
+        except: pass
+    # Compute diff
+    all_diffs = compute_diff(old_text, new_text)
+    total_changes = sum(1 for op, i1, i2, j1, j2 in
+                        difflib.SequenceMatcher(None, old_text.splitlines(),
+                                                new_text.splitlines()).get_opcodes()
+                        if op != 'equal')
+    detail = format_diff_detail(all_diffs, total_changes)
+    return [mk("page_change", brand, name, url, detail, diffs=all_diffs)]
+
+def diff_page_hash(brand, name, old_h, new_h, url, last_alerted,
+                   cooldown=PAGE_COOLDOWN_HOURS):
+    """Hash-only diff for FLIR/FLUKE."""
     if not old_h or not new_h or old_h == new_h: return []
     if last_alerted:
         try:
@@ -254,7 +336,7 @@ def diff_page(brand, name, old_h, new_h, url, last_alerted, cooldown=PAGE_COOLDO
                < timedelta(hours=cooldown):
                 print(f"    [cooldown] {brand} · {name}"); return []
         except: pass
-    return [mk("page_change", brand, name, url, "Content updated")]
+    return [mk("page_change", brand, name, url, "Hash-only: page changed (diff unavailable)")]
 
 def diff_nav(brand, old_h, new_h, url, last_alerted):
     if not old_h or not new_h or old_h == new_h: return []
@@ -269,9 +351,9 @@ def diff_nav(brand, old_h, new_h, url, last_alerted):
 # ─── Dashboard ────────────────────────────────────────────────────────────────
 
 def update_dashboard(dash, new_changes, page_status, product_counts):
-    now      = datetime.now(timezone.utc)
-    today    = now.strftime("%Y-%m-%d")
-    week_ago = (now - timedelta(days=7)).timestamp()
+    now     = datetime.now(timezone.utc)
+    today   = now.strftime("%Y-%m-%d")
+    week_ts = (now - timedelta(days=7)).timestamp()
     dash["changes"] = (new_changes + dash.get("changes", []))[:MAX_HISTORY]
     dash.update({
         "generated_at":   now.isoformat(),
@@ -282,9 +364,9 @@ def update_dashboard(dash, new_changes, page_status, product_counts):
     all_c = dash["changes"]
     dash["stats"] = {
         "total": len(all_c),
-        "today": sum(1 for c in all_c if c.get("ts", "")[:10] == today),
+        "today": sum(1 for c in all_c if c.get("ts","")[:10] == today),
         "week":  sum(1 for c in all_c if c.get("ts") and
-                     datetime.fromisoformat(c["ts"].replace("Z", "+00:00")).timestamp() >= week_ago),
+                     datetime.fromisoformat(c["ts"].replace("Z","+00:00")).timestamp() >= week_ts),
     }
 
 # ─── Email ────────────────────────────────────────────────────────────────────
@@ -301,42 +383,80 @@ def send_email(changes, run_time):
     by_brand = {}
     for c in changes: by_brand.setdefault(c["brand"], []).append(c)
 
-    lines = [f"Competitive Monitor — {run_time}", "=" * 56]
+    # Plain text
+    lines = [f"Competitive Monitor — {run_time}", "="*56]
     for brand, items in by_brand.items():
-        lines += [f"\n{brand} ({len(items)} change{'s' if len(items) > 1 else ''})", "─" * 36]
+        lines += [f"\n{brand} ({len(items)} change{'s' if len(items)>1 else ''})", "─"*36]
         for c in items:
-            lines += [f"  [{c['label']}] {c['title']}", f"         {c['detail']}"]
-            if c.get("url"): lines.append(f"         {c['url']}")
+            lines += [f"  [{c['label']}] {c['title']}", f"  {c['detail']}"]
+            if c.get("url"): lines.append(f"  {c['url']}")
     if pu: lines.append(f"\nDashboard: {pu}")
 
+    # HTML
     rows = ""
     for brand, items in by_brand.items():
-        rows += (f'<tr><td colspan="3" style="padding:14px 0 6px;font-size:15px;font-weight:600;'
+        rows += (f'<tr><td colspan="2" style="padding:14px 0 6px;font-size:15px;font-weight:600;'
                  f'border-bottom:2px solid #e5e7eb">{brand} '
                  f'<span style="font-weight:400;font-size:12px;color:#6b7280">'
-                 f'{len(items)} change{"s" if len(items) > 1 else ""}</span></td></tr>')
+                 f'{len(items)} change{"s" if len(items)>1 else ""}</span></td></tr>')
         for c in items:
             col = TAG_COLOR.get(c["label"], "#6b7280")
-            tit = (f'<a href="{c["url"]}" style="color:#1d4ed8;text-decoration:none">{c["title"]}</a>'
-                   if c.get("url") else c["title"])
+            tit = (f'<a href="{c["url"]}" style="color:#1d4ed8;text-decoration:none">'
+                   f'{c["title"]}</a>') if c.get("url") else c["title"]
+            # Build diff block if available
+            diff_html = ""
+            if c.get("diffs"):
+                diff_lines = []
+                for d in c["diffs"]:
+                    if d["type"] == "added":
+                        diff_lines.append(
+                            f'<div style="background:#f0fdf4;color:#15803d;padding:2px 6px;'
+                            f'border-left:3px solid #86efac;margin:1px 0;font-size:12px;'
+                            f'font-family:monospace">+ {d["text"][:120]}</div>')
+                    elif d["type"] == "removed":
+                        diff_lines.append(
+                            f'<div style="background:#fef2f2;color:#b91c1c;padding:2px 6px;'
+                            f'border-left:3px solid #fca5a5;margin:1px 0;font-size:12px;'
+                            f'font-family:monospace">- {d["text"][:120]}</div>')
+                    elif d["type"] == "modified":
+                        diff_lines.append(
+                            f'<div style="background:#fffbeb;color:#92400e;padding:2px 6px;'
+                            f'border-left:3px solid #fcd34d;margin:1px 0;font-size:12px;'
+                            f'font-family:monospace">'
+                            f'~ {d["old"][:80]}<br>'
+                            f'&nbsp;&nbsp;→ {d["new"][:80]}</div>')
+                diff_html = "".join(diff_lines)
+            elif "Hash-only" in c.get("detail", ""):
+                diff_html = (f'<div style="color:#6b7280;font-size:12px;font-style:italic;'
+                             f'margin-top:4px">Hash-only: diff unavailable</div>')
+
             rows += (f'<tr style="border-bottom:1px solid #f3f4f6">'
-                     f'<td style="padding:9px 8px 9px 0;width:64px;vertical-align:top">'
-                     f'<span style="background:{col}20;color:{col};font-size:11px;font-weight:700;'
-                     f'padding:3px 7px;border-radius:4px">{c["label"]}</span></td>'
-                     f'<td style="padding:9px 8px;font-size:14px;vertical-align:top">{tit}</td>'
-                     f'<td style="padding:9px 0 9px 8px;font-size:12px;color:#6b7280;'
-                     f'vertical-align:top;white-space:nowrap">{c["detail"]}</td></tr>')
-    dl = (f'<p style="margin-top:20px"><a href="{pu}" style="color:#1d4ed8">View dashboard →</a></p>') if pu else ""
+                     f'<td style="padding:9px 8px 9px 0;width:100px;vertical-align:top">'
+                     f'<span style="background:{col}20;color:{col};font-size:11px;'
+                     f'font-weight:700;padding:3px 7px;border-radius:4px">{c["label"]}</span>'
+                     f'</td>'
+                     f'<td style="padding:9px 0;font-size:14px;vertical-align:top">'
+                     f'{tit}'
+                     f'<div style="font-size:12px;color:#6b7280;margin-top:2px">{c["detail"][:200]}</div>'
+                     f'{diff_html}'
+                     f'</td></tr>')
+
+    dl = (f'<p style="margin-top:20px"><a href="{pu}" style="color:#1d4ed8">'
+          f'View dashboard →</a></p>') if pu else ""
     html = (f'<!DOCTYPE html><html><body style="font-family:-apple-system,sans-serif;'
-            f'max-width:660px;margin:0 auto;padding:24px;color:#111">'
-            f'<div style="margin-bottom:18px"><div style="font-size:20px;font-weight:700">Competitive Monitor</div>'
-            f'<div style="font-size:12px;color:#9ca3af;margin-top:3px">{run_time} · {len(changes)} changes</div></div>'
+            f'max-width:680px;margin:0 auto;padding:24px;color:#111">'
+            f'<div style="margin-bottom:18px">'
+            f'<div style="font-size:20px;font-weight:700">Competitive Monitor</div>'
+            f'<div style="font-size:12px;color:#9ca3af;margin-top:3px">'
+            f'{run_time} · {len(changes)} changes</div></div>'
             f'<table style="width:100%;border-collapse:collapse">{rows}</table>{dl}'
-            f'<div style="margin-top:20px;font-size:11px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:10px">'
-            f'TOPDON · FLIR · FLUKE</div></body></html>')
+            f'<div style="margin-top:20px;font-size:11px;color:#9ca3af;'
+            f'border-top:1px solid #e5e7eb;padding-top:10px">TOPDON · FLIR · FLUKE</div>'
+            f'</body></html>')
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"[Monitor] {len(changes)} change{'s' if len(changes) > 1 else ''} — {run_time[:10]}"
+    msg["Subject"] = (f"[Monitor] {len(changes)} change{'s' if len(changes)>1 else ''} "
+                      f"— {run_time[:10]}")
     msg["From"] = u; msg["To"] = to
     msg.attach(MIMEText("\n".join(lines), "plain"))
     msg.attach(MIMEText(html, "html"))
@@ -345,13 +465,14 @@ def send_email(changes, run_time):
             s.ehlo(); s.starttls(); s.ehlo(); s.login(u, pw)
             s.sendmail(u, to, msg.as_string())
         print(f"  [email] sent → {to}")
-    except Exception as e: print(f"  [email] FAILED: {e}")
+    except Exception as e:
+        print(f"  [email] FAILED: {e}")
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 def run():
     run_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    print(f"\n{'='*60}\nMonitor v7  {run_time}\n{'='*60}")
+    print(f"\n{'='*60}\nMonitor v8  {run_time}\n{'='*60}")
 
     state    = load_state()
     dash     = load_dashboard()
@@ -367,28 +488,53 @@ def run():
             page_status[brand] = {}
 
             if cfg["type"] == "shopify_filtered":
-                print("  products (TC/TS filtered)...")
+                # TC/TS products: price/stock/new
+                print("  products (TC/TS)...")
                 new_p = fetch_shopify_products(cfg["products_api"], cfg["base"], client)
                 old_p = bs.get("products", {})
                 product_counts[brand] = len(new_p)
                 if not is_first:
                     ch = diff_products(brand, old_p, new_p)
-                    if ch: print(f"  → {len(ch)} product change(s)")
+                    if ch: print(f"  → {len(ch)} product data change(s)")
                     all_changes.extend(ch)
                 else:
                     print(f"  → baseline: {len(new_p)} thermal products")
                 bs["products"] = new_p
 
-                print("  blog (thermal only)...")
-                new_b = fetch_shopify_blog(cfg["blog_api"], cfg["base"], cfg["blog_keywords"], client)
+                # TC/TS product pages: text diff on description/specs
+                print("  product pages (text diff)...")
+                prod_snapshots = bs.setdefault("product_snapshots", {})
+                prod_alerted   = bs.setdefault("product_page_alerted", {})
+                for handle, prod in new_p.items():
+                    url = prod["url"]
+                    _, new_text = fetch_page(url, client)
+                    if new_text is None: continue
+                    old_text = prod_snapshots.get(handle)
+                    if not is_first and old_text:
+                        ch = diff_page_text(
+                            brand, f"{prod['title']} (product page)",
+                            old_text, new_text, url, prod_alerted.get(handle)
+                        )
+                        if ch:
+                            all_changes.extend(ch)
+                            prod_alerted[handle] = now_iso()
+                            print(f"  → {prod['title']} page changed")
+                    prod_snapshots[handle] = new_text
+
+                # Blog
+                print("  blog...")
+                new_b = fetch_shopify_blog(
+                    cfg["blog_api"], cfg["base"], cfg["blog_keywords"], client)
                 if not is_first:
                     ch = diff_blog(brand, bs.get("blog", {}), new_b)
                     if ch: print(f"  → {len(ch)} new article(s)")
                     all_changes.extend(ch)
                 bs["blog"] = new_b
 
-                print("  nav structure...")
-                new_nh = fetch_nav_hash(cfg["nav_url"], client)
+                # Nav structure
+                print("  nav...")
+                _, nav_text = fetch_page(cfg["nav_url"], client)
+                new_nh = text_hash(nav_text) if nav_text else None
                 if not is_first:
                     ch = diff_nav(brand, bs.get("nav_hash"), new_nh,
                                   cfg["nav_url"], bs.get("nav_alerted"))
@@ -397,41 +543,67 @@ def run():
                         bs["nav_alerted"] = now_iso()
                 bs["nav_hash"] = new_nh
 
+                # Key pages: full text diff
+                ps = bs.setdefault("page_snapshots", {})
+                pa = bs.setdefault("page_alerted", {})
+                for pname, url in cfg["pages"].items():
+                    print(f"  {pname}...")
+                    _, new_text = fetch_page(url, client)
+                    changed = False
+                    if not is_first and new_text:
+                        old_text = ps.get(pname)
+                        ch = diff_page_text(brand, pname, old_text, new_text,
+                                            url, pa.get(pname))
+                        if ch:
+                            changed = True
+                            all_changes.extend(ch)
+                            pa[pname] = now_iso()
+                            print(f"  → {pname} changed!")
+                    page_status[brand][pname] = {
+                        "url":        url,
+                        "status":     "changed" if changed else ("ok" if new_text else "error"),
+                        "checked_at": now_iso(),
+                    }
+                    if new_text: ps[pname] = new_text
+
             else:
+                # FLIR/FLUKE: hash-only
+                hs = bs.setdefault("page_hashes", {})
+                ha = bs.setdefault("page_alerted", {})
+
                 for key, url, label in [
                     ("products_hash", cfg["products_url"], "Products page"),
                     ("blog_hash",     cfg["blog_url"],     "Blog page"),
                 ]:
                     print(f"  {label}...")
-                    new_h = fetch_hash(url, client)
+                    _, text = fetch_page(url, client)
+                    new_h = text_hash(text) if text else None
                     if not is_first:
-                        ch = diff_page(brand, label, bs.get(key), new_h, url,
-                                       bs.get(f"{key}_alerted"))
+                        ch = diff_page_hash(brand, label, hs.get(key), new_h,
+                                            url, ha.get(key))
                         if ch:
                             all_changes.extend(ch)
-                            bs[f"{key}_alerted"] = now_iso()
-                    bs[key] = new_h
+                            ha[key] = now_iso()
+                    hs[key] = new_h
 
-            # Key pages
-            ps = bs.setdefault("pages", {})
-            pa = bs.setdefault("page_alerted", {})
-            for pname, url in cfg["pages"].items():
-                print(f"  {pname}...")
-                new_h = fetch_hash(url, client)
-                changed = False
-                if not is_first and new_h:
-                    ch = diff_page(brand, pname, ps.get(pname), new_h, url, pa.get(pname))
-                    if ch:
-                        changed = True
-                        all_changes.extend(ch)
-                        pa[pname] = now_iso()
-                        print(f"  → {pname} changed!")
-                page_status[brand][pname] = {
-                    "url":        url,
-                    "status":     "changed" if changed else ("ok" if new_h else "error"),
-                    "checked_at": now_iso(),
-                }
-                if new_h: ps[pname] = new_h
+                for pname, url in cfg["pages"].items():
+                    print(f"  {pname}...")
+                    _, text = fetch_page(url, client)
+                    new_h = text_hash(text) if text else None
+                    changed = False
+                    if not is_first:
+                        ch = diff_page_hash(brand, pname, hs.get(pname), new_h,
+                                            url, ha.get(pname))
+                        if ch:
+                            changed = True
+                            all_changes.extend(ch)
+                            ha[pname] = now_iso()
+                    page_status[brand][pname] = {
+                        "url":        url,
+                        "status":     "changed" if changed else ("ok" if new_h else "error"),
+                        "checked_at": now_iso(),
+                    }
+                    hs[pname] = new_h
 
     save_state(state)
     update_dashboard(dash, all_changes, page_status, product_counts)
@@ -444,7 +616,7 @@ def run():
     elif all_changes:
         print(f"{len(all_changes)} change(s):")
         for c in all_changes:
-            print(f"  [{c['label']}] {c['brand']} · {c['title']} — {c['detail']}")
+            print(f"  [{c['label']}] {c['brand']} · {c['title']} — {c['detail'][:80]}")
         send_email(all_changes, run_time)
     else:
         print("No changes. No email sent.")
@@ -452,4 +624,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-
