@@ -1,16 +1,421 @@
 {
-  "generated_at": "2026-03-25T18:10:42.012029+00:00",
+  "generated_at": "2026-03-25T20:04:38.978773+00:00",
   "brand_list": [
     "TOPDON",
     "FLIR",
     "FLUKE"
   ],
   "stats": {
-    "total": 76,
-    "today": 31,
-    "week": 76
+    "total": 86,
+    "today": 41,
+    "week": 86
   },
   "changes": [
+    {
+      "id": "2026-03-25T20:04:34.896716+00:00-TOPDON-page_change-c736b7",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:34.896736+00:00",
+      "title": "Thermal Imagers",
+      "url": "https://www.topdon.com/pages/tools/thermal-imagers",
+      "detail": "~ [+o4i[Q&%@9i7ǯ? ?Mffw8]nW_s=7KKDOD3V' RCD>˹ｪUUPͬ@uUxU@vh# 8I,uR含\\TᬹP, → [+o4i[Q&)@9i7ǯ? FbNW_s=7KKcGѓe;ьkI&B䕄lꭾV[n]'MT/d82e'J$[ߒ%f@uXamYn:=EXRm\\\"{!ᴔ|#[[\n~ ўR80]iTP|khͰP?pg1fzŖC(ˑVV]1GD}X- s&3/}# → /4Gby7526RP֏~IfH}մ38HKt(Ρs>}a`äH;s߻ODDqRbBqQPT5}kp\\Y!Wz/YsX?=եq*ۧa}Өvk}abbh-aPfy\n~ J#߭ Ok!TMd 9_@,u@Ð߭/^|t → 8}Qx=zlEl^%Uh|ebC#g1{)& C {;~VQ' ;~xGH?{ Y_PX,ESLYW{SFGE7hшe1龯%lel+$0% :6$Yxyrh\n~ !dDBfؠ/@ e$hzKL%4 e5|uOӗҏe.'AzoLN@?!1x|fz~ MǛ7ӧk4A='k7632WI[PXwG5xV_MXWpKaJsS^x\\ → EliLe ut-ffMMAhS9;n o\"{ 4BGEU`JLl\"lFK\\e|2To ݱ41'#yK|Spߙ7-\\zͧVӫEL?C @2 Yg7Es\\^Q6\n~ :x-`g`w\"Q|xE]YQ)˃) MUGXg4'p → mPK;ǩn{Ӹ;Y\\]J34Tq8Lp*䢼\"wiLSౝ&flKǧ'@JKw m!K1cvuGjJR);3V;Z{:iLrcBCo\"d3:I%''@f{¨U.g\n~ tlHNOQh%:/͌OPuX P@1[CP%|*V7$uhkUv]T_ → ]GKB8GV']'Ҙaq͝2oR.iQL(Q9tG)ļOr6u:N99;蜝:밂J9k37zCǑyOzodb\" >t>tNz=9%AWU2,kZmm[.=Z2.\n~ \\nB)8TؔП\"P2Bq5Z*y9Lį?J(dw*LZ %0>CYjp-ޜMo(kjP)m+fpG → iceipib vZZ(GfՍRu *U3x~LysܽrOLC7Is_ck2D酻:W\"h.e{r]8GcJ~,8n;ܒM&+C*-س*OUz3$JS4ٱ\"`qa\n~ RZ@焼.MTQ>U&Tu-AHW(ؚTc\\B_fh74Ǘ v+kۚ˘MYPZMgg^%Ul20K]%WfGv5B:T 7+8۩Ze/, → gbbbQd| ̆b3霢VXpiLa~.hʗ\\ޖm˿eyuMC9b(J@Az]jٳ9`M8ssCpe64 Z\\Um+",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[+o4i[Q&%@9i7ǯ? ?Mffw8]nW_s=7KKDOD3V' RCD>˹ｪUUPͬ@uUxU@vh# 8I,uR含\\TᬹP,",
+          "new": "[+o4i[Q&)@9i7ǯ? FbNW_s=7KKcGѓe;ьkI&B䕄lꭾV[n]'MT/d82e'J$[ߒ%f@uXamYn:=EXRm\\\"{!ᴔ|#[[,ydbtiL FBjLdd7*73(20BL&W`J*)tM X)4#-E?Asνޫ^]UrTYT{ﻯ"
+        },
+        {
+          "type": "modified",
+          "old": "ўR80]iTP|khͰP?pg1fzŖC(ˑVV]1GD}X- s&3/}#",
+          "new": "/4Gby7526RP֏~IfH}մ38HKt(Ρs>}a`äH;s߻ODDqRbBqQPT5}kp\\Y!Wz/YsX?=եq*ۧa}Өvk}abbh-aPfy#:~b?r[0Eyr:wOy_nSm;T@[ҪWY!S;t/I#4|noF6VU|y;\"BU1f}s6ڞ(b.fW$ 5 =Y幠 喱a"
+        },
+        {
+          "type": "modified",
+          "old": "J#߭ Ok!TMd 9_@,u@Ð߭/^|t",
+          "new": "8}Qx=zlEl^%Uh|ebC#g1{)& C {;~VQ' ;~xGH?{ Y_PX,ESLYW{SFGE7hшe1龯%lel+$0% :6$Yxyrh/!nLiN)S؉zUϼ@+bT[K$mKxԁt/_#V+JC1\" V?%+o/=Uk Ui-i,ɣ*i-\"7,O'mzp2)>T|9lOG6em1m:5ĺP&B`pk;FB6$g#VL|fE*7͎P!'bD0+\"x0 p\"C#Ӑ\\NYFNʃlГ1+9)YCBR1֐&ۉtE{6ϩ\\8O$8vAQhGXBts̐9@pc, `XI>*2@l^]Dw:D 51nHYHZMgg^%-d+hK]ԅf$v5B:T 7lTJM~E~J]Z11u^.[hӖP* {G2jV7\"2J؄iBk絵&==dʙBetdI"
+        },
+        {
+          "type": "modified",
+          "old": "!dDBfؠ/@ e$hzKL%4 e5|uOӗҏe.'AzoLN@?!1x|fz~ MǛ7ӧk4A='k7632WI[PXwG5xV_MXWpKaJsS^x\\",
+          "new": "EliLe ut-ffMMAhS9;n o\"{ 4BGEU`JLl\"lFK\\e|2To ݱ41'#yK|Spߙ7-\\zͧVӫEL?C @2 Yg7Es\\^Q6;\\7q/>YƟTao=J0Q̌yGK8OryPHNKaUΠED`cВ[)Fjp+ߨ_u3zDl"
+        },
+        {
+          "type": "modified",
+          "old": ":x-`g`w\"Q|xE]YQ)˃) MUGXg4'p",
+          "new": "mPK;ǩn{Ӹ;Y\\]J34Tq8Lp*䢼\"wiLSౝ&flKǧ'@JKw m!K1cvuGjJR);3V;Z{:iLrcBCo\"d3:I%''@f{¨U.g^n6beˁUC}O[Hrwqcy$snʙ*mtZ0"
+        },
+        {
+          "type": "modified",
+          "old": "tlHNOQh%:/͌OPuX P@1[CP%|*V7$uhkUv]T_",
+          "new": "]GKB8GV']'Ҙaq͝2oR.iQL(Q9tG)ļOr6u:N99;蜝:밂J9k37zCǑyOzodb\" >t>tNz=9%AWU2,kZmm[.=Z2.($7x͗1QC܂UxxOO'YzS wiN lynwҮd9/}ƽS>צk"
+        },
+        {
+          "type": "modified",
+          "old": "\\nB)8TؔП\"P2Bq5Z*y9Lį?J(dw*LZ %0>CYjp-ޜMo(kjP)m+fpG",
+          "new": "iceipib vZZ(GfՍRu *U3x~LysܽrOLC7Is_ck2D酻:W\"h.e{r]8GcJ~,8n;ܒM&+C*-س*OUz3$JS4ٱ\"`qa1E!4I/i=R~op68?> Rc++1i (Ýz+JU{[lA^c5UbDҜ&Gy($na\\aKɺ@~]3sAuH'1WTLeb>;Sv%ܩ|6JX ☪j;*ܵHf\\ONҪIT\"q_d'_\":xdBT+U$h~RlǗ@f^HrҼĤKel؎uIKZ? زԖc N҅Є@)Xx̓ښd=s|V ZLOgdT8kZI̳si(cݞirw@K /T;9VENTrHmJYdmaLȠB1#"
+        },
+        {
+          "type": "modified",
+          "old": "RZ@焼.MTQ>U&Tu-AHW(ؚTc\\B_fh74Ǘ v+kۚ˘MYPZMgg^%Ul20K]%WfGv5B:T 7+8۩Ze/,",
+          "new": "gbbbQd| ̆b3霢VXpiLa~.hʗ\\ޖm˿eyuMC9b(J@Az]jٳ9`M8ssCpe64 Z\\Um+"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:35.125884+00:00-TOPDON-page_change-3dab99",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:35.125899+00:00",
+      "title": "Thermal Apps",
+      "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
+      "detail": "~ [U4RJ09rPHȼ`ǯ?pLFbN՗9/!L=h_R~FidٮR?p PYVQL/hM7v}]k#mTM'4I Mzf]ʶ@*qpybf9Jy h ;JkE → [U4RJ0)rPHȼ`ǯ?pLh2[6r{}|Z}y#%%cT4lWeWu5@$$L,/_цnFmTz Fx?2T%]b?|v^Kf jpjx\"&nXk.cs\n~ 2%-eg6Xhc1CeTMC{_wvleZ^^ƴc޽aelMv~bs/$1V]>}$@HPody 0|+;{|qJ \"$el → ۢUh|MU)h6@#QFCU^njr^UCOD?D[Y(䌐 2#4ӛ}s] t\"D,9 B xJFYv ]hXfwlnc:mg{,MTKy[|}r-E|dB✶\n~ b Pg+l;˘ey$Lľ}~M$!HJ̪͆|mF%@H(s5+UǁLե9R → /LyDÒBw'*Dlr5)䔥QIa`U*:?ƆV8:E@n+M*n1ȁV@!BީlH[@pВlM{eϩB\n~ Bb=~[scYh)2IO+s6Kޯt`_GioRJ(Fd, → AQ뻇`'GXBteP9@?u Ha\\Iޤ侱>\"WY7V7!516YPZMggU\\ֿ&\\@ cDHujWqe$ȱ@y\n~ B[x*0;^Nqfcqt _ {.;P eoJG=r~d$EQ2E[zb57n2Y1DqGTvKZ#8% E BKcݬ(C%j1պGa|4AW2k{(2g2 → P5y_CXpUk(XQta uY)G==%Ц)G* $LEѾ TLSR p~\\ipѥ]fmӨ0}Z8.KFg>/> YƟT!r=J0Q,j\\0?Rĝ$L:3 \n~ M:M蛁Q&A0Zڄ{X7;bcL^Wv↨GB㕉hluMdw0\\/f!~,u'Tտ+gq ܖ;AMi{b ɡܘR+qOO → s^%B.&4$QG׈ Sq!;!st!:ff-/cְoNUݺ%D&Inx{T_ g g\\Vsť'5ȩ䇗>.j3W,b>3(w\"fi|وte6SRFu}w l\n~ &)mkZgdɽv!`%z]@cuU\\f˧pIoc?v@8glܤ\\XΫWk)KD#lIlD,ԉF> 9+7e:Mmg@#JJx&t$yZ꽁B tz%m:;k5` → >'ҒuE'C_ ئPخ;;ttw!|fZLdܠ>̨30yߛ֥HV-a+BA3[ӑѡС՜+q݊Z ޗ2vm;Fߤnt[[j8ۊ? Cl綪R4%LiJr|`iL(\n~ !1JzD`Jc.2kFe싵WqYڞ(5B>xI → @>XB>5vIOx`XUF[TkMq>;Xa:b8)NqQ?(X|-' Aw3Sx M!ed{bJ!gp;lt?pI=$3pb?#pw2973U6X=Σq=֧",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[U4RJ09rPHȼ`ǯ?pLFbN՗9/!L=h_R~FidٮR?p PYVQL/hM7v}]k#mTM'4I Mzf]ʶ@*qpybf9Jy h ;JkEس8$ T: ߇eߜo٬nTH#',@%Rl͗-Wü\"ݪ[/TgJ ,;[75_L!EAu2{` !zaf=`! aͤ?8\\!M=bKW^T*_\\ƿԚ_k3g :#{P R[@jFs}?hRp䐐ux5D[DEMݜ5E#E+Ek|(|2yk3ǹHrz9PUM@33g|UuAbƟ3~ve\\A&E",
+          "new": "[U4RJ0)rPHȼ`ǯ?pLh2[6r{}|Z}y#%%cT4lWeWu5@$$L,/_цnFmTz Fx?2T%]b?|v^Kf jpjx\"&nXk.cs27NɌI[ِYMרe1}ft/*8i81:EEVmzj/-!A@ y\"8eVCF` iݠ{f~VQ[,BH> MJ^%èyE}UUq¶?Uef)0l,^6}wٞz@G8Ev]t9}iMzv:K94pŝӑ HTj29ȇCo:y{ϗn3^:j>ezRA>őy`8`B_ ^ߠ[y@l~m熯X8/961T֝q_pX ֘uc[_?Xtˈ3Ba}߽.Cf_M2ح(p_^};@\"XkMm!T0guNx@{+x`Frr'"
+        },
+        {
+          "type": "modified",
+          "old": "2%-eg6Xhc1CeTMC{_wvleZ^^ƴc޽aelMv~bs/$1V]>}$@HPody 0|+;{|qJ \"$el",
+          "new": "ۢUh|MU)h6@#QFCU^njr^UCOD?D[Y(䌐 2#4ӛ}s] t\"D,9 B xJFYv ]hXfwlnc:mg{,MTKy[|}r-E|dB✶2:ǐG^ B`p^$a=U,4=(-eJ>3+Syiv"
+        },
+        {
+          "type": "modified",
+          "old": "b Pg+l;˘ey$Lľ}~M$!HJ̪͆|mF%@H(s5+UǁLե9R",
+          "new": "/LyDÒBw'*Dlr5)䔥QIa`U*:?ƆV8:E@n+M*n1ȁV@!BީlH[@pВlM{eϩB"
+        },
+        {
+          "type": "modified",
+          "old": "Bb=~[scYh)2IO+s6Kޯt`_GioRJ(Fd,",
+          "new": "AQ뻇`'GXBteP9@?u Ha\\Iޤ侱>\"WY7V7!516YPZMggU\\ֿ&\\@ cDHujWqe$ȱ@y"
+        },
+        {
+          "type": "modified",
+          "old": "B[x*0;^Nqfcqt _ {.;P eoJG=r~d$EQ2E[zb57n2Y1DqGTvKZ#8% E BKcݬ(C%j1պGa|4AW2k{(2g2`6;Htr-PR(7T=*tnGz>=],Mf≧Z|a۠6P(PW_]ϞOWxEC7}~>__5zAϟOi8_ yyY[=*W",
+          "new": "P5y_CXpUk(XQta uY)G==%Ц)G* $LEѾ TLSR p~\\ipѥ]fmӨ0}Z8.KFg>/> YƟT!r=J0Q,j\\0?Rĝ$L:3 /\"\\M5RBFU8K&E)6P6E=WDwX6\\Yn3Y}xJ4q8Lp*Q ;86E%3@i-$`IQ-r~YX DDVngT~Onc:V)/}yO68po~s#Ja5ri([rSy2B#Ⱦ۵!1(sP.tHj;%mhQh*kJZ8߸\\^c>e1>Zʩ%sB $rc \\\\ĭ~z0*PK\\A^jcUCu-i[Ah:^u*nX=84&tJ9uXW.8\\՞vm,aIZK̉(wZw[)qҞ$f@\"ʖЭQ]4l q6]S8U8m[n!98jI)UWIT-!+ʣrqqW}\\Lk|;N/ܕUs%r/,6PF͡g{yNȄ}B:jn_쨊I!7MvRI|XST{ Sx@PUsm;s=lVt:-3sJM@*-1WOՊ+21+i')'ie`%[ z;* ;&#JoL+ 7ؐuPu;Is?t 83/чU=o{\\YL6X &E~soM-t`oe2%YM`+6qN-.qUQ[΃kh@,Fγ\"I89=x6 h׽KTw#yC^pSi1 䝴n|PZ ~rurɹq~teo-.newJ0ŊxD#gS}: 46H%+!ObvJ}ʧ6dx[3bP_]^`p&4RDМoݞ\"kNex6@h^.?xn1&ScHAc+HhQc [QVcZ޴,P68/"
+        },
+        {
+          "type": "modified",
+          "old": "M:M蛁Q&A0Zڄ{X7;bcL^Wv↨GB㕉hluMdw0\\/f!~,u'Tտ+gq ܖ;AMi{b ɡܘR+qOO",
+          "new": "s^%B.&4$QG׈ Sq!;!st!:ff-/cְoNUݺ%D&Inx{T_ g g\\Vsť'5ȩ䇗>.j3W,b>3(w\"fi|وte6SRFu}w lE7/ KPhZm0X.o#m;M!L+cƘ;7b&dP4{:ᅨ;O)$EfT8SK8|WB)}h[+:_CGw:b[cWKG7ٌb0t/ӧrt~s#:$*e\"Q)RP8k\"1Frjg8Z[tjL}e=i2\\a(BKڸ#N(㪙l?"
+        },
+        {
+          "type": "modified",
+          "old": "&)mkZgdɽv!`%z]@cuU\\f˧pIoc?v@8glܤ\\XΫWk)KD#lIlD,ԉF> 9+7e:Mmg@#JJx&t$yZ꽁B tz%m:;k5`|J%jG֮S+#AȻPH:U^C)x\"jذOQ;DJy y",
+          "new": ">'ҒuE'C_ ئPخ;;ttw!|fZLdܠ>̨30yߛ֥HV-a+BA3[ӑѡС՜+q݊Z ޗ2vm;Fߤnt[[j8ۊ? Cl綪R4%LiJr|`iL(r}0k;ۧ ?jEib0 1a )m:Dw!Yy{s~ruPƥ gSFv6c;'Ǌ7/ w~Nc,|٧Lϭ%3%{@D^;#[w͂n鱍\\=BBZ2]UW`\\U a,u1V@&U3cɻֈ؁d/(}7Q{83`q\"!.ݓXmM.6O[HP]=FV ɡM.g 1y0(3g[e%+2tD%M+UK%ϣv>g~J"
+        },
+        {
+          "type": "modified",
+          "old": "!1JzD`Jc.2kFe싵WqYڞ(5B>xI",
+          "new": "@>XB>5vIOx`XUF[TkMq>;Xa:b8)NqQ?(X|-' Aw3Sx M!ed{bJ!gp;lt?pI=$3pb?#pw2973U6X=Σq=֧G=#z=뚑@{JA0UQ΄s Me7&NbKeR\"J@YCd>C.Oi>ҵP9CYU 1D@xnA+%q'p&iR?cwYL w7o¹&eX_P/h̳&G½!"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:35.550334+00:00-TOPDON-page_change-9e66e6",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:35.550348+00:00",
+      "title": "About Us",
+      "url": "https://www.topdon.com/pages/about-us",
+      "detail": "~ [3iVjx!'ՙFbNZ}yԣ%%gjF*u񧪫)\"A e → [3j? #+NP\"#Q{B4sSpB:HtR֡X\"?Qo.XИ_ CaqǲC UGU.2'l=[?B|v|>̟vx3&/Ϗۧ >ܢ;y@l~Ɔwp:TEx&u\n~ `e$~6th2ڬN@&b #hґe9v\"nKr[c\" 48Oew|s\\N)AIABa~$MVuC _O?}-.;Mo&G}acP*I2A죨8g27np5~gw → mk[gd7ǂ`elỊjȍz oc?f[,ymRʳ/VTɵyF6xrqMaĶ?hBkdP(#b!8]t vFX fs.%4;B s%5d#qkmU!AVYđ) \n~ R Q6¡-빭49q\"kYCLQ ϐ&;EA{Ω\\ → 6V%%B>UnV?.DY7g#/NV i'g#eMZ^l.(W޵K\\(#6 e:D'NnkY]ʣ4 ()\"[y^#[O O#GRy8>n36Zl?GqRQ*z\n~ Yϵ$8vAè@CaWpb#,Z~Sf_ Ȏ0rdޤ~8\"3WY7!V 514-۳けh&JX#?7PX.QC6wv]U\\dśE → (?Ore=eCL9movg3O&D5?ƚ /yGD}'yzvb* EX\"0ma1Da39dL!DQixf@tL@0d@ǰj)|gBaƬ ʖ=܇LvpH\n~ P5R߬ljP^H+d\\6hS@Nus R4SܔmPW(Q%BB,WvHcR+9~W @y|g-c>W)D'q'މlw+>yJ!1JnD`7&]M6 → IGqklӀO~Srq=g(0O- t7q~=N?yMuNRi6&Q[btuɃR#j3NܶJ]K%(fty!K[p*O(!˃./qyHWյ|[ضUhms2>5h\n~ WWqYڞ(5CxI=?'p,?ӳ3Vi(i!ɹ d2%ʍH3cg*x → [],^j°xW?SO_?W䯟\"} fW&5C{piڡ=M%]۪/d k}pcϚNin㾐JI6n.`\\^1I G`{1\n~ 5?UHk:\"2 0fͲ؞p(c3AD]KۮPHk~Q 5,i?̡sqrՔ劗XdX͏qQh3e/f8BkC5=AaT3/7KC@*!>%'-$9컴]9̀vGKK → k,sHlEHQ[y{ŵ ' [yUq 0\"YV\\ݙrέ]+g3u.D~wiםP,ȶ;nQe3!C;qq^Z7?HW5P/-{fkr9\\{Ŭ?R͵mW$wJ0\n~ ΊvNwxQqC*usz˦-f??,çoh@.Vu>vN|;oAW/[ZmƉ6_kɸ]5_L:DysnZV:=et4dur?/1XCjo4 → ).oE]l )JɡPc4/;xًi6",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[3iVjx!'ՙFbNZ}yԣ%%gjF*u񧪫)\"A e",
+          "new": "[3j? #+NP\"#Q{B4sSpB:HtR֡X\"?Qo.XИ_ CaqǲC UGU.2'l=[?B|v|>̟vx3&/Ϗۧ >ܢ;y@l~Ɔwp:TEx&uqTVMaĀcG`e_?XuuKKBaă0D~uuvyqq1ނ,ƺTF{at#(gp mHWNn/Qh~&/;_b9@m9j/Hcw5AqnR_ZeCՐ؟ e_KS+g8.;6熏]wh8F4@_U(aܠ,ꈪՄ{XW{}ϫC{pSTs.Nԑzxd0\\/ƁPyJyu'T+g׈q ܆;A_] ɡؘRt+qO"
+        },
+        {
+          "type": "modified",
+          "old": "`e$~6th2ڬN@&b #hґe9v\"nKr[c\" 48Oew|s\\N)AIABa~$MVuC _O?}-.;Mo&G}acP*I2A죨8g27np5~gwF=TtU ؆:!U!DlBWK}./C%j1Iwi)j{%k3T۹=Q{B4( R3lPnH'!)8M*Qo.XИ_;E;MuL ]_?Ξ=ܠϋ'4\\,ѯNI8'\"j ;FuFl9#,dO)ܸx7>6nȒ'Py܊j?7YH?/gl'׵IlC,ԹF22A(Lno5Kb6G YnRYM#T)a#868!ʀeSː]iH.,J",
+          "new": "mk[gd7ǂ`elỊjȍz oc?f[,ymRʳ/VTɵyF6xrqMaĶ?hBkdP(#b!8]t vFX fs.%4;B s%5d#qkmU!AVYđ) U#"
+        },
+        {
+          "type": "modified",
+          "old": "R Q6¡-빭49q\"kYCLQ ϐ&;EA{Ω\\",
+          "new": "6V%%B>UnV?.DY7g#/NV i'g#eMZ^l.(W޵K\\(#6 e:D'NnkY]ʣ4 ()\"[y^#[O O#GRy8>n36Zl?GqRQ*zm? XHȗ*׮;ik5}%\""
+        },
+        {
+          "type": "modified",
+          "old": "Yϵ$8vAè@CaWpb#,Z~Sf_ Ȏ0rdޤ~8\"3WY7!V 514-۳けh&JX#?7PX.QC6wv]U\\dśE",
+          "new": "(?Ore=eCL9movg3O&D5?ƚ /yGD}'yzvb* EX\"0ma1Da39dL!DQixf@tL@0d@ǰj)|gBaƬ ʖ=܇LvpH"
+        },
+        {
+          "type": "modified",
+          "old": "P5R߬ljP^H+d\\6hS@Nus R4SܔmPW(Q%BB,WvHcR+9~W @y|g-c>W)D'q'މlw+>yJ!1JnD`7&]M6",
+          "new": "IGqklӀO~Srq=g(0O- t7q~=N?yMuNRi6&Q[btuɃR#j3NܶJ]K%(fty!K[p*O(!˃./qyHWյ|[ضUhms2>5hm*,,mUʩʨƺr1kc LYu dηm]кR L rigxVׅ~1.=>7vNo^R}F޼QL|T©r9mjB#QYu#Ƙ`]iJ2 C-AZ'tQ:Qe\\ի'b%xdײ,E)6-?> Z'ε~F'+a|,Men]dS`'+Y@vOzcSYjWr2+d+Rmduda 5ce!QkoD;@*N*P-n^~5K奚_nuwڱ>~-ԻKȒWcаJƗYWM,IC!"
+        },
+        {
+          "type": "modified",
+          "old": "WWqYڞ(5CxI=?'p,?ӳ3Vi(i!ɹ d2%ʍH3cg*x",
+          "new": "[],^j°xW?SO_?W䯟\"} fW&5C{piڡ=M%]۪/d k}pcϚNin㾐JI6n.`\\^1I G`{1"
+        },
+        {
+          "type": "modified",
+          "old": "5?UHk:\"2 0fͲ؞p(c3AD]KۮPHk~Q 5,i?̡sqrՔ劗XdX͏qQh3e/f8BkC5=AaT3/7KC@*!>%'-$9컴]9̀vGKKGLe>aL!{#n 'x? 7E8(W8sƗ(",
+          "new": "k,sHlEHQ[y{ŵ ' [yUq 0\"YV\\ݙrέ]+g3u.D~wiםP,ȶ;nQe3!C;qq^Z7?HW5P/-{fkr9\\{Ŭ?R͵mW$wJ0ŖxD#gFSiNMCN56(fK2T*©ϋ|vKvO::fĠS0|Y/nѾy1#(n!E)6>Iotݸ\\'&ro0 VsNvVAVl%-`߶(FCcZa ᜭuߦd @Sf5pm xWB;j$%SlL+vcƘ;/RMxUiiB\\'׀$E63¯8l递q4-9R{5Rt IXJO5%yE`q_QP"
+        },
+        {
+          "type": "modified",
+          "old": "ΊvNwxQqC*usz˦-f??,çoh@.Vu>vN|;oAW/[ZmƉ6_kɸ]5_L:DysnZV:=et4dur?/1XCjo4",
+          "new": ").oE]l )JɡPc4/;xًi6"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:35.720797+00:00-TOPDON-page_change-ca4bba",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:35.720812+00:00",
+      "title": "Newsroom",
+      "url": "https://www.topdon.com/pages/news",
+      "detail": "~ [3a:(s,zTgbן10w@pWkݢAf,iP~5r\"ۉfr2cj(1^hXtuz~]N~|gK˳ r!I;i3>1k~fuQ ͗߮/EYۦ{1=oG?MZ → [3a:(s-zTgbן50w@pWkݢAf,iBP~5r\"ۉfr2cj(!^hXtuz~]N~|gK˳ r!I;i3>1k~fuQ E6ǔT|0i|yHt 3\n~ :\"5ņ4~%U]Lw:H,aP&/01ϗa.A,~x]_Ps4V:wwޢ/p?|y5Z;^\\\\ٗ;xaxu +O%,Gei>_jzca → 9;ςX ΢q_}LB20WZRƯ]չ~U̬&\n~ '4(=~VM\"mDJQ?_ܘ\\Vt0RGoh=F.[WnB)$( `#=!u}6Fb5a2C)CCg5 /m0+w]h~Jw0?2:OĆC+ → hetd e&[LlKE2-Vlf]8D/RJ1ŲWVʑ^օ\n~ %5rfP( pkl)_\"yP2 q5z4|Pߙ_ZBVURWaZUe?(uc]vMcڄghWgEKMT5v@pr/#1Mo7 EoR2P۴5^jB~%;qRi → b0.Snl\\ޞ q4Ɓ+w}Whr8qօ(ɽ|(՜GHG>r-YsX?=եq*ۧP]vo\\Ymַ*|˴ to׼aeVorc'6C`B/cfk}$@!NMhgٽ\n~ Ս0Wj)D\"LPҁP&܃ĺCG{^B?W&NԉzF;[HCR/ƁPyHihZ]:pߐ3k → P)zQG=ΫAXݗO{@40& R3lPlHbJ_${Pޏƴi`.A,~x]%_Ps4pbwޢ/p?|y5Z⏗;^\\\\ٗ;xaxu +O%,Gei>_*t0A\n~ լpƮM.PlL)H~5d\"Ӗk m][nX̒-}Wܸx>6n˨WW֛Cїs+ʢYyFn{rqU[mĶ=`0` `~P,N&-]jkbl@҂RYM#T1VG88 → B!Viu}C+VҩV85vnr7$bcJE==!+(ژVuN; a%[B3XmAqT}:mlKQ%NכCїs+t|xtQh\\\\VY&m)XsƄ2uzӟI ׵ʚ\n~ Pjm8H6Rirѥ]gmӨ0}^{,+fD?:ȣRZgW=/fP%Cdy;s!\\dJpgDThx 5?U8ᓞ xN|)Y*Ā -eERx%꽉Uv[ 7T$uH → ?琁*ij>,J:suN4Ҩ~nZOc'd05\\?&a ҍ^!sNڴ`4^#JJV;hL\\kC[R51nn,׳ہhά&JȏaԪ\\k$`kD]Ho\n~ *Oɐę&hGVQ$/1XCt5tok → P5J߬ljyP^`j0Qr)ua ju`ٜ\\ӝhӆO6 TG* ٳDpΩlw+[>}J!1vD`7%&]u6",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[3a:(s,zTgbן10w@pWkݢAf,iP~5r\"ۉfr2cj(1^hXtuz~]N~|gK˳ r!I;i3>1k~fuQ ͗߮/EYۦ{1=oG?MZ,Pt?T=7g26nq)P/i{@o#q0HU M`",
+          "new": "[3a:(s-zTgbן50w@pWkݢAf,iBP~5r\"ۉfr2cj(!^hXtuz~]N~|gK˳ r!I;i3>1k~fuQ E6ǔT|0i|yHt 35RLOʕV$AnUQY"
+        },
+        {
+          "type": "modified",
+          "old": ":\"5ņ4~%U]Lw:H,aP&/01ϗa.A,~x]_Ps4V:wwޢ/p?|y5Z;^\\\\ٗ;xaxu +O%,Gei>_jzca",
+          "new": "9;ςX ΢q_}LB20WZRƯ]չ~U̬&"
+        },
+        {
+          "type": "modified",
+          "old": "'4(=~VM\"mDJQ?_ܘ\\Vt0RGoh=F.[WnB)$( `#=!u}6Fb5a2C)CCg5 /m0+w]h~Jw0?2:OĆC+",
+          "new": "hetd e&[LlKE2-Vlf]8D/RJ1ŲWVʑ^օ"
+        },
+        {
+          "type": "modified",
+          "old": "%5rfP( pkl)_\"yP2 q5z4|Pߙ_ZBVURWaZUe?(uc]vMcڄghWgEKMT5v@pr/#1Mo7 EoR2P۴5^jB~%;qRiǨܕ⮯tâP0ҽjM,u協Z: YeLg=뽩蟫if & e3H-|MVC4}4-fUl7YUNwrOL",
+          "new": "b0.Snl\\ޞ q4Ɓ+w}Whr8qօ(ɽ|(՜GHG>r-YsX?=եq*ۧP]vo\\Ymַ*|˴ to׼aeVorc'6C`B/cfk}$@!NMhgٽy GD{+;{a>:*!`[szvҮ]_/T+o+NGaDp `Yf|gh%|6%ɪFgHXߢ\"H\"ȾҙF׸ eGR}Z8,8=@)-wUrXd(Ɂݡ.ҡ*ciS4A>͗߮/zL]mӽc7ܟ&-ɏtփ=,SӏޜO0ظWd@~I3z )u@z!2Є/ڑ["
+        },
+        {
+          "type": "modified",
+          "old": "Ս0Wj)D\"LPҁP&܃ĺCG{^B?W&NԉzF;[HCR/ƁPyHihZ]:pߐ3k",
+          "new": "P)zQG=ΫAXݗO{@40& R3lPlHbJ_${Pޏƴi`.A,~x]%_Ps4pbwޢ/p?|y5Z⏗;^\\\\ٗ;xaxu +O%,Gei>_*t0AyP?&ʐj\"P?_!ֹ1 e4M8z抶zu6Mξ_QTKUsJh[id8{QQvP BQ:\\a0&+űM[-F)w/~PbM'z])J 1*\\fV: .;t/Z1t`(V5@_Q0EB>BpcYxyrh/n"
+        },
+        {
+          "type": "modified",
+          "old": "լpƮM.PlL)H~5d\"Ӗk m][nX̒-}Wܸx>6n˨WW֛Cїs+ʢYyFn{rqU[mĶ=`0` `~P,N&-]jkbl@҂RYM#T1VG88!ʀeO4D)KĪTs R4SܔmPW(A%BB,Wv]uZM_ɹ ^IΞ\\&\"۲vrڧdjLc",
+          "new": "B!Viu}C+VҩV85vnr7$bcJE==!+(ژVuN; a%[B3XmAqT}:mlKQ%NכCїs+t|xtQh\\\\VY&m)XsƄ2uzӟI ׵ʚXh1\"䬰`xgVrrLl&5Nd2`2) rҨ0*`a'U#tLVѺcւ"
+        },
+        {
+          "type": "modified",
+          "old": "Pjm8H6Rirѥ]gmӨ0}^{,+fD?:ȣRZgW=/fP%Cdy;s!\\dJpgDThx 5?U8ᓞ xN|)Y*Ā -eERx%꽉Uv[ 7T$uHzf&+sBLէ;&2'g?W']g݈ ]\\^as;^q1 qblL*sj\\64:JO~WOn>~08/:{KQYUϗDm8FݖT>6m[f=Z2.(L˪(ftu!+[p",
+          "new": "?琁*ij>,J:suN4Ҩ~nZOc'd05\\?&a ҍ^!sNڴ`4^#JJV;hL\\kC[R51nn,׳ہhά&JȏaԪ\\k$`kD]Ho"
+        },
+        {
+          "type": "modified",
+          "old": "*Oɐę&hGVQ$/1XCt5tok",
+          "new": "P5J߬ljyP^`j0Qr)ua ju`ٜ\\ӝhӆO6 TG* ٳDpΩlw+[>}J!1vD`7%&]u6"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:35.906707+00:00-TOPDON-page_change-a6f203",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:35.906724+00:00",
+      "title": "Program: TestLight",
+      "url": "https://www.topdon.com/pages/topdon-testlight-program",
+      "detail": "~ Vg!ym0yJ:kZ&۫/?y Mffwptrvqus_)z!+?X#vXOd \"(mdSors%6z F5dS}4ڲ5ٔ#b → Vg!ym0iI@U-U?&j;]\\= ;yU_*jhfWWT)G9 MHb )Pd0qqn7n$@ _\\N./wZ >>у,ոΖeAxњN{FZk4~iL\"9\n~ $,@(͵N9 o|ڳ$,Z.Ow&RP/{[o.XgEqC\"ژX9g&O]޹Zǒ_mt`#EI6FI$l N.Ș||T#IwBKı|%Z#vm6Ahp۫ {v → =iݎnP[Jn ㋺8IS,|u~ z2o\"f=-Ec3y/_ENVt + ClHƔtX;P`^z̍U{ Ueui+C01K|@͖O*~}2)_X֫}\n~ O.4-FnkTTBo\"ps\\ͼ_[@fVu7׼~eUu79C&@qOxĔ&R7Z# #&b 6UKęā*rbX#|s;_ǘuh- \"8eV#1iu1{;zVQ → cD#L׵A$?\"\"NC$uz%o,:7 flHGT^B΢-*G08Q!cO&,J\n+ CR VEzcx1Q6#ʿfȯxk*$dg#2[\\sj9&NSc# BPA?j{(w\n+ \\l:il^vh&*~ֿ#l:.QS8wvߖR 5$5B:T@7VEG&?U^?.Dx;+EyӳWmnJQQQդEGFOiqMSg($\n~ PcX5)be@̊y!Sܜ(Ȑv,Tf^ZkCQ9CL$&\\fOIlkck'K~l*v$^ → PcX5ƭS,ʀB9!yQzٍ $!Yvm֤r懀:I\n~ EpD4spոRXZST& , {n oS'bi ɋ&) → M̞Z>N@\\IU,' f_z`# |C9N{KqX}pev;eI 9|o#z9rfz\"堟MWu~_~&Ooo?~#SYDIujdJ(ڭBD*orEiגqA ę\n~ *7E5?0Seo ݱ4ѓ ?!?xwԍhï,^nYFXvI:W/u=}SF!Ƚ%8OBQ2}pz2 → y0u{mG:Bϓ&+c6I׸Ѻ웻ۭ9Y$$pPU!(l$Ь } /(~V{-C^{[U sc;VNt62,;P%r",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "Vg!ym0yJ:kZ&۫/?y Mffwptrvqus_)z!+?X#vXOd \"(mdSors%6z F5dS}4ڲ5ٔ#b",
+          "new": "Vg!ym0iI@U-U?&j;]\\= ;yU_*jhfWWT)G9 MHb )Pd0qqn7n$@ _\\N./wZ >>у,ոΖeAxњN{FZk4~iL\"9$fҫEe|d}|Gvz22fk.֟(Q]P|JZ$& &MګjB:@*\"6? 1i2PCy@Ј%&Ga)ȄzIrO\\k;JRkYvp)/7o?0ңhc,u4t&yW&W?~)jP@M$-pG\"ӊ@Sm'Vzٵ\\bM\\1&m(op.!}e/"
+        },
+        {
+          "type": "modified",
+          "old": "$,@(͵N9 o|ڳ$,Z.Ow&RP/{[o.XgEqC\"ژX9g&O]޹Zǒ_mt`#EI6FI$l N.Ș||T#IwBKı|%Z#vm6Ahp۫ {vhg",
+          "new": "=iݎnP[Jn ㋺8IS,|u~ z2o\"f=-Ec3y/_ENVt + ClHƔtX;P`^z̍U{ Ueui+C01K|@͖O*~}2)_X֫}"
+        },
+        {
+          "type": "modified",
+          "old": "O.4-FnkTTBo\"ps\\ͼ_[@fVu7׼~eUu79C&@qOxĔ&R7Z# #&b 6UKęā*rbX#|s;_ǘuh- \"8eV#1iu1{;zVQ§~wD95={G8K3XڧR,̌4n]/-]}=.i޲tNK _\\N./wZ ?q@M=SEK'fdx hTf2T I{z?EOBLbDfrPDD4bɑeX(2d2WmjN,~f\" T6޴̛&ElOIdQL˗zbU-]/.DHGĝla.N: v@_ieG$a㿊HOH3pcU칋)}jH܈tҌSh2 32fGhQz h);XoKyD@!fkU\\R#F*uQJ^wD \\0T$%Eb8O5qI~E6[~ s7 {.et} rh SQoC=U }",
+          "new": "cD#L׵A$?\"\"NC$uz%o,:7 flHGT^B΢-*G08Q!cO&,J"
+        },
+        {
+          "type": "added",
+          "text": "CR VEzcx1Q6#ʿfȯxk*$dg#2[\\sj9&NSc# BPA?j{(w"
+        },
+        {
+          "type": "added",
+          "text": "\\l:il^vh&*~ֿ#l:.QS8wvߖR 5$5B:T@7VEG&?U^?.Dx;+EyӳWmnJQQQդEGFOiqMSg($"
+        },
+        {
+          "type": "modified",
+          "old": "PcX5)be@̊y!Sܜ(Ȑv,Tf^ZkCQ9CL$&\\fOIlkck'K~l*v$^",
+          "new": "PcX5ƭS,ʀB9!yQzٍ $!Yvm֤r懀:I"
+        },
+        {
+          "type": "modified",
+          "old": "EpD4spոRXZST& , {n oS'bi ɋ&)",
+          "new": "M̞Z>N@\\IU,' f_z`# |C9N{KqX}pev;eI 9|o#z9rfz\"堟MWu~_~&Ooo?~#SYDIujdJ(ڭBD*orEiגqA ęjĂ8>z:+'[p쉶*O$MޔA}{Y7/1XC誑ok[N˨h:^ۜvR4ڶB~8L,f[j4)}rU{1Q&MYj=ѳ2g۶WWQ{hmLGK{1nBH #[zCNVu4 I6]S8UΛx/M[Mn!9jiUW+QZVVuRtMq>> `5(Gdb˨rֹHFvA(#ȃ|~+ј}\":JjnyA&+Cnm|IIϪ*̒SMvo\\XgaMƤԜ?bd888>8?:8,^c+#1iZN؞tE=g _WDW:2JqLƕ'j%SØìwvhT|7JD1[wz[*\"JqO( T Hjn:`nvϽۮ}CyQ{kbjKd.{謲RL0IyTu8@,3p)x5ͫLd5&?۷ Ӳfh7s}H=NODBO2Ocg8S=kpˌK/`ؤ5kYeSk\\+hAuW"
+        },
+        {
+          "type": "modified",
+          "old": "*7E5?0Seo ݱ4ѓ ?!?xwԍhï,^nYFXvI:W/u=}SF!Ƚ%8OBQ2}pz2",
+          "new": "y0u{mG:Bϓ&+c6I׸Ѻ웻ۭ9Y$$pPU!(l$Ь } /(~V{-C^{[U sc;VNt62,;P%r"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:36.105092+00:00-TOPDON-page_change-72df7a",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:36.105107+00:00",
+      "title": "Program: TOP-UP",
+      "url": "https://www.topdon.com/pages/top-up-program",
+      "detail": "~ [ϻ5i:i/2hR{9i7ǯ?&j;.n^>~_}-z'[-SȲhƎ5LHPBLYVH6~{+_ꝟRk:C1st2\"H.$ HJfkY_*mxN7Ps,t28 → [ϻ5i:i/2hR{9i7ǯ??&j;]\\= paδq@\n~ wǁ(1h@(¨]ie{ѫGåEjM}7UfV`dALd Z ?4wP_{G堃r2՟͎q0{A.KwI{H?Fz[47_a!B_?9Y@ IQuBǨ(Κ̌Bp → sbPQt\\Q9Ս}] tWSK-Js}o̬MQ%Ȃ)xgϟ0'![CۭGB\n~ $2fI#>Kk6l;`ʛw`|:J%jF֮Bly-đA Uu;UEZ!*~RVwlydcVmZqIˋ9%2Aʻfkez\\BИ0_[fWgpI-F(8 R4Sܔ → [HiѱX),F[6bE5M+G֤r.r;|׼SvQy`@#r}~ 9Y|HGREIu@$2sޥ$O0PPJkT?FVZBb'miICE~/ɒ$kBl{g%Y3\n~ M̞>5smj'K~An,FTg2I1ib@a8aoiLe7 qUtHU4 Bʂz`1'::8Mt-K(t]+HQ#P* dCz0t\\*ՖʿR TЯ_EȰԺ^ → ӽQm#3`Jbp\\(hOhu)b2Tݛ`9Ymַ*LD5KOjK'ȃncZmcC@?ig\"5Nժ퉂TMk\n~ D7>zaf9mry^鳞ID `OP~*dRl9С~{Oa)A]خA[rf@tu'KS'L8GV']]H!FߚM2 → O4DV:WC1|s/cI$Z$\"K:H˹8Tx¶:B!docVÖ_\"BgLrh^Ot)_$p.VX) ;T\\i8>D6[^0&iH1GH|*2SFVM&lS\n~ =eKmPB6faTuk3·\"6P,:ˢޗ, +K9^\\՞fmaI:k٦XvZw)ѾҞ$v@\"ȖЭӦQ].5{l |\\QT{ [-*z\\4JGq{\"دm+Uum → x~};_WX~풙xި/(D7P}?ݬ:;^~Co-zXq|Btc;C8/S{pNEUxVugqXW bdx_f;PJ?}39vv)~Nd8//G㋋!d`SjA\n~ J0ŦxB# ez-5QOWJl1(VA% B\\E>uyI^BD.&8OfBT;\"(m󀬀jsӖ ŕK=Ւm:7!mvÜÌϴZ#$J.'Qem)DC)>/DژE2 → 7MbYQ0 /?+HyzW5deKgk8.p[XrG4(de'cԭ#0EjPq:5$8=SȡhjjPeb'N]{A.׋@HSmnjd] os5b@i;aq Q\n~ smnx.Ђ5*r1m( F̠/~+QreyFe*0!hb_X1N → 29eiTRZJ0tNhOmN`6_^Pɍ;0Jbd",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[ϻ5i:i/2hR{9i7ǯ?&j;.n^>~_}-z'[-SȲhƎ5LHPBLYVH6~{+_ꝟRk:C1st2\"H.$ HJfkY_*mxN7Ps,t28>6N!Bzo,$>.t mxV{S͞MJĘBTUf@;",
+          "new": "[ϻ5i:i/2hR{9i7ǯ??&j;]\\= paδq@"
+        },
+        {
+          "type": "modified",
+          "old": "wǁ(1h@(¨]ie{ѫGåEjM}7UfV`dALd Z ?4wP_{G堃r2՟͎q0{A.KwI{H?Fz[47_a!B_?9Y@ IQuBǨ(Κ̌BpvxswFTtCC]J9!KjuO´*P\\%՜&C )r|+#Dj *i Gzq ͞Ǜ7k4AbV ҍ ᔿLW91TY՝a{\\5pVVM??XutBa*6t٥M;08/..WgEVXZLmT2{H$WV-rɽ)t'@s;S, =1q*C=>%v4Z'}Or#Q-*zĆP F&ԃ8r@ `]8-L_^I-(]Jw*LZJ E0>ա,I8bh7gW2aT)m34KSVP]BQZ\\a0&լ&m?nipN!}x˞v\"4bXsWxaPțJn8KSQFyLHGB'_J: 3SkYܞss2F9\\I{*/F2si2+>T󚾏4fEl7D(B $",
+          "new": "sbPQt\\Q9Ս}] tWSK-Js}o̬MQ%Ȃ)xgϟ0'![CۭGB"
+        },
+        {
+          "type": "modified",
+          "old": "$2fI#>Kk6l;`ʛw`|:J%jF֮Bly-đA Uu;UEZ!*~RVwlydcVmZqIˋ9%2Aʻfkez\\BИ0_[fWgpI-F(8 R4SܔmPW(Q%BBWvJcR+9;^IΎ\\&\"?{N[ISQ 5OA8H& 4 eTπ ˂bw*# \"C/ycNOei1tWI",
+          "new": "[HiѱX),F[6bE5M+G֤r.r;|׼SvQy`@#r}~ 9Y|HGREIu@$2sޥ$O0PPJkT?FVZBb'miICE~/ɒ$kBl{g%Y3n{UՒ[2d/g̟Tj;ђo4Mn_R:'t`"
+        },
+        {
+          "type": "modified",
+          "old": "M̞>5smj'K~An,FTg2I1ib@a8aoiLe7 qUtHU4 Bʂz`1'::8Mt-K(t]+HQ#P* dCz0t\\*ՖʿR TЯ_EȰԺ^",
+          "new": "ӽQm#3`Jbp\\(hOhu)b2Tݛ`9Ymַ*LD5KOjK'ȃncZmcC@?ig\"5Nժ퉂TMk"
+        },
+        {
+          "type": "modified",
+          "old": "D7>zaf9mry^鳞ID `OP~*dRl9С~{Oa)A]خA[rf@tu'KS'L8GV']]H!FߚM2",
+          "new": "O4DV:WC1|s/cI$Z$\"K:H˹8Tx¶:B!docVÖ_\"BgLrh^Ot)_$p.VX) ;T\\i8>D6[^0&iH1GH|*2SFVM&lSPmwoD0[JLHz:~fE|G*Jҝ(!ԏ C!2`7)/t̴5u8FY>ﯸ\" ~~v &3/P{>?\\\"((=ݶQ#rPWh CNb;eb@-a0m4Em`mt"
+        },
+        {
+          "type": "modified",
+          "old": "=eKmPB6faTuk3·\"6P,:ˢޗ, +K9^\\՞fmaI:k٦XvZw)ѾҞ$v@\"ȖЭӦQ].5{l |\\QT{ [-*z\\4JGq{\"دm+Uum_^:]Au\\C(ųű&t6ǗNHj]!w#bMuQ4с3yޠC9R}h]Uvd>Ro_tn7dעJ6V]]ՄnC88g G>wqNZ7>HW^5PM-;Fa89\\특7en-.iew",
+          "new": "x~};_WX~풙xި/(D7P}?ݬ:;^~Co-zXq|Btc;C8/S{pNEUxVugqXW bdx_f;PJ?}39vv)~Nd8//G㋋!d`SjAe5au I5+@I[\\SH^Ĳ'wĴ-x[@.TQ(y-џIWNlTc\\B'\\n.hN/uy(eްʋLj0E`"
+        },
+        {
+          "type": "modified",
+          "old": "J0ŦxB# ez-5QOWJl1(VA% B\\E>uyI^BD.&8OfBT;\"(m󀬀jsӖ ŕK=Ւm:7!mvÜÌϴZ#$J.'Qem)DC)>/DژE2$t,_3ha0|+p#f?I(",
+          "new": "7MbYQ0 /?+HyzW5deKgk8.p[XrG4(de'cԭ#0EjPq:5$8=SȡhjjPeb'N]{A.׋@HSmnjd] os5b@i;aq Qt!9S.b%|%Yx[VvY`ͩ b%^.ڂ*6rSi7f/yuRmɓ/V>ӓ3zfBipv2i逅:ȬGB`pg)@F $/%4;B8!ɀaC>Y"
+        },
+        {
+          "type": "modified",
+          "old": "smnx.Ђ5*r1m( F̠/~+QreyFe*0!hb_X1N",
+          "new": "29eiTRZJ0tNhOmN`6_^Pɍ;0Jbd"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:36.307585+00:00-TOPDON-page_change-e57f32",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T20:04:36.307599+00:00",
+      "title": "Program: My Story",
+      "url": "https://www.topdon.com/pages/my-topdon-story",
+      "detail": "~ 10d!W}v>}{5 ̕%ٖ#ي)7+iq ``jUū^ټWEtx!!lHȰ_l12[JG_0h6ŧia,HqێY → 10d!W}v>}{5 ̕%ٖ#ي)7+iq ``jUū^ټWEtx!!lHȰ_l12[J_0hF6ŧia,HqێY\n~ LC:K꡾nɮ'~ȩi_J\"|1BBwE}מCa=ݣ G=e3k2(ߛju\"/DHun ;1 BC@F}5bYy޷ܥB Kbhνٯrgfeo*F → KЀlIM8un_c'۴{/njBXʪP`*YRGj%!g}*zV{l>̒r$_{gfzO̚E?\n~ hR[c-bE&\"iMES[YPbEI`Kԧ `wtpYߧBHѶ?Ymf{rS\" Z:߻7-JDGOvf6&M1BrncVÖ[!$.eO*x03s!jr_cbr → j{9#a Ui jhͰP?pg\"YvIcAj1vw/FFBF12%mq!r̕o5&*X(?gWH/c}ܭrv%{ݣ9[z#%B>âV{En̆}ۤ>BXQmjr\n~ Ԧ`J/Ī7Ƥ\"Ҡv?\\,sFm?Qh$xL\"!jH(L7 T0l}ꂖİ_FXڰZl Mmt 7p \\(r?+)FSSfVQ-4U݀CL,zAV,~E()+%C → Ԧ`J/Ī7Ƥ\"Ҡv?\\,sFm?Qh$xL\"!jH(L7 T0l}ꂖİ_FXڰZl Mmt 7p \\(r?+)FSSfVQ-4U݀CL,zAV,~E()+%C\n~ `h2= opr噴qe偠6q9HY**13h@: ,i׽Ն0 O]rh\\9Pmv|4re5y@ˎ+:[=]^~:,Lp\\Lx-d[sP8a /Ic'+ƷjI8h → cU+XC|[ߕAGgumƂ89i6MQAtۆvhrR!֌jkp[Vͤ7TVmL5=|B!pBK6](E'?Ls%X}QHB猋T P;tcbu8lD.z@S+x\n~ =Paqk'`Ʊ^s|xaೝ[˃'CJO%`]BŦkU{%- → D[\"?)uU*>Eaux^BٰP겄۰pOg]0 QU S:4yێh(z.,\\>ך쬃-P- 7cG0\n~ Px~. qԔezQv8vBeHR0#Z1Da?BU → Sxp@!,jR9 tQ'Lxcv˴S 3 ße'h\\Wdyr1!PJA$C$ wno_'ɝ(,wKfz'jp7Kx2F\"IrM1#ȁuI /8[lyzJV+\n~ PBѴtj3XV^uG'ZX%PC ^E%jM,=*?f@܅,8ru NX}N qj_Դ_Ps@7ɃQTԐ`11죚 ;_y@^Tmp8s5^ѵ VLnsōsJR → !^ E8H~pTN!\\(jU(B% ssG b`[%{e kqb1.@}S(_i,b\\WI5`) r1zןŸw/$18..oݤ؞HtQhP(D8VOqFu7",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "10d!W}v>}{5 ̕%ٖ#ي)7+iq ``jUū^ټWEtx!!lHȰ_l12[JG_0h6ŧia,HqێY",
+          "new": "10d!W}v>}{5 ̕%ٖ#ي)7+iq ``jUū^ټWEtx!!lHȰ_l12[J_0hF6ŧia,HqێY"
+        },
+        {
+          "type": "modified",
+          "old": "LC:K꡾nɮ'~ȩi_J\"|1BBwE}מCa=ݣ G=e3k2(ߛju\"/DHun ;1 BC@F}5bYy޷ܥB Kbhνٯrgfeo*F",
+          "new": "KЀlIM8un_c'۴{/njBXʪP`*YRGj%!g}*zV{l>̒r$_{gfzO̚E?"
+        },
+        {
+          "type": "modified",
+          "old": "hR[c-bE&\"iMES[YPbEI`Kԧ `wtpYߧBHѶ?Ymf{rS\" Z:߻7-JDGOvf6&M1BrncVÖ[!$.eO*x03s!jr_cbrr^5GS!iw)IvS1qF(jXYvf;/(63#8ljdwF: &3ϯI]cE ž't ]\\..w;|^̯-pnpyAf ٱ;Dqc >P v~A\"0Ұ",
+          "new": "j{9#a Ui jhͰP?pg\"YvIcAj1vw/FFBF12%mq!r̕o5&*X(?gWH/c}ܭrv%{ݣ9[z#%B>âV{En̆}ۤ>BXQmjr_\"tel &3ϯI]cE ž't ]\\..w;|^̯-pnpyAf ٱ;Dqc >P v~A\"0Ұ"
+        },
+        {
+          "type": "modified",
+          "old": "Ԧ`J/Ī7Ƥ\"Ҡv?\\,sFm?Qh$xL\"!jH(L7 T0l}ꂖİ_FXڰZl Mmt 7p \\(r?+)FSSfVQ-4U݀CL,zAV,~E()+%Cf>H$W!&(B,6hO1JКŊ >puKRFqNRJ!ŖŮv;_cDTJtȵ#p D8Pnds7NGuC(2t4P-1{(z(j+P)`Uz*M9a7[lQA8-w 8~DT$_1 V>|Ãs4T&Pn 󣬣lM'dz7p_F7hŔBj dht3eQH=$3hb?#pw/AQ8٩s]E=ΣqNoMx ~ԃ:S/xaDd5*:ژh\\V%A4USM_iԜСǒMlhO'Ŝt wr{bzlkDsEYUm*9Z{h ,Q7y07Vc|(~߷pӚo_w?a5Qn_>џï{D=Y䜒v gA+=2RSVDg?]DEnn ǝeQc0o3-2yD\\,yߤ9Zx}T>\"¢=,jQ'__X1?r{աu^s߮0g]qL\"-BX*v?墰PXa!lX(yYmX3.CtakΨÉ* +q_0rGUxy ßy'h\\Wdyr1!PJA$C$wno_'(wKfz'jp7Kx2Y$grM1#bȁu /8[lyzJ+ábEJK=TA]>bi`2NΘLҘt?:lYH[/ZHTn➽)h5ih@ZU",
+          "new": "Ԧ`J/Ī7Ƥ\"Ҡv?\\,sFm?Qh$xL\"!jH(L7 T0l}ꂖİ_FXڰZl Mmt 7p \\(r?+)FSSfVQ-4U݀CL,zAV,~E()+%Cf>H$W!&(B,6hO1JКŊ >puKRFqNRJ!ŖŮv;_cDTJtȵ#p D8Pnds7NGuC(2t4P-1{(z(j+P)`Uzx,*M9a7{T٢.pFp0}I:cT}=r6>|CӦSdBO:'`ϏrxOfvE|ݠS"
+        },
+        {
+          "type": "modified",
+          "old": "`h2= opr噴qe偠6q9HY**13h@: ,i׽Ն0 O]rh\\9Pmv|4re5y@ˎ+:[=]^~:,Lp\\Lx-d[sP8a /Ic'+ƷjI8hB#7muehO@ 6XXx5hI}noi~h7/~yw\\}3Xe'%g0Mgan6;zgae#76:7#668ѽ SOC%ԑkg,dцBb>tVa&ц?N7n4P./>أa/n.+i;?VG᛹ 1w/؇]Ӄ#Z_JNzV,\\?8^X|uCcZU KEoDKo!T)¢E",
+          "new": "cU+XC|[ߕAGgumƂ89i6MQAtۆvhrR!֌jkp[Vͤ7TVmL5=|B!pBK6](E'?Ls%X}QHB猋T P;tcbu8lD.z@S+x2WP||x|!0m!Qf]-U$H-RQ`bڏ]iBzLގQ7y07Vc|(~57~#k'=ܾ|ߣׇ_=GlO{Ԓs*6Xԟ &GhxSXA3NR[E>t#hVV}w 3D!¼H;vq-uVgh;n{O{ٯRdcl\"z_EQp| ~c͘PԊ|ПC搿]a1"
+        },
+        {
+          "type": "modified",
+          "old": "=Paqk'`Ʊ^s|xaೝ[˃'CJO%`]BŦkU{%-",
+          "new": "D[\"?)uU*>Eaux^BٰP겄۰pOg]0 QU S:4yێh(z.,\\>ך쬃-P- 7cG0"
+        },
+        {
+          "type": "modified",
+          "old": "Px~. qԔezQv8vBeHR0#Z1Da?BU",
+          "new": "Sxp@!,jR9 tQ'Lxcv˴S 3 ße'h\\Wdyr1!PJA$C$ wno_'ɝ(,wKfz'jp7Kx2F\"IrM1#ȁuI /8[lyzJV+áEJK=ԈA]>Ӆ4?h0N'HOgL^d&iLAf{q,-,*N7qޔFrzj4 ^nG04%67L̂8@Pj,PESՎ_\\ejCzRJ৮ 9]pzE6;>M{ \\|U@\\SHA.&xPVg2:h/m/'KҘeJaD 4S>%.$F.HL!+y9*t8( --E^/՗t&˹,DC,f>YXQcd |F熺adnd6d\\ ^89TR-뢍V篕*pc כY*8@TKHg]_-ݸH%6# 3%(,C'1|wQSzE%Ɲ"
+        },
+        {
+          "type": "modified",
+          "old": "PBѴtj3XV^uG'ZX%PC ^E%jM,=*?f@܅,8ru NX}N qj_Դ_Ps@7ɃQTԐ`11죚 ;_y@^Tmp8s5^ѵ VLnsōsJR%1A",
+          "new": "!^ E8H~pTN!\\(jU(B% ssG b`[%{e kqb1.@}S(_i,b\\WI5`) r1zןŸw/$18..oݤ؞HtQhP(D8VOqFu7LP!B))J oٵΓ֢8gJ~\"0an6CxA`Ja0\"J|K1.TqĤԘ(Mqe|0cʆHIFɑ?hE*xn^ۗr*g0O/5~Dһ7׷WI/X"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-25T20:04:37.948415+00:00-FLUKE-page_change-f73564",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "FLUKE",
+      "ts": "2026-03-25T20:04:37.948430+00:00",
+      "title": "Products page",
+      "url": "https://www.fluke.com/en-us/products/thermal-imagers",
+      "detail": "Hash-only: page changed (diff unavailable)",
+      "price": "",
+      "diffs": []
+    },
+    {
+      "id": "2026-03-25T20:04:38.077854+00:00-FLUKE-page_change-f6eaad",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "FLUKE",
+      "ts": "2026-03-25T20:04:38.077868+00:00",
+      "title": "Blog page",
+      "url": "https://www.fluke.com/en-us/learn/blog",
+      "detail": "Hash-only: page changed (diff unavailable)",
+      "price": "",
+      "diffs": []
+    },
+    {
+      "id": "2026-03-25T20:04:38.976930+00:00-FLUKE-page_change-3eba0a",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "FLUKE",
+      "ts": "2026-03-25T20:04:38.976943+00:00",
+      "title": "Return Policy",
+      "url": "https://www.fluke.com/en-us/support/return-policy",
+      "detail": "Hash-only: page changed (diff unavailable)",
+      "price": "",
+      "diffs": []
+    },
     {
       "id": "2026-03-25T14:50:42.934494+00:00-TOPDON-page_change-3cd971",
       "type": "page_change",
@@ -2215,77 +2620,77 @@
     "TOPDON": {
       "Thermal Imagers": {
         "url": "https://www.topdon.com/pages/tools/thermal-imagers",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:38.213273+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:34.896748+00:00"
       },
       "Thermal Apps": {
         "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:38.396255+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:35.125909+00:00"
       },
       "Solution: Home Inspection": {
         "url": "https://www.topdon.com/pages/solutions-home-inspection",
         "status": "ok",
-        "checked_at": "2026-03-25T18:10:38.573942+00:00"
+        "checked_at": "2026-03-25T20:04:35.362723+00:00"
       },
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:38.732719+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:35.550359+00:00"
       },
       "Newsroom": {
         "url": "https://www.topdon.com/pages/news",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:38.915863+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:35.720823+00:00"
       },
       "Program: TestLight": {
         "url": "https://www.topdon.com/pages/topdon-testlight-program",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:39.128855+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:35.906736+00:00"
       },
       "Program: TOP-UP": {
         "url": "https://www.topdon.com/pages/top-up-program",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:39.306135+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:36.105117+00:00"
       },
       "Program: My Story": {
         "url": "https://www.topdon.com/pages/my-topdon-story",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:39.471284+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:36.307610+00:00"
       },
       "Program: Partner": {
         "url": "https://www.topdon.com/pages/become-a-topdon-partner",
         "status": "error",
-        "checked_at": "2026-03-25T18:10:39.580595+00:00"
+        "checked_at": "2026-03-25T20:04:36.425898+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-25T18:10:39.695431+00:00"
+        "checked_at": "2026-03-25T20:04:36.554778+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-25T18:10:40.530275+00:00"
+        "checked_at": "2026-03-25T20:04:37.350045+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-25T18:10:40.721310+00:00"
+        "checked_at": "2026-03-25T20:04:37.623542+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-25T18:10:41.764259+00:00"
+        "checked_at": "2026-03-25T20:04:38.772120+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
-        "status": "ok",
-        "checked_at": "2026-03-25T18:10:42.010351+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T20:04:38.976950+00:00"
       }
     }
   },
