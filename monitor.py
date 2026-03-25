@@ -1,5 +1,5 @@
 """
-Thermal Camera Competitive Monitor v8
+Thermal Camera Competitive Monitor v9
 - TOPDON pages: full text diff (see exactly what changed)
 - TOPDON TC/TS products: price/stock/new + product page text diff
 - FLIR/FLUKE: hash-only
@@ -142,12 +142,21 @@ def extract_text(html: str) -> str:
     t = re.sub(r'</(p|div|li|h[1-6]|section|article|td|tr)[^>]*>', '\n', t, flags=re.IGNORECASE)
     t = re.sub(r'<br\s*/?>',               '\n', t, flags=re.IGNORECASE)
     t = re.sub(r'<[^>]+>', ' ', t)
+    # Decode HTML entities
+    t = t.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+    t = t.replace('&nbsp;', ' ').replace('&#39;', "'").replace('&quot;', '"')
+    t = re.sub(r'&#x[0-9a-fA-F]+;', '', t)
+    t = re.sub(r'&#[0-9]+;', '', t)
+    # Remove non-printable / replacement characters (garbled bytes show as �)
+    t = t.replace('\ufffd', '')
+    t = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', t)
     # Clean up lines
     lines = []
     for line in t.split('\n'):
         line = re.sub(r'\s+', ' ', line).strip()
-        # Skip very short lines and nav/footer boilerplate
-        if len(line) > 20:
+        # Only keep lines with real readable content (min 15 printable ASCII/unicode chars)
+        printable = re.sub(r'[^\w\s\.,!?:;\-\'\"/()]', '', line)
+        if len(printable) > 15:
             lines.append(line)
     return '\n'.join(lines)
 
@@ -208,8 +217,10 @@ def fetch_page(url: str, client: httpx.Client) -> tuple[str|None, str|None]:
     """Returns (raw_html, extracted_text) or (None, None) on error."""
     try:
         r = client.get(url, timeout=25); r.raise_for_status()
-        text = extract_text(r.text)
-        return r.text, text
+        # Force UTF-8 decode, replace undecodable bytes
+        raw = r.content.decode("utf-8", errors="replace")
+        text = extract_text(raw)
+        return raw, text
     except Exception as e:
         print(f"    [warn] {url}: {e}"); return None, None
 
@@ -472,7 +483,7 @@ def send_email(changes, run_time):
 
 def run():
     run_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    print(f"\n{'='*60}\nMonitor v8  {run_time}\n{'='*60}")
+    print(f"\n{'='*60}\nMonitor v9  {run_time}\n{'='*60}")
 
     state    = load_state()
     dash     = load_dashboard()
