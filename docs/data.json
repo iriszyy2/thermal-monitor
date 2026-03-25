@@ -1,16 +1,69 @@
 {
-  "generated_at": "2026-03-25T20:04:38.978773+00:00",
+  "generated_at": "2026-03-25T22:05:20.089275+00:00",
   "brand_list": [
     "TOPDON",
     "FLIR",
     "FLUKE"
   ],
   "stats": {
-    "total": 86,
-    "today": 41,
-    "week": 86
+    "total": 87,
+    "today": 42,
+    "week": 87
   },
   "changes": [
+    {
+      "id": "2026-03-25T22:05:16.149116+00:00-TOPDON-page_change-3cd971",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T22:05:16.149138+00:00",
+      "title": "Solution: Home Inspection",
+      "url": "https://www.topdon.com/pages/solutions-home-inspection",
+      "detail": "~ [,h4iJ= L5J#vXvUWSDB *IemfeY] XHtdYbw$gx>S$,@Q2?n8\\5ךb,$ pA)Nzax4ՙR,;;JD~9A#c]Ӵʹ → [)h4iVjx%ɉVLqC &j;.W_u&hdNtXvr2l[_Wu՛R{: f84+KrD}#ٹ3 E4Y,6.lVARI-O3ΐ#¼D\\I7jgdnYV\n~ ?z@>@rAj>}=|RH(3lB\\4.Oy8IFFr2us-+.EP>U{l0' 6B\"P$FSm|]Ű2&$( e̬v\\cB`_֬kV$@6r6_:Bl? → NR*s6_:Bl?L9Hgo!@q _ץm܉Ewuh6~ΐ`7J4EVy]7 .cjDN'V) ALK>8JE&[2vvhb\"8%FF` `pfޅNߡUY(?\n~ ?yj2>͍@6 CNڪb:@4cmj,hPW@!g,E&280!F&ԃc9 soLį/ڔ^44LqgZ8ތC}Uiq\\7ŏ7 aj53JK|7sFjz:\\a/ → 5Ia$AG@*[Ih*U gm_17)9ߌڞ:|ۊ;# P7QR Ng=o_~y~KaP^u;ɧ@ϼ@S'D&@9 $)@ bߊsf3ϯ_m# &J? #FJ\n~ E (S/UB{-qSPNԳz d70\\/ƁP{ʵu 'T䁕+gHq ܖ;A ha ɡԘRt+qO → 93d)R$4a?%12dk~{P?3(eih*܍paCeXm& dc#ZfTS0En\n~ &s'6-׵ȼ7GC02K]GmcU\\ƥS ķQ>6s(QUɵŻyGxJq][avHȋBka\"b!8]/w{#Yq I+4^=dLZ!_\\lzƆ:m:;(buY → \"$2fF}֋@06mYwDYdQ(a,1;X.m+G5B:T 7'8ۨZ3-\n~ &-/S1pYwmk2=D!Qh(0P[FQ/3 8Ktrq. s3i'[8?e>$rhLSAoCDO)) → T [0S-\\E OjyHpaUΨED`cВ;IFjtKר_M3{DlFb)(Ov&*?\n~ (?OH u%a\"+jD= 3 tfݼ؞( b3ID]KYخ7PHk~Q,p=ի}ꬵ,\"rYhNzRC O|)n*Ā -eER̈́%*ĪV譂qks*:b$փID  → 2@-\\vۧwGJV^90a3p(Ua-?#ݴ+F.xz(-Y>5,>E989đjJJKvfMwRx:qvcCﴙ2ەd3.>gg3=AaW3/7KTq@*!=%\n~ vf%KL ]ܲĭ}z>*h0+K\\A^jc:Fu-itZA:^ۜ u)lzpHL,zWr:\\p=X(,c]MS׫+(=TSc=I → yxintib Z^JGfխcu-*3x +Nz~]3sI\"6+/֊+2&''^S0w/%|7J\\ ҈z;*H='Giq\"7EQDq]r;WWA+@v_z-R1",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[,h4iJ= L5J#vXvUWSDB *IemfeY] XHtdYbw$gx>S$,@Q2?n8\\5ךb,$ pA)Nzax4ՙR,;;JD~9A#c]ӴʹM({^{UTYUH}+97hz4-EqgZ 6ΧJb(c#iM5Av$)5Big($ХP21@9:",
+          "new": "[)h4iVjx%ɉVLqC &j;.W_u&hdNtXvr2l[_Wu՛R{: f84+KrD}#ٹ3 E4Y,6.lVARI-O3ΐ#¼D\\I7jgdnYVb+hhq#*E~gM .SifZ&Asν{j*`~U\\*H*^U4= \"8_-clS%1qV&Қ ;H}մ3cRb@Lsrp? X 9Hiih}9{(QgFI 'Pyh\\T)VR>>DM含\\TKmYِUhu)b2Tݛ`9Ymַ*L%wd4mnc5*}6qэ/cZ!T"
+        },
+        {
+          "type": "modified",
+          "old": "?z@>@rAj>}=|RH(3lB\\4.Oy8IFFr2us-+.EP>U{l0' 6B\"P$FSm|]Ű2&$( e̬v\\cB`_֬kV$@6r6_:Bl?L9Hgo!@q _g?p6ƄRT\\scT2mISTm%Pw*02nW+EYrtTmbH-cjwnV!FH Sbmd&^ l6/h%|V%B᏿ ԏާQ2[ɜY;]ZmH#J $a4N\\V*6qoFrN|ۊ;# P7QR ׏rV>_ {.;'?o\"&FF '\"P*I3:$eطko.dk1bqG]TrZ#z%!F'}BWKCݯ(C%j1w[uǏh|d>:C%bPhy2*ѐbL97Bfؠǯ@3ThfC2BVdx.@Oeom2O7t>Wȝ:o@Ef|?ŋ{zv M^ѧ5>^ߠ[y@l~mL8+^XPZw5|1VamX_vp-0`ֻ9/.k3x3 `gWaqt~y9^\\\\o `+2;o7 00SY7Y;@v˷i+'w,Z_K鎀wX1P[bL:}Pbc)",
+          "new": "NR*s6_:Bl?L9Hgo!@q _ץm܉Ewuh6~ΐ`7J4EVy]7 .cjDN'V) ALK>8JE&[2vvhb\"8%FF` `pfޅNߡUY(?C!O)+2d/wʵ"
+        },
+        {
+          "type": "modified",
+          "old": "?yj2>͍@6 CNڪb:@4cmj,hPW@!g,E&280!F&ԃc9 soLį/ڔ^44LqgZ8ތC}Uiq\\7ŏ7 aj53JK|7sFjz:\\a/1&5.lM[--[9䏯a`YⓢArgP셗E`.yDN($E",
+          "new": "5Ia$AG@*[Ih*U gm_17)9ߌڞ:|ۊ;# P7QR Ng=o_~y~KaP^u;ɧ@ϼ@S'D&@9 $)@ bߊsf3ϯ_m# &J? #FJC6B?N2\\ _^\"JaZ^|tJ!/dT!ŘsBfؠǯ@hfK2\\gVdx.@Oeˇ.'[Ao\\dN@ v|?E{fvM^ѧ/O4}EwlӧM _pWIUXPZwG5|VamX_vp-0`ֻ/.k3:x3-`gWa7\"QbxCY[Qy󝩴M =戸κi|-hg_EN#]9eъB^Jw@Ċڊ3grik/cwUCinpVCސ^CрhSC6`9D3"
+        },
+        {
+          "type": "modified",
+          "old": "E (S/UB{-qSPNԳz d70\\/ƁP{ʵu 'T䁕+gHq ܖ;A ha ɡԘRt+qO",
+          "new": "93d)R$4a?%12dk~{P?3(eih*܍paCeXm& dc#ZfTS0En"
+        },
+        {
+          "type": "modified",
+          "old": "&s'6-׵ȼ7GC02K]GmcU\\ƥS ķQ>6s(QUɵŻyGxJq][avHȋBka\"b!8]/w{#Yq I+4^=dLZ!_\\lzƆ:m:;(buY0>s%5#qkץ]ŕ ȷPHug[U|EZ!*arVwܝ呗ȟڴ7",
+          "new": "\"$2fF}֋@06mYwDYdQ(a,1;X.m+G5B:T 7'8ۨZ3-"
+        },
+        {
+          "type": "modified",
+          "old": "&-/S1pYwmk2=D!Qh(0P[FQ/3 8Ktrq. s3i'[8?e>$rhLSAoCDO))",
+          "new": "T [0S-\\E OjyHpaUΨED`cВ;IFjtKר_M3{DlFb)(Ov&*?"
+        },
+        {
+          "type": "modified",
+          "old": "(?OH u%a\"+jD= 3 tfݼ؞( b3ID]KYخ7PHk~Q,p=ի}ꬵ,\"rYhNzRC O|)n*Ā -eER̈́%*ĪV譂qks*:b$փID 2`zm- [u-1`NIk~0tlu%GJyN3Dey疸Yi&gBߐ*,ln+Զvgpi.^QTi#|M':~~_?>ǻOT\\.1j-E",
+          "new": "2@-\\vۧwGJV^90a3p(Ua-?#ݴ+F.xz(-Y>5,>E989đjJJKvfMwRx:qvcCﴙ2ەd3.>gg3=AaW3/7KTq@*!=%'+$9컴]9̀GJKG%)lG8GVg]]S?e:6Ӻ#\\Z,ә@ ۦk"
+        },
+        {
+          "type": "modified",
+          "old": "vf%KL ]ܲĭ}z>*h0+K\\A^jc:Fu-itZA:^ۜ u)lzpHL,zWr:\\p=X(,c]MS׫+(=TSc=I",
+          "new": "yxintib Z^JGfխcu-*3x +Nz~]3sI\"6+/֊+2&''^S0w/%|7J\\ ҈z;*H='Giq\"7EQDq]r;WWA+@v_z-R1mYO:ۉS3'2R`c^7WPἑǆxJuѠ4с3yޠQ>U+5|Ydy}wq/:t[7heҁMg,kd5Aw]k!D3itGsQ[΃kh@,Fγ\"I(>=Oy {4Gm+Abk 㘄3!@RF7kȏxdцqTK &K3+GvֹpcRR{Te:Hy 4&+j,=\\OOz,~D v5'B*Fi[HCFrd3(qB 7^.S"
+        }
+      ]
+    },
     {
       "id": "2026-03-25T20:04:34.896716+00:00-TOPDON-page_change-c736b7",
       "type": "page_change",
@@ -2620,77 +2673,77 @@
     "TOPDON": {
       "Thermal Imagers": {
         "url": "https://www.topdon.com/pages/tools/thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:34.896748+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:15.776940+00:00"
       },
       "Thermal Apps": {
         "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:35.125909+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:15.892210+00:00"
       },
       "Solution: Home Inspection": {
         "url": "https://www.topdon.com/pages/solutions-home-inspection",
-        "status": "ok",
-        "checked_at": "2026-03-25T20:04:35.362723+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T22:05:16.149149+00:00"
       },
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:35.550359+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:16.347754+00:00"
       },
       "Newsroom": {
         "url": "https://www.topdon.com/pages/news",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:35.720823+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:16.522950+00:00"
       },
       "Program: TestLight": {
         "url": "https://www.topdon.com/pages/topdon-testlight-program",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:35.906736+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:16.774843+00:00"
       },
       "Program: TOP-UP": {
         "url": "https://www.topdon.com/pages/top-up-program",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:36.105117+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:17.005673+00:00"
       },
       "Program: My Story": {
         "url": "https://www.topdon.com/pages/my-topdon-story",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:36.307610+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:17.215379+00:00"
       },
       "Program: Partner": {
         "url": "https://www.topdon.com/pages/become-a-topdon-partner",
         "status": "error",
-        "checked_at": "2026-03-25T20:04:36.425898+00:00"
+        "checked_at": "2026-03-25T22:05:17.407968+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-25T20:04:36.554778+00:00"
+        "checked_at": "2026-03-25T22:05:17.560575+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-25T20:04:37.350045+00:00"
+        "checked_at": "2026-03-25T22:05:18.643228+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-25T20:04:37.623542+00:00"
+        "checked_at": "2026-03-25T22:05:18.966512+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-25T20:04:38.772120+00:00"
+        "checked_at": "2026-03-25T22:05:19.782683+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
-        "status": "changed",
-        "checked_at": "2026-03-25T20:04:38.976950+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T22:05:20.087523+00:00"
       }
     }
   },
