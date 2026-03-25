@@ -214,13 +214,13 @@ def format_diff_detail(diffs: list[dict], total_changes: int) -> str:
 # ─── Fetchers ─────────────────────────────────────────────────────────────────
 
 def fetch_page(url: str, client: httpx.Client) -> tuple[str|None, str|None]:
-    """Returns (raw_html, extracted_text) or (None, None) on error."""
     try:
-        r = client.get(url, timeout=25); r.raise_for_status()
-        # Force UTF-8 decode, replace undecodable bytes
-        raw = r.content.decode("utf-8", errors="replace")
-        text = extract_text(raw)
-        return raw, text
+        r = client.get(url, timeout=25)
+        r.raise_for_status()
+        # Decode raw bytes explicitly, ignore bad chars
+        html = r.content.decode('utf-8', errors='ignore')
+        text = extract_text(html)
+        return html, text
     except Exception as e:
         print(f"    [warn] {url}: {e}"); return None, None
 
