@@ -1,16 +1,69 @@
 {
-  "generated_at": "2026-03-25T05:17:43.829743+00:00",
+  "generated_at": "2026-03-25T08:03:12.966730+00:00",
   "brand_list": [
     "TOPDON",
     "FLIR",
     "FLUKE"
   ],
   "stats": {
-    "total": 59,
-    "today": 14,
-    "week": 59
+    "total": 60,
+    "today": 15,
+    "week": 60
   },
   "changes": [
+    {
+      "id": "2026-03-25T08:03:08.479401+00:00-TOPDON-page_change-3cd971",
+      "type": "page_change",
+      "label": "PAGE",
+      "brand": "TOPDON",
+      "ts": "2026-03-25T08:03:08.479423+00:00",
+      "title": "Solution: Home Inspection",
+      "url": "https://www.topdon.com/pages/solutions-home-inspection",
+      "detail": "~ [,h4iJ= 8_-clS%1qV&Қ ;HOM;C!9] → [)h4iJ= U{l0' 6B\"P$FSm|]Ű2&$( e̬v\\cB`_֬kV$@6r5kjx! ?L9Hgo!@q [1s'JYס!o dLk!8 CR}\n~ (\"9)ˋV)67$FZfWy{ںԖ GZuV\"yl*Cuٽi6vk}abdY|GO#)6f]bXaPmw__2fV;NY!EB/Ck5k nX}vCg}{M  → xo3U+4{3Ɔ>J$劮xw6O.)~iCUS@QZjϏko7\n~ Tii_S AځK>8JE&[2vvhb\"8%FF` ݠ{f~ VQ[\\(BH> → {7qdmښ0mip!x 2 ʴ;J/,\n~ }J^%èyE}UUqOۆ$ :RJFeU~N8kSȎKa|3chwCVMt?O]My>oo_~zKn~W_u9ɧB| 5102 → s,B uBAWy.$oWuԹ@P(gI7$؛Tc{.t)cxcfh74gW5XeX6si\"m1g;J3M󂑘nlZv[2/ɣ.r+'fyY+\n~ @P HRT?!)Sľf_[#v!k\\׏;(C/|>ꂤ1G+1}?rX~E*Q!kߪ[~G{%*Q|ۿBkϓQ|c → Y;DіܨK؊+%\"LdC\\Q=pc\"=?Z%7E큼@ LD=g_Hvi b\\;+[qBEX[ܾrT!0mԀVАJ)E7iP`>6wby];ps4c,dOmܸt\n~ 9\"5m , p&KڦQaz+,mO!X$q → n%ԖQL;t{h+C @^RRD*^F>i׾APG{K&ĤLNH[ٲC]eJR94[ ڷjG ʽFZMirTG'$Mle0Iw\"zomj ~5ER_+} M\n~ O.ŌUD`b,pgr.ـ+\" Br̀ → 8\\ϋ4aY\\W2E@F5[IPê a/Q:aQ\\lOI^e_$\"Ү|,lkctzz(5?D(p=ի}ꬵ,\"pYhNzRC O|)n*Ā -eER%*ĪV譂qk\n~ p-$(B͏acυ(ٰ(y.$2ʯaiWRk1:==ҚBf\"tOI → : `TtzmǺM6PM=8$&tJ9uYXW.8\\՞vm,aIszK̅wZw[)1Ҟ$n@p\"ʖЭQ]TH[ k#K_q41_|>mp\\0u۶ڻJ&btT`V",
+      "price": "",
+      "diffs": [
+        {
+          "type": "modified",
+          "old": "[,h4iJ= 8_-clS%1qV&Қ ;HOM;C!9]",
+          "new": "[)h4iJ= U{l0' 6B\"P$FSm|]Ű2&$( e̬v\\cB`_֬kV$@6r5kjx! ?L9Hgo!@q [1s'JYס!o dLk!8 CR}+:ϙ =]lMfwZ|a;6P'-h1=_?b Í@6 CNڪb:@4k=o5 Ԑ X \\BY&Mdp*a@ 6BL%8r@Z ` _~jS"
+        },
+        {
+          "type": "modified",
+          "old": "(\"9)ˋV)67$FZfWy{ںԖ GZuV\"yl*Cuٽi6vk}abdY|GO#)6f]bXaPmw__2fV;NY!EB/Ck5k nX}vCg}{M ?-Xj%P~`7JIREVy]d3{T",
+          "new": "xo3U+4{3Ɔ>J$劮xw6O.)~iCUS@QZjϏko7"
+        },
+        {
+          "type": "modified",
+          "old": "Tii_S AځK>8JE&[2vvhb\"8%FF` ݠ{f~ VQ[\\(BH>",
+          "new": "{7qdmښ0mip!x 2 ʴ;J/,"
+        },
+        {
+          "type": "modified",
+          "old": "}J^%èyE}UUqOۆ$ :RJFeU~N8kSȎKa|3chwCVMt?O]My>oo_~zKn~W_u9ɧB| 5102",
+          "new": "s,B uBAWy.$oWuԹ@P(gI7$؛Tc{.t)cxcfh74gW5XeX6si\"m1g;J3M󂑘nlZv[2/ɣ.r+'fyY+"
+        },
+        {
+          "type": "modified",
+          "old": "@P HRT?!)Sľf_[#v!k\\׏;(C/|>ꂤ1G+1}?rX~E*Q!kߪ[~G{%*Q|ۿBkϓQ|c",
+          "new": "Y;DіܨK؊+%\"LdC\\Q=pc\"=?Z%7E큼@ LD=g_Hvi b\\;+[qBEX[ܾrT!0mԀVАJ)E7iP`>6wby];ps4c,dOmܸt7!69P7&T{ fGsGHr0l)$0 p@Tɖ!GӈBNY&V#lhC#[_JSwLm,rxȐo*AdB4_^sy)-;an!0+8P-Y)3i/h\"dG9UREoJg q?>\"WY7!V!515^h&ʪXֿ$B cDHuiWqe$ȭ78ҡj9aV*dbVGm܅՝\"wly*+6 e?lyIˋTE%F]ڦLQH&"
+        },
+        {
+          "type": "modified",
+          "old": "9\"5m , p&KڦQaz+,mO!X$q",
+          "new": "n%ԖQL;t{h+C @^RRD*^F>i׾APG{K&ĤLNH[ٲC]eJR94[ ڷjG ʽFZMirTG'$Mle0Iw\"zomj ~5ER_+} Mp1DvM23WqYڞ(5CxI?ڛA"
+        },
+        {
+          "type": "modified",
+          "old": "O.ŌUD`b,pgr.ـ+\" Br̀",
+          "new": "8\\ϋ4aY\\W2E@F5[IPê a/Q:aQ\\lOI^e_$\"Ү|,lkctzz(5?D(p=ի}ꬵ,\"pYhNzRC O|)n*Ā -eER%*ĪV譂qks*:b$޽ID 2`zm- [u-1`NIk~0tlu-GJyN3Dey痸Yi&gBߔ*,ln+նvgpiGavs䍁˦OV??,çohC@?vNs|;%&AW yt4by% /1XCj"
+        },
+        {
+          "type": "modified",
+          "old": "p-$(B͏acυ(ٰ(y.$2ʯaiWRk1:==ҚBf\"tOI",
+          "new": ": `TtzmǺM6PM=8$&tJ9uYXW.8\\՞vm,aIszK̅wZw[)1Ҟ$n@p\"ʖЭQ]TH[ k#K_q41_|>mp\\0u۶ڻJ&btT`VJ0&XעR=̃*wyww^p m3qnqM("
+        }
+      ]
+    },
     {
       "id": "2026-03-25T05:17:39.803039+00:00-TOPDON-page_change-c736b7",
       "type": "page_change",
@@ -1642,77 +1695,77 @@
     "TOPDON": {
       "Thermal Imagers": {
         "url": "https://www.topdon.com/pages/tools/thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:39.803071+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:08.187922+00:00"
       },
       "Thermal Apps": {
         "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:39.964893+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:08.294273+00:00"
       },
       "Solution: Home Inspection": {
         "url": "https://www.topdon.com/pages/solutions-home-inspection",
-        "status": "ok",
-        "checked_at": "2026-03-25T05:17:40.134723+00:00"
+        "status": "changed",
+        "checked_at": "2026-03-25T08:03:08.479434+00:00"
       },
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:40.310207+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:08.663607+00:00"
       },
       "Newsroom": {
         "url": "https://www.topdon.com/pages/news",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:40.475005+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:08.908842+00:00"
       },
       "Program: TestLight": {
         "url": "https://www.topdon.com/pages/topdon-testlight-program",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:40.578121+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:09.012195+00:00"
       },
       "Program: TOP-UP": {
         "url": "https://www.topdon.com/pages/top-up-program",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:40.747009+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:09.189265+00:00"
       },
       "Program: My Story": {
         "url": "https://www.topdon.com/pages/my-topdon-story",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:40.913745+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:09.351347+00:00"
       },
       "Program: Partner": {
         "url": "https://www.topdon.com/pages/become-a-topdon-partner",
         "status": "error",
-        "checked_at": "2026-03-25T05:17:41.065061+00:00"
+        "checked_at": "2026-03-25T08:03:09.621153+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-25T05:17:41.173703+00:00"
+        "checked_at": "2026-03-25T08:03:09.797361+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-25T05:17:42.261430+00:00"
+        "checked_at": "2026-03-25T08:03:10.906104+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-25T05:17:42.469364+00:00"
+        "checked_at": "2026-03-25T08:03:11.271113+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-25T05:17:43.681067+00:00"
+        "checked_at": "2026-03-25T08:03:12.564422+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
-        "status": "changed",
-        "checked_at": "2026-03-25T05:17:43.828059+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-25T08:03:12.964954+00:00"
       }
     }
   },
