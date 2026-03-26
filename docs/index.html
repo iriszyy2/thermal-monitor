@@ -6,113 +6,75 @@
 <title>竞品监控</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#f5f4ef;--card:#fff;--border:#e5e3dc;
-  --text:#1a1a18;--muted:#78776f;--faint:#efede8;
-  --green:#15803d;--green-bg:#dcfce7;
-  --amber:#b45309;--amber-bg:#fef3c7;
-  --red:#b91c1c;--red-bg:#fee2e2;
-  --blue:#1d4ed8;--blue-bg:#dbeafe;
-  --purple:#6d28d9;--purple-bg:#ede9fe;
-  --teal:#0e7490;--teal-bg:#cffafe;
-  --pink:#be185d;--pink-bg:#fce7f3;
-}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
-.topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;
-  height:52px;display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:10}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f4ef;color:#1a1a18;font-size:14px;line-height:1.5}
+.topbar{background:#fff;border-bottom:1px solid #e5e3dc;padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
 .tl{display:flex;align-items:center;gap:9px}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.pulse{width:8px;height:8px;border-radius:50%;background:#22c55e}
 .ttitle{font-size:15px;font-weight:600}
-.tmeta{font-size:12px;color:var(--muted);margin-top:1px}
-.btn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:8px;
-  border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer}
-.btn:hover{background:var(--faint)}
+.tmeta{font-size:12px;color:#78776f;margin-top:1px}
+.btn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid #e5e3dc;background:#fff;color:#1a1a18;cursor:pointer}
+.btn:hover{background:#efede8}
 .page{max-width:1060px;margin:0 auto;padding:24px 20px}
-.alert{background:var(--amber-bg);border:1px solid #fcd34d;border-radius:10px;
-  padding:10px 16px;display:flex;align-items:center;gap:9px;margin-bottom:20px;
-  font-size:13px;color:var(--amber)}
+.alert{background:#fef3c7;border:1px solid #fbbf24;border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:9px;margin-bottom:20px;font-size:13px;color:#92400e}
 .alert.hidden{display:none}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
-.slabel{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
-.sval{font-size:26px;font-weight:600}
-.sval.amber{color:var(--amber)}
-.sval.green{color:var(--green);font-size:16px;padding-top:4px}
-.ssub{font-size:11px;color:var(--muted);margin-top:3px}
-.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px}
-.tab{font-size:13px;font-weight:500;padding:8px 16px 10px;color:var(--muted);
-  cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
-.tab.active{color:var(--text);border-bottom-color:var(--text)}
+.stat{background:#efede8;border-radius:10px;padding:14px 16px}
+.slabel{font-size:11px;color:#78776f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.sval{font-size:24px;font-weight:600;color:#1a1a18}
+.sval.amber{color:#b45309}
+.sval.green{color:#16a34a;font-size:16px;padding-top:4px}
+.ssub{font-size:11px;color:#78776f;margin-top:3px}
+.tabs{display:flex;border-bottom:1px solid #e5e3dc;margin-bottom:20px}
+.tab{font-size:13px;font-weight:500;padding:7px 16px 10px;color:#78776f;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.active{color:#1a1a18;border-bottom-color:#1a1a18}
 .filters{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-.fbtn{font-size:12px;padding:4px 12px;border-radius:16px;
-  border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer}
-.fbtn.active{background:var(--text);color:#fff;border-color:var(--text)}
+.fbtn{font-size:12px;padding:4px 12px;border-radius:16px;border:1px solid #e5e3dc;background:#fff;color:#78776f;cursor:pointer}
+.fbtn.active{background:#1a1a18;color:#fff;border-color:#1a1a18}
 .grid{display:grid;grid-template-columns:1fr 300px;gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;
-  overflow:hidden;margin-bottom:14px}
-.card:last-child{margin-bottom:0}
-.ch{padding:12px 16px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between}
-.ctitle{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
-.chint{font-size:11px;color:var(--muted)}
-.cbadge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;
-  background:var(--amber-bg);color:var(--amber)}
-.cbadge.zero{background:var(--faint);color:var(--muted)}
-/* Change item */
-.ci{padding:12px 16px;border-bottom:1px solid var(--faint)}
-.ci:last-child{border-bottom:none}
-.ci:hover{background:var(--faint)}
-.ci-top{display:flex;align-items:flex-start;gap:10px}
-.tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:5px;
-  flex-shrink:0;margin-top:1px}
-.tag-NEW{background:var(--green-bg);color:var(--green)}
-.tag-REMOVED{background:var(--red-bg);color:var(--red)}
-.tag-PRICE{background:var(--amber-bg);color:var(--amber)}
-.tag-STOCK{background:var(--blue-bg);color:var(--blue)}
-.tag-BLOG{background:var(--purple-bg);color:var(--purple)}
-.tag-PAGE{background:var(--teal-bg);color:var(--teal)}
-.tag-NAV{background:var(--pink-bg);color:var(--pink)}
-.tag-PRODUCT\ PAGE{background:var(--teal-bg);color:var(--teal)}
-.cbody{flex:1;min-width:0}
-.cbrand{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1px}
-.cname{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
-.cname a{color:var(--blue);text-decoration:none}
-.cname a:hover{text-decoration:underline}
-.cdetail{font-size:12px;color:var(--muted);margin-bottom:4px}
-.ctime{font-size:11px;color:var(--muted);white-space:nowrap;flex-shrink:0;margin-top:2px}
-/* Diff block */
-.diff-block{margin-top:6px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
-.diff-line{font-size:11px;font-family:monospace;padding:3px 8px;line-height:1.6;
-  white-space:pre-wrap;word-break:break-all}
-.diff-added  {background:#f0fdf4;color:#15803d;border-left:3px solid #86efac}
+.panel{background:#fff;border:1px solid #e5e3dc;border-radius:12px;overflow:hidden;margin-bottom:14px}
+.panel:last-child{margin-bottom:0}
+.ph{padding:12px 16px;border-bottom:1px solid #e5e3dc;display:flex;align-items:center;justify-content:space-between}
+.ptitle{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.badge{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
+.b-amber{background:#fef3c7;color:#b45309}
+.b-gray{background:#efede8;color:#78776f}
+.item{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;border-bottom:1px solid #f5f4ef}
+.item:last-child{border-bottom:none}
+.item:hover{background:#f5f4ef}
+.tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:5px;flex-shrink:0;margin-top:1px;letter-spacing:.03em}
+.tag-NEW{background:#dcfce7;color:#15803d}
+.tag-PRICE{background:#fef3c7;color:#b45309}
+.tag-STOCK{background:#dbeafe;color:#1d4ed8}
+.tag-REMOVED{background:#fee2e2;color:#b91c1c}
+.tag-BLOG{background:#ede9fe;color:#6d28d9}
+.tag-PAGE{background:#ccfbf1;color:#0f766e}
+.tag-NAV{background:#fce7f3;color:#be185d}
+.ibody{flex:1;min-width:0}
+.ibrand{font-size:10px;color:#78776f;text-transform:uppercase;letter-spacing:.04em;margin-bottom:1px}
+.iname{font-size:13px;font-weight:500;color:#1a1a18;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iname a{color:#1d4ed8;text-decoration:none}
+.iname a:hover{text-decoration:underline}
+.idetail{font-size:12px;color:#78776f}
+.itime{font-size:11px;color:#78776f;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.diff-block{margin-top:6px;border-radius:6px;overflow:hidden;border:1px solid #e5e3dc}
+.diff-line{font-size:11px;font-family:monospace;padding:3px 8px;line-height:1.6;word-break:break-all}
+.diff-added{background:#f0fdf4;color:#15803d;border-left:3px solid #86efac}
 .diff-removed{background:#fef2f2;color:#b91c1c;border-left:3px solid #fca5a5}
 .diff-modified{background:#fffbeb;color:#92400e;border-left:3px solid #fcd34d}
-.diff-hash{background:var(--faint);color:var(--muted);font-style:italic;
-  font-size:11px;padding:4px 8px;border-radius:4px;margin-top:4px}
-.expand-btn{font-size:11px;color:var(--blue);cursor:pointer;margin-top:4px;
-  background:none;border:none;padding:0;text-decoration:underline}
-/* Right col */
-.right{display:flex;flex-direction:column;gap:14px}
-.pr{display:flex;align-items:center;justify-content:space-between;
-  padding:9px 16px;border-bottom:1px solid var(--faint);font-size:13px}
+.pr{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid #f5f4ef;font-size:13px}
 .pr:last-child{border-bottom:none}
-.pinfo{flex:1;min-width:0}
-.pname{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pname a{color:var(--text);text-decoration:none}
-.pbrand{font-size:11px;color:var(--muted)}
-.sok{font-size:11px;font-weight:600;color:var(--green);margin-left:8px;white-space:nowrap}
-.schanged{font-size:11px;font-weight:600;color:var(--amber);margin-left:8px;white-space:nowrap}
-.serr{font-size:11px;font-weight:600;color:var(--red);margin-left:8px;white-space:nowrap}
-.brand-row{display:flex;align-items:center;justify-content:space-between;
-  padding:9px 16px;border-bottom:1px solid var(--faint);cursor:pointer}
+.pname{font-weight:500;color:#1a1a18}
+.pname a{color:#1a1a18;text-decoration:none}
+.pbrand{font-size:11px;color:#78776f}
+.sok{font-size:11px;font-weight:600;color:#16a34a;white-space:nowrap;margin-left:8px}
+.schanged{font-size:11px;font-weight:600;color:#b45309;white-space:nowrap;margin-left:8px}
+.serr{font-size:11px;font-weight:600;color:#b91c1c;white-space:nowrap;margin-left:8px}
+.brand-row{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid #f5f4ef;cursor:pointer}
 .brand-row:last-child{border-bottom:none}
-.brand-row:hover{background:var(--faint)}
-.bname{font-size:13px;font-weight:500}
-.bcnt{font-size:11px;background:var(--faint);color:var(--muted);padding:2px 9px;border-radius:10px}
+.brand-row:hover{background:#f5f4ef}
+.bcnt{font-size:11px;background:#efede8;color:#78776f;padding:2px 9px;border-radius:10px}
+.empty{padding:32px 16px;text-align:center;color:#78776f;font-size:13px}
 .hidden{display:none}
-#loading{text-align:center;padding:60px;color:var(--muted)}
 @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -120,141 +82,77 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 <div class="topbar">
   <div class="tl">
     <div class="pulse"></div>
-    <div>
-      <div class="ttitle">竞品监控 Dashboard</div>
-      <div class="tmeta" id="meta">加载中…</div>
-    </div>
+    <div><div class="ttitle">竞品监控 Dashboard</div><div class="tmeta" id="meta">加载中…</div></div>
   </div>
   <button class="btn" onclick="loadData()">刷新</button>
 </div>
 <div class="page">
-  <div id="loading">正在加载…</div>
-  <div id="app" class="hidden">
-    <div class="alert hidden" id="banner">
-      <span style="font-size:14px">⚡</span>
-      <span id="banner-text"></span>
+  <div class="alert hidden" id="alert"><span style="font-size:14px">⚡</span><span id="alert-text"></span></div>
+  <div class="stats">
+    <div class="stat"><div class="slabel">监控品牌</div><div class="sval" id="s-brands">—</div><div class="ssub" id="s-brands-sub">—</div></div>
+    <div class="stat"><div class="slabel">今日变化</div><div class="sval amber" id="s-today">—</div><div class="ssub">过去 24 小时</div></div>
+    <div class="stat"><div class="slabel">本周变化</div><div class="sval" id="s-week">—</div><div class="ssub">过去 7 天</div></div>
+    <div class="stat"><div class="slabel">系统状态</div><div class="sval green">正常</div><div class="ssub" id="s-time">—</div></div>
+  </div>
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('log',this)">变化日志</div>
+    <div class="tab" onclick="switchTab('brands',this)">品牌概览</div>
+  </div>
+  <div id="tab-log">
+    <div class="filters">
+      <button class="fbtn active" data-f="all">全部</button>
+      <button class="fbtn" data-f="new_product">新品</button>
+      <button class="fbtn" data-f="price_change">价格</button>
+      <button class="fbtn" data-f="stock_change">库存</button>
+      <button class="fbtn" data-f="removed_product">下架</button>
+      <button class="fbtn" data-f="new_article">博客</button>
+      <button class="fbtn" data-f="page_change">页面</button>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="slabel">监控品牌</div>
-        <div class="sval" id="s-brands">—</div>
-        <div class="ssub" id="s-brands-sub">—</div></div>
-      <div class="stat"><div class="slabel">今日变化</div>
-        <div class="sval amber" id="s-today">—</div>
-        <div class="ssub">过去 24 小时</div></div>
-      <div class="stat"><div class="slabel">本周变化</div>
-        <div class="sval" id="s-week">—</div>
-        <div class="ssub">过去 7 天</div></div>
-      <div class="stat"><div class="slabel">系统状态</div>
-        <div class="sval green">正常</div>
-        <div class="ssub" id="s-time">—</div></div>
-    </div>
-    <div class="tabs">
-      <div class="tab active" onclick="switchTab('log',this)">变化日志</div>
-      <div class="tab" onclick="switchTab('brands',this)">品牌概览</div>
-    </div>
-    <div id="tab-log">
-      <div class="filters" id="filters">
-        <button class="fbtn active" data-f="all">全部</button>
-        <button class="fbtn" data-f="new_product">新品</button>
-        <button class="fbtn" data-f="price_change">价格</button>
-        <button class="fbtn" data-f="stock_change">库存</button>
-        <button class="fbtn" data-f="removed_product">下架</button>
-        <button class="fbtn" data-f="new_article">博客</button>
-        <button class="fbtn" data-f="page_change">页面</button>
-        <button class="fbtn" data-f="product_page">产品页</button>
-      </div>
-      <div class="grid">
-        <div>
-          <div class="card">
-            <div class="ch">
-              <div class="ctitle">变化日志
-                <span class="cbadge zero" id="cnt">0</span>
-              </div>
-              <div class="chint" id="brand-hint">所有品牌</div>
-            </div>
-            <div id="change-list"><div style="padding:32px;text-align:center;color:var(--muted)">暂无记录</div></div>
-          </div>
-        </div>
-        <div class="right">
-          <div class="card">
-            <div class="ch"><div class="ctitle">关键页面状态</div></div>
-            <div id="page-list"><div style="padding:20px;text-align:center;color:var(--muted);font-size:13px">暂无数据</div></div>
-          </div>
-          <div class="card">
-            <div class="ch"><div class="ctitle">品牌 · 产品数</div></div>
-            <div id="brand-sidebar"></div>
-          </div>
+    <div class="grid">
+      <div>
+        <div class="panel">
+          <div class="ph"><div class="ptitle">变化日志 <span class="badge b-gray" id="cnt">0</span></div><span style="font-size:12px;color:#78776f" id="brand-hint">所有品牌</span></div>
+          <div id="change-list"><div class="empty">暂无记录</div></div>
         </div>
       </div>
-    </div>
-    <div id="tab-brands" class="hidden">
-      <div id="brand-cards"></div>
+      <div>
+        <div class="panel">
+          <div class="ph"><div class="ptitle">关键页面状态</div></div>
+          <div id="page-list"><div class="empty">暂无数据</div></div>
+        </div>
+        <div class="panel">
+          <div class="ph"><div class="ptitle">品牌 · 产品数</div></div>
+          <div id="brand-sidebar"></div>
+        </div>
+      </div>
     </div>
   </div>
+  <div id="tab-brands" class="hidden"><div id="brand-cards"></div></div>
 </div>
 <script>
-let D=null, fType='all', fBrand='all';
+let D=null,fType='all',fBrand='all';
 const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-function ago(iso){
-  const d=(Date.now()-new Date(iso))/1000;
-  if(d<60)return'刚刚';if(d<3600)return Math.floor(d/60)+'分钟前';
-  if(d<86400)return Math.floor(d/3600)+'小时前';return Math.floor(d/86400)+'天前';
-}
-function switchTab(id,el){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('tab-log').classList.toggle('hidden',id!=='log');
-  document.getElementById('tab-brands').classList.toggle('hidden',id!=='brands');
-}
-function buildDiffHtml(diffs, detail){
-  if(!diffs||!diffs.length){
-    if(detail&&detail.includes('Hash-only')){
-      return `<div class="diff-hash">Hash-only: diff unavailable</div>`;
-    }
-    return '';
-  }
-  const lines=diffs.map(d=>{
-    if(d.type==='added')
-      return`<div class="diff-line diff-added">+ ${esc(d.text||'').substring(0,150)}</div>`;
-    if(d.type==='removed')
-      return`<div class="diff-line diff-removed">- ${esc(d.text||'').substring(0,150)}</div>`;
-    if(d.type==='modified')
-      return`<div class="diff-line diff-modified">~ ${esc(d.old||'').substring(0,100)}<br>&nbsp;&nbsp;→ ${esc(d.new||'').substring(0,100)}</div>`;
+function ago(iso){const d=(Date.now()-new Date(iso))/1000;if(d<60)return'刚刚';if(d<3600)return~~(d/60)+'分钟前';if(d<86400)return~~(d/3600)+'小时前';return~~(d/86400)+'天前';}
+function switchTab(id,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('tab-log').classList.toggle('hidden',id!=='log');document.getElementById('tab-brands').classList.toggle('hidden',id!=='brands');}
+function buildDiff(diffs,detail){
+  if(!diffs||!diffs.length){if(detail&&detail.includes('Hash-only'))return'<div style="font-size:11px;color:#78776f;font-style:italic;margin-top:4px">Hash-only · diff unavailable</div>';return'';}
+  return'<div class="diff-block">'+diffs.map(d=>{
+    if(d.type==='added')return`<div class="diff-line diff-added">+ ${esc((d.text||'').substring(0,150))}</div>`;
+    if(d.type==='removed')return`<div class="diff-line diff-removed">- ${esc((d.text||'').substring(0,150))}</div>`;
+    if(d.type==='modified')return`<div class="diff-line diff-modified">~ ${esc((d.old||'').substring(0,100))}<br>&nbsp;&nbsp;→ ${esc((d.new||'').substring(0,100))}</div>`;
     return'';
-  }).join('');
-  return`<div class="diff-block">${lines}</div>`;
+  }).join('')+'</div>';
 }
 function renderList(){
   if(!D)return;
-  const list=(D.changes||[]).filter(c=>{
-    const fOk=fType==='all'||c.type===fType;
-    const bOk=fBrand==='all'||c.brand===fBrand;
-    return fOk&&bOk;
-  });
-  const badge=document.getElementById('cnt');
-  badge.textContent=list.length;
-  badge.className='cbadge'+(list.length?'':' zero');
-  document.getElementById('change-list').innerHTML=list.length
-    ?list.map(c=>{
-        const tag=(c.label||'?').replace(' ','_');
-        const title=c.url
-          ?`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a>`
-          :esc(c.title);
-        const diffHtml=buildDiffHtml(c.diffs,c.detail);
-        return`<div class="ci">
-          <div class="ci-top">
-            <span class="tag tag-${tag}">${esc(c.label||'?')}</span>
-            <div class="cbody">
-              <div class="cbrand">${esc(c.brand)}</div>
-              <div class="cname">${title}</div>
-              <div class="cdetail">${esc(c.detail||'').substring(0,200)}</div>
-              ${diffHtml}
-            </div>
-            <div class="ctime">${c.ts?ago(c.ts):''}</div>
-          </div>
-        </div>`;
-      }).join('')
-    :'<div style="padding:32px;text-align:center;color:var(--muted);font-size:13px">当前筛选条件下无记录</div>';
+  const list=(D.changes||[]).filter(c=>(fType==='all'||c.type===fType)&&(fBrand==='all'||c.brand===fBrand));
+  const cnt=document.getElementById('cnt');
+  cnt.textContent=list.length;cnt.className='badge '+(list.length?'b-amber':'b-gray');
+  document.getElementById('change-list').innerHTML=list.length?list.map(c=>{
+    const tag=c.label||'?';
+    const title=c.url?`<a href="${esc(c.url)}" target="_blank">${esc(c.title)}</a>`:esc(c.title);
+    return`<div class="item"><span class="tag tag-${tag}">${tag}</span><div class="ibody"><div class="ibrand">${esc(c.brand)}</div><div class="iname">${title}</div><div class="idetail">${esc((c.detail||'').substring(0,200))}</div>${buildDiff(c.diffs,c.detail)}</div><div class="itime">${c.ts?ago(c.ts):''}</div></div>`;
+  }).join(''):'<div class="empty">当前筛选条件下无记录</div>';
 }
 function renderPages(){
   if(!D)return;
@@ -264,88 +162,44 @@ function renderPages(){
       const cls=info.status==='changed'?'schanged':info.status==='error'?'serr':'sok';
       const lbl=info.status==='changed'?'已变化':info.status==='error'?'访问失败':'未变化';
       const link=info.url?`<a href="${esc(info.url)}" target="_blank">${esc(name)}</a>`:esc(name);
-      rows.push(`<div class="pr"><div class="pinfo">
-        <div class="pname">${link}</div><div class="pbrand">${esc(brand)}</div></div>
-        <span class="${cls}">${lbl}</span></div>`);
+      rows.push(`<div class="pr"><div><div class="pname">${link}</div><div class="pbrand">${esc(brand)}</div></div><span class="${cls}">${lbl}</span></div>`);
     }
-  document.getElementById('page-list').innerHTML=rows.join('')||
-    '<div style="padding:20px;text-align:center;color:var(--muted);font-size:13px">暂无数据</div>';
+  document.getElementById('page-list').innerHTML=rows.join('')||'<div class="empty">暂无数据</div>';
 }
 function renderSidebar(){
   if(!D)return;
-  const brands=D.brand_list||[];
-  const counts=D.product_counts||{};
+  const brands=D.brand_list||[],counts=D.product_counts||{};
   document.getElementById('brand-sidebar').innerHTML=brands.map(b=>
-    `<div class="brand-row" onclick="filterBrand('${b}')">
-      <span class="bname" style="color:${fBrand===b?'var(--blue)':'var(--text)'}">${esc(b)}</span>
-      <span class="bcnt">${counts[b]??'—'} 产品</span>
-    </div>`).join('');
+    `<div class="brand-row" onclick="filterBrand('${b}')"><span style="font-size:13px;font-weight:500;color:${fBrand===b?'#1d4ed8':'#1a1a18'}">${esc(b)}</span><span class="bcnt">${counts[b]??'—'} 产品</span></div>`
+  ).join('');
 }
 function renderBrandCards(){
   if(!D)return;
-  const brands=D.brand_list||[];
-  const counts=D.product_counts||{};
+  const brands=D.brand_list||[],counts=D.product_counts||{};
   document.getElementById('brand-cards').innerHTML=brands.map(b=>{
-    const bc=(D.changes||[]).filter(c=>c.brand===b).slice(0,5);
-    return`<div class="card" style="margin-bottom:14px">
-      <div class="ch"><div class="ctitle">${esc(b)}</div>
-        <span class="chint">${counts[b]??'—'} 产品</span></div>
-      ${bc.length?bc.map(c=>{
-        const tag=(c.label||'?').replace(' ','_');
-        const title=c.url?`<a href="${esc(c.url)}" target="_blank">${esc(c.title)}</a>`:esc(c.title);
-        return`<div class="ci"><div class="ci-top">
-          <span class="tag tag-${tag}">${esc(c.label||'?')}</span>
-          <div class="cbody"><div class="cname">${title}</div>
-          <div class="cdetail">${esc(c.detail||'').substring(0,150)}</div>
-          ${buildDiffHtml(c.diffs,c.detail)}</div>
-          <div class="ctime">${c.ts?ago(c.ts):''}</div>
-        </div></div>`;
-      }).join(''):'<div style="padding:20px;text-align:center;color:var(--muted);font-size:13px">暂无记录</div>'}
-    </div>`;
+    const bc=(D.changes||[]).filter(c=>c.brand===b).slice(0,4);
+    return`<div class="panel" style="margin-bottom:14px"><div class="ph"><div class="ptitle">${esc(b)}</div><span style="font-size:12px;color:#78776f">${counts[b]??'—'} 产品</span></div>${bc.length?bc.map(c=>{const tag=c.label||'?';const title=c.url?`<a href="${esc(c.url)}" target="_blank">${esc(c.title)}</a>`:esc(c.title);return`<div class="item"><span class="tag tag-${tag}">${tag}</span><div class="ibody"><div class="iname">${title}</div><div class="idetail">${esc((c.detail||'').substring(0,120))}</div>${buildDiff(c.diffs,c.detail)}</div><div class="itime">${c.ts?ago(c.ts):''}</div></div>`;}).join(''):'<div class="empty">暂无记录</div>'}</div>`;
   }).join('');
 }
-function filterBrand(b){
-  fBrand=fBrand===b?'all':b;
-  document.getElementById('brand-hint').textContent=fBrand==='all'?'所有品牌':fBrand;
-  renderList();renderSidebar();
-}
-document.getElementById('filters').addEventListener('click',e=>{
-  const btn=e.target.closest('.fbtn');
-  if(!btn)return;
-  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  fType=btn.dataset.f;renderList();
-});
+function filterBrand(b){fBrand=fBrand===b?'all':b;document.getElementById('brand-hint').textContent=fBrand==='all'?'所有品牌':fBrand;renderList();renderSidebar();}
+document.querySelector('.filters').addEventListener('click',e=>{const btn=e.target.closest('.fbtn');if(!btn)return;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');fType=btn.dataset.f;renderList();});
 function render(data){
   D=data;
-  document.getElementById('loading').classList.add('hidden');
-  document.getElementById('app').classList.remove('hidden');
-  const brands=data.brand_list||[];
-  const genAt=data.generated_at?new Date(data.generated_at):null;
-  document.getElementById('meta').textContent=genAt
-    ?`上次检查：${ago(data.generated_at)} · 监控 ${brands.length} 个品牌`:'暂无数据';
+  const brands=data.brand_list||[],genAt=data.generated_at?new Date(data.generated_at):null;
+  document.getElementById('meta').textContent=genAt?`上次检查：${ago(data.generated_at)} · 监控 ${brands.length} 个品牌`:'暂无数据';
   document.getElementById('s-brands').textContent=brands.length||'—';
   document.getElementById('s-brands-sub').textContent=brands.join(' · ')||'—';
   document.getElementById('s-today').textContent=data.stats?.today??0;
   document.getElementById('s-week').textContent=data.stats?.week??0;
   document.getElementById('s-time').textContent=genAt?genAt.toLocaleDateString('zh-CN'):'—';
   const today=data.stats?.today??0;
-  document.getElementById('banner').classList.toggle('hidden',today===0);
-  if(today>0)document.getElementById('banner-text').textContent=
-    `今日检测到 ${today} 处变化，请查看下方日志。`;
+  document.getElementById('alert').classList.toggle('hidden',today===0);
+  if(today>0)document.getElementById('alert-text').textContent=`今日检测到 ${today} 处变化，请查看下方日志。`;
   renderList();renderPages();renderSidebar();renderBrandCards();
 }
 async function loadData(){
-  try{
-    const r=await fetch('data.json?t='+Date.now());
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    render(await r.json());
-  }catch(e){
-    document.getElementById('loading').innerHTML=
-      `<div style="color:var(--red);font-size:13px">无法加载：${e.message}</div>`;
-    document.getElementById('loading').classList.remove('hidden');
-    document.getElementById('app').classList.add('hidden');
-  }
+  try{const r=await fetch('data.json?t='+Date.now());if(!r.ok)throw new Error('HTTP '+r.status);render(await r.json());}
+  catch(e){document.getElementById('meta').textContent='无法加载：'+e.message;}
 }
 loadData();
 setInterval(loadData,5*60*1000);
