@@ -5,7 +5,7 @@ Thermal Camera Competitive Monitor v8
 - FLIR/FLUKE: hash-only
 """
 
-import os, json, hashlib, re, httpx, smtplib, difflib
+import os, json, hashlib, re, html, httpx, smtplib, difflib, string
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from email.mime.text import MIMEText
@@ -78,7 +78,7 @@ HEADERS = {
     "User-Agent":      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
     "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Encoding": "gzip, deflate",
     "Cache-Control":   "no-cache",
 }
 
@@ -98,28 +98,37 @@ TAG_COLOR = {
     "NAV": "#be185d", "PRODUCT PAGE": "#0891b2",
 }
 
+NOISY_LINE_PATTERNS = [
+    r"^Get the latest news from\b",
+    r"^Use left/right arrows to navigate\b",
+    r"^Choosing a selection results in a full page refresh\.?$",
+    r"^Press the space key then arrow keys to make a selection\.?$",
+    r"^Select Your Country(?:/Region| or Region)?$",
+    r"^&copy; .*All rights reserved\.",
+]
+
 # ─── State ────────────────────────────────────────────────────────────────────
 
 def load_state():
     if STATE_FILE.exists():
-        try: return json.loads(STATE_FILE.read_text())
+        try: return json.loads(STATE_FILE.read_text(encoding="utf-8"))
         except: pass
     return {}
 
 def save_state(s):
-    STATE_FILE.write_text(json.dumps(s, indent=2, ensure_ascii=False))
+    STATE_FILE.write_text(json.dumps(s, indent=2, ensure_ascii=False), encoding="utf-8")
 
 def load_dashboard():
     DATA_DIR.mkdir(exist_ok=True)
     if DATA_FILE.exists():
         try:
-            d = json.loads(DATA_FILE.read_text())
+            d = json.loads(DATA_FILE.read_text(encoding="utf-8"))
             if "history" in d and "changes" not in d:
                 d["changes"] = d.pop("history")
                 for c in d["changes"]:
                     if "label" not in c:
                         c["label"] = TYPE_LABEL.get(c.get("type", ""), "?")
-            return d
+            return sanitize_dashboard(d)
         except: pass
     return {
         "generated_at": "", "brand_list": list(BRANDS.keys()),
@@ -129,9 +138,62 @@ def load_dashboard():
 
 def save_dashboard(d):
     DATA_DIR.mkdir(exist_ok=True)
-    DATA_FILE.write_text(json.dumps(d, indent=2, ensure_ascii=False))
+    DATA_FILE.write_text(
+        json.dumps(sanitize_dashboard(d), indent=2, ensure_ascii=False),
+        encoding="utf-8"
+    )
 
 # ─── Text extraction ──────────────────────────────────────────────────────────
+
+def text_quality_score(text: str) -> float:
+    s = re.sub(r'\s+', ' ', str(text or '')).strip()
+    if not s:
+        return float("-inf")
+    ascii_letters = sum(1 for c in s if c.isascii() and c.isalpha())
+    digits = sum(1 for c in s if c.isdigit())
+    spaces = sum(1 for c in s if c.isspace())
+    cjk = sum(1 for c in s if '\u4e00' <= c <= '\u9fff')
+    punctuation = sum(1 for c in s if c in string.punctuation)
+    replacement = s.count('\ufffd')
+    mojibake = sum(1 for c in s if c in "ÂÃ¢€™¡£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÔÁ")
+    return ascii_letters + digits + spaces * 0.2 + cjk * 1.3 - punctuation * 0.5 - replacement * 8 - mojibake * 3
+
+def normalize_text(text: str) -> str:
+    s = str(text or "")
+    candidates = {s}
+    for _ in range(2):
+        next_round = set()
+        for cand in candidates:
+            next_round.add(cand)
+            next_round.add(html.unescape(cand))
+            for enc in ("latin1", "cp1252"):
+                try:
+                    next_round.add(cand.encode(enc).decode("utf-8"))
+                except Exception:
+                    pass
+        candidates = next_round
+    best = max(candidates, key=text_quality_score)
+    best = html.unescape(best)
+    best = (best.replace("\xa0", " ")
+                .replace("–", "-")
+                .replace("—", "-")
+                .replace("→", "->")
+                .replace("℃", "°C")
+                .replace("℉", "°F"))
+    return re.sub(r'\s+', ' ', best).strip()
+
+def should_skip_line(line: str) -> bool:
+    return any(re.search(pattern, line, re.IGNORECASE) for pattern in NOISY_LINE_PATTERNS)
+
+def unique_lines(lines: list[str]) -> list[str]:
+    out, seen = [], set()
+    for line in lines:
+        key = re.sub(r'\s+', ' ', line).strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(line)
+    return out
 
 def extract_text(html: str) -> str:
     """Extract clean visible text from HTML for diffing."""
@@ -149,14 +211,15 @@ def extract_text(html: str) -> str:
     t = re.sub(r'<[^>]+>', ' ', t)
     lines = []
     for line in t.split('\n'):
-        line = re.sub(r'\s+', ' ', line).strip()
+        line = normalize_text(line)
         if len(line) < 25:
             continue
-        special = sum(1 for c in line if c in '{}[]\\^$*+=|@#%&;:<>')
-        if len(line) > 0 and special / len(line) > 0.12:
+        if should_skip_line(line):
+            continue
+        if is_probably_garbled(line):
             continue
         lines.append(line)
-    return '\n'.join(lines)
+    return '\n'.join(unique_lines(lines))
 
 def text_hash(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()[:24]
@@ -174,22 +237,22 @@ def compute_diff(old_text: str, new_text: str) -> list[dict]:
         new_chunk = new_lines[j1:j2]
         if op == 'insert':
             for line in new_chunk:
-                if line.strip():
+                if line.strip() and not is_probably_garbled(line):
                     changes.append({"type": "added",   "text": line.strip()})
         elif op == 'delete':
             for line in old_chunk:
-                if line.strip():
+                if line.strip() and not is_probably_garbled(line):
                     changes.append({"type": "removed", "text": line.strip()})
         elif op == 'replace':
             # Pair up old/new lines
             for i in range(max(len(old_chunk), len(new_chunk))):
                 old_l = old_chunk[i].strip() if i < len(old_chunk) else ""
                 new_l = new_chunk[i].strip() if i < len(new_chunk) else ""
-                if old_l and new_l:
+                if old_l and new_l and not (is_probably_garbled(old_l) or is_probably_garbled(new_l)):
                     changes.append({"type": "modified", "old": old_l, "new": new_l})
-                elif new_l:
+                elif new_l and not is_probably_garbled(new_l):
                     changes.append({"type": "added",   "text": new_l})
-                elif old_l:
+                elif old_l and not is_probably_garbled(old_l):
                     changes.append({"type": "removed", "text": old_l})
         if len(changes) >= MAX_DIFF_LINES:
             break
@@ -205,9 +268,77 @@ def format_diff_detail(diffs: list[dict], total_changes: int) -> str:
             lines.append(f"- {d['text'][:120]}")
         elif d["type"] == "modified":
             lines.append(f"~ {d['old'][:80]} → {d['new'][:80]}")
+    lines = unique_lines(lines)
     if total_changes > MAX_DIFF_LINES:
         lines.append(f"... and {total_changes - MAX_DIFF_LINES} more changes")
     return "\n".join(lines) if lines else "Content updated (diff unavailable)"
+
+def is_probably_garbled(text: str) -> bool:
+    text = re.sub(r'\s+', ' ', str(text or '')).strip()
+    if len(text) < 20:
+        return False
+    if "锟" in text or "鈫" in text or "\ufffd" in text:
+        return True
+
+    total = len(text)
+    ascii_letters = sum(1 for c in text if c.isascii() and c.isalpha())
+    digits = sum(1 for c in text if c.isdigit())
+    spaces = sum(1 for c in text if c.isspace())
+    punctuation = sum(1 for c in text if c in string.punctuation)
+    odd = sum(1 for c in text if not c.isascii() and not ('\u4e00' <= c <= '\u9fff'))
+
+    punct_ratio = punctuation / total
+    odd_ratio = odd / total
+    readable_ratio = (ascii_letters + digits + spaces) / total
+    word_like = len(re.findall(r'[A-Za-z]{3,}', text))
+
+    if punct_ratio > 0.22:
+        return True
+    if odd_ratio > 0.18:
+        return True
+    if readable_ratio < 0.45 and word_like < 3:
+        return True
+    if re.search(r'[\\|@#$%^*_+=~`]{3,}', text):
+        return True
+    return False
+
+def sanitize_change(change: dict) -> dict:
+    clean = dict(change)
+    clean_diffs = []
+    for d in clean.get("diffs", []):
+        kind = d.get("type")
+        if kind in {"added", "removed"}:
+            text = normalize_text(d.get("text", ""))
+            if text and not is_probably_garbled(text):
+                clean_diffs.append({"type": kind, "text": text})
+        elif kind == "modified":
+            old = normalize_text(d.get("old", ""))
+            new = normalize_text(d.get("new", ""))
+            if old and new and not (is_probably_garbled(old) or is_probably_garbled(new)):
+                clean_diffs.append({"type": kind, "old": old, "new": new})
+    seen = set()
+    deduped = []
+    for diff in clean_diffs:
+        key = json.dumps(diff, sort_keys=True, ensure_ascii=False)
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(diff)
+    clean["diffs"] = deduped
+
+    detail = normalize_text(clean.get("detail", ""))
+    if detail and is_probably_garbled(detail):
+        clean["detail"] = "Content updated"
+    elif clean["diffs"]:
+        clean["detail"] = format_diff_detail(clean["diffs"], len(clean["diffs"]))
+    else:
+        clean["detail"] = detail
+    return clean
+
+def sanitize_dashboard(dashboard: dict) -> dict:
+    cleaned = dict(dashboard)
+    cleaned["changes"] = [sanitize_change(c) for c in cleaned.get("changes", [])]
+    return cleaned
 
 # ─── Fetchers ─────────────────────────────────────────────────────────────────
 
