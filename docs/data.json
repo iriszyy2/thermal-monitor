@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T11:59:54.100941+00:00",
+  "generated_at": "2026-03-28T14:04:27.834062+00:00",
   "brand_list": [
     "TOPDON",
     "FLIR",
@@ -6505,77 +6505,77 @@
     "TOPDON": {
       "Thermal Imagers": {
         "url": "https://www.topdon.com/pages/tools/thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:50.044903+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:24.735895+00:00"
       },
       "Thermal Apps": {
         "url": "https://www.topdon.com/pages/topdon-apps-thermal-imagers",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:50.262955+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:24.910052+00:00"
       },
       "Solution: Home Inspection": {
         "url": "https://www.topdon.com/pages/solutions-home-inspection",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:50.413392+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.067940+00:00"
       },
       "About Us": {
         "url": "https://www.topdon.com/pages/about-us",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:50.663911+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.209339+00:00"
       },
       "Newsroom": {
         "url": "https://www.topdon.com/pages/news",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:50.814930+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.370874+00:00"
       },
       "Program: TestLight": {
         "url": "https://www.topdon.com/pages/topdon-testlight-program",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:51.045201+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.526146+00:00"
       },
       "Program: TOP-UP": {
         "url": "https://www.topdon.com/pages/top-up-program",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:51.329556+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.692693+00:00"
       },
       "Program: My Story": {
         "url": "https://www.topdon.com/pages/my-topdon-story",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:51.528594+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:25.854007+00:00"
       },
       "Program: Partner": {
         "url": "https://www.topdon.com/pages/become-a-topdon-partner",
         "status": "error",
-        "checked_at": "2026-03-28T11:59:51.730204+00:00"
+        "checked_at": "2026-03-28T14:04:25.946991+00:00"
       },
       "Refund Policy": {
         "url": "https://www.topdon.com/policies/refund-policy",
         "status": "error",
-        "checked_at": "2026-03-28T11:59:51.884356+00:00"
+        "checked_at": "2026-03-28T14:04:26.047136+00:00"
       }
     },
     "FLIR": {
       "About Us": {
         "url": "https://www.flir.com/about/",
         "status": "ok",
-        "checked_at": "2026-03-28T11:59:52.978043+00:00"
+        "checked_at": "2026-03-28T14:04:26.832729+00:00"
       },
       "Return Policy": {
         "url": "https://www.flir.com/support/return-policy/",
         "status": "ok",
-        "checked_at": "2026-03-28T11:59:53.232577+00:00"
+        "checked_at": "2026-03-28T14:04:27.048017+00:00"
       }
     },
     "FLUKE": {
       "About": {
         "url": "https://www.fluke.com/en-us/about-fluke",
         "status": "error",
-        "checked_at": "2026-03-28T11:59:53.881457+00:00"
+        "checked_at": "2026-03-28T14:04:27.623353+00:00"
       },
       "Return Policy": {
         "url": "https://www.fluke.com/en-us/support/return-policy",
-        "status": "changed",
-        "checked_at": "2026-03-28T11:59:54.096352+00:00"
+        "status": "ok",
+        "checked_at": "2026-03-28T14:04:27.828762+00:00"
       }
     }
   },
